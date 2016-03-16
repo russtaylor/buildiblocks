@@ -1,4 +1,4 @@
-Lodecraftia
-===========
+Buildiblocks
+============
 
-The very beginnings (and I mean beginnings) of a Minecraft mod to enhance the building and construction aspects of Minecraft. 
+The beginnings of a mod to provide improved building materials in Minecraft. Created in conjunction with [Lodeclaw](http://twitch.tv/lodeclaw). 

@@ -1,0 +1,6 @@
+{
+  "variants": {
+    "half=bottom": { "model": "buildiblocks:lapis_lazuli_slab_bottom" },
+    "half=top": { "model": "buildiblocks:lapis_lazuli_slab_top" }
+  }
+}

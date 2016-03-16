@@ -1,7 +1,0 @@
-{
-    "parent": "lodecraftia:block/wall_n",
-    "textures": {
-        "wall": "blocks/sandstone_smooth",
-        "end": "blocks/sandstone_normal"
-    }
-}

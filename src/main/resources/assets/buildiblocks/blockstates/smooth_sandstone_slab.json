@@ -1,0 +1,6 @@
+{
+  "variants": {
+    "half=bottom": { "model": "buildiblocks:smooth_sandstone_slab_bottom" },
+    "half=top": { "model": "buildiblocks:smooth_sandstone_slab_top" }
+  }
+}

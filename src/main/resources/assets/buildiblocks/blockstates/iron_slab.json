@@ -1,0 +1,6 @@
+{
+  "variants": {
+    "half=bottom": { "model": "buildiblocks:iron_slab_bottom" },
+    "half=top": { "model": "buildiblocks:iron_slab_top" }
+  }
+}

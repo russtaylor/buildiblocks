@@ -1,0 +1,6 @@
+{
+  "variants": {
+    "half=bottom": { "model": "buildiblocks:polished_diorite_slab_bottom" },
+    "half=top": { "model": "buildiblocks:polished_diorite_slab_top" }
+  }
+}

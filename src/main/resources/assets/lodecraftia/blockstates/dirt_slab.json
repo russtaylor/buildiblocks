@@ -1,6 +1,0 @@
-{
-  "variants": {
-    "half=bottom": { "model": "lodecraftia:dirt_slab_bottom" },
-    "half=top": { "model": "lodecraftia:dirt_slab_top" }
-  }
-}

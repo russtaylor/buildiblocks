@@ -1,6 +1,0 @@
-{
-  "variants": {
-    "half=bottom": { "model": "lodecraftia:gold_slab_bottom" },
-    "half=top": { "model": "lodecraftia:gold_slab_top" }
-  }
-}

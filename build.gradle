@@ -13,8 +13,8 @@ buildscript {
 apply plugin: 'net.minecraftforge.gradle.forge'
 
 version = "0.1"
-group= "com.lodecraftia.mod" // http://maven.apache.org/guides/mini/guide-naming-conventions.html
-archivesBaseName = "lodecraftia"
+group= "com.buildiblocks.mod" // http://maven.apache.org/guides/mini/guide-naming-conventions.html
+archivesBaseName = "buildiblocks"
 
 minecraft {
     version = "1.8.9-11.15.1.1722"

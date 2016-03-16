@@ -1,6 +1,0 @@
-{
-  "parent": "block/stone",
-  "textures": {
-    "all": "lodecraftia:blocks/basalt_stone"
-  }
-}

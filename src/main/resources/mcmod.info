@@ -1,8 +1,8 @@
 [
 {
-  "modid": "lodecraftia",
-  "name": "Lodecraftia",
-  "description": "This is Lodecraftia.",
+  "modid": "buildiblocks",
+  "name": "Buildiblocks",
+  "description": "This is Buildiblocks.",
   "version": "${version}",
   "mcversion": "${mcversion}",
   "url": "",

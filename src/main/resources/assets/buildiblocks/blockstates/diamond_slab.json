@@ -1,0 +1,6 @@
+{
+  "variants": {
+    "half=bottom": { "model": "buildiblocks:diamond_slab_bottom" },
+    "half=top": { "model": "buildiblocks:diamond_slab_top" }
+  }
+}
