@@ -154,17 +154,19 @@ def replace_options(passed_option_list, file_option_list, file_text, file_path)
     if replace_option.nil? and not passed_option_list[option].nil?
       replace_option = passed_option_list[option.to_sym]
     end
-    if replace_option.nil?
+    if replace_option.nil? and not passed_option_list['custom'].nil?
       replace_option = passed_option_list['custom'][option]
     end
     if option == 'mod_name'
-      if passed_option_list['vanilla'] and not file_path.include? 'models/block'
+      if passed_option_list['vanilla'] and file_path.include? 'models/block'
         replace_option = ''
       else
         replace_option = "#{replace_option}:"
       end
     end
-    file_text.gsub!(/\{#{option}\}/, replace_option)
+    unless replace_option.nil?
+      file_text.gsub!(/\{#{option}\}/, replace_option)
+    end
   end
   file_text
 end

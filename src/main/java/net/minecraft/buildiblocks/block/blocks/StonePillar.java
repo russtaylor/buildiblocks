@@ -11,9 +11,9 @@ import net.minecraft.world.IBlockAccess;
  *
  * Created by russt on 12/29/14.
  */
-public class AndesiteBrick extends Block {
+public class StonePillar extends Block {
 
-    public AndesiteBrick() {
+    public StonePillar() {
         super(Material.rock);
     }
 
