@@ -14,8 +14,4 @@ public class SandstoneWall extends ModBlockWall {
     public SandstoneWall(Block block) {
         super(block, BLOCK_NAME);
     }
-
-    public ModBlockWall register() {
-        return register(BLOCK_NAME);
-    }
 }

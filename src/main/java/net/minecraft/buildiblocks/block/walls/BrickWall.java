@@ -14,8 +14,4 @@ public class BrickWall extends ModBlockWall {
     public BrickWall(Block block) {
         super(block, BLOCK_NAME);
     }
-
-    public ModBlockWall register() {
-        return register(BLOCK_NAME);
-    }
 }

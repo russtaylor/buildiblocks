@@ -1,6 +1,8 @@
 package net.minecraft.buildiblocks.block;
 
 import net.minecraft.block.BlockColored;
+import net.minecraft.buildiblocks.block.blocks.StonePillar;
+import net.minecraft.buildiblocks.block.walls.*;
 import net.minecraft.init.Blocks;
 import net.minecraft.buildiblocks.block.fences.DiamondFence;
 import net.minecraft.buildiblocks.block.fences.GoldFence;
@@ -15,13 +17,6 @@ import net.minecraft.buildiblocks.block.stairs.PolishedAndesiteStairs;
 import net.minecraft.buildiblocks.block.stairs.PolishedDioriteStairs;
 import net.minecraft.buildiblocks.block.stairs.PolishedGraniteStairs;
 import net.minecraft.buildiblocks.block.stairs.SmoothSandstoneStairs;
-import net.minecraft.buildiblocks.block.walls.BrickWall;
-import net.minecraft.buildiblocks.block.walls.NetherBrickWall;
-import net.minecraft.buildiblocks.block.walls.NetherQuartzWall;
-import net.minecraft.buildiblocks.block.walls.SandstoneBrickWall;
-import net.minecraft.buildiblocks.block.walls.SandstoneWall;
-import net.minecraft.buildiblocks.block.walls.StoneBrickWall;
-import net.minecraft.buildiblocks.block.walls.StoneWall;
 
 /**
  * Handles the creation of various types of blocks.
@@ -41,10 +36,15 @@ public class BlockHandler {
     }
 
     private void registerVanillaBlockExtensions() {
+        registerVanillaBlocks();
         registerVanillaWalls();
         registerVanillaFences();
         registerVanillaStairs();
         registerVanillaSlabs();
+    }
+
+    private void registerVanillaBlocks() {
+        BlockList.stonePillar = new StonePillar(Blocks.stone).register();
     }
 
     private void registerVanillaWalls() {
@@ -55,6 +55,9 @@ public class BlockHandler {
         BlockList.sandstoneWall = new SandstoneWall(Blocks.sandstone).register();
         BlockList.sandstoneBrickWall = new SandstoneBrickWall(Blocks.sandstone).register();
         BlockList.brickWall = new BrickWall(Blocks.brick_block).register();
+        BlockList.polishedAndesiteWall = new PolishedAndesiteWall(Blocks.stone).register();
+        BlockList.polishedGraniteWall = new PolishedGraniteWall(Blocks.stone).register();
+        BlockList.polishedDioriteWall = new PolishedDioriteWall(Blocks.stone).register();
     }
 
     private void registerVanillaFences() {

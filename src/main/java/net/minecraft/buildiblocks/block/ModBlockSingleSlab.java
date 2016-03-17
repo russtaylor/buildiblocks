@@ -26,6 +26,7 @@ public class ModBlockSingleSlab extends BlockSlab implements IModBlock {
         setResistance(blockResistance);
         setCreativeTab(CreativeTabs.tabBlock);
         setUnlocalizedName(blockName);
+        setRegistryName(blockName);
         this.useNeighborBrightness = true;
     }
 

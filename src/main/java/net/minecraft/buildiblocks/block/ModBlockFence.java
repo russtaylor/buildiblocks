@@ -8,6 +8,7 @@ import net.minecraft.block.properties.IProperty;
 import net.minecraft.block.properties.PropertyBool;
 import net.minecraft.block.state.BlockState;
 import net.minecraft.block.state.IBlockState;
+import net.minecraft.buildiblocks.common.ModBlockHelper;
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.entity.Entity;
 import net.minecraft.init.Blocks;
@@ -46,6 +47,7 @@ public class ModBlockFence extends Block implements IModBlock {
         this.setResistance(block.getExplosionResistance(null));
         this.setStepSound(block.stepSound);
         setUnlocalizedName(blockName);
+        setRegistryName(blockName);
         setCreativeTab(CreativeTabs.tabBlock);
         useNeighborBrightness = true;
     }
@@ -209,6 +211,7 @@ public class ModBlockFence extends Block implements IModBlock {
     public ModBlockFence register(String blockName) {
         GameRegistry.registerBlock(this, blockName);
         BlockList.blockList.add(this);
+        ModBlockHelper.registerItemRender(this, this.getBlockName());
         return this;
     }
 }

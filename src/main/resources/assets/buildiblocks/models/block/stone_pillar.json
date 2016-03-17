@@ -1,0 +1,12 @@
+{
+  "parent": "block/cube",
+  "textures": {
+    "down": "blocks/stone_slab_top",
+    "up": "blocks/stone_slab_top",
+    "north": "buildiblocks:blocks/stone_pillar",
+    "east": "buildiblocks:blocks/stone_pillar",
+    "south": "buildiblocks:blocks/stone_pillar",
+    "west": "buildiblocks:blocks/stone_pillar",
+    "particle": "buildiblocks:blocks/stone_pillar"
+  }
+}

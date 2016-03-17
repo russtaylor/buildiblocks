@@ -7,12 +7,11 @@ import net.minecraft.item.Item;
 import net.minecraftforge.client.model.ModelLoader;
 
 /**
- * Handles common functionality that blocks require.
+ * Handles common functionality that items require.
  */
 public class ModItemHelper {
-    public static void registerItemRender(Block block, String blockName) {
-        Item item = Item.getItemFromBlock(block);
+    public static void registerItemRender(Item item, String itemName) {
         ModelLoader.setCustomModelResourceLocation(item, 0,
-                new ModelResourceLocation(BuildiblocksMod.MOD_ID + ":" + blockName, "inventory"));
+                new ModelResourceLocation(BuildiblocksMod.MOD_ID + ":" + itemName, "inventory"));
     }
 }

@@ -13,10 +13,8 @@ public class BlockList {
 
     public static List<IModBlock> blockList = Lists.newArrayList();
 
-    // Stone Types
-    public static ModBlock andesiteStone;
-    public static ModBlock basaltStone;
-    public static ModBlock bauxiteStone;
+    // Blocks
+    public static ModBlock stonePillar;
 
     // Walls
     public static ModBlockWall netherQuartzWall;
@@ -26,6 +24,9 @@ public class BlockList {
     public static ModBlockWall sandstoneWall;
     public static ModBlockWall sandstoneBrickWall;
     public static ModBlockWall brickWall;
+    public static ModBlockWall polishedAndesiteWall;
+    public static ModBlockWall polishedGraniteWall;
+    public static ModBlockWall polishedDioriteWall;
 
     // Fences
     public static ModBlockFence ironFence;

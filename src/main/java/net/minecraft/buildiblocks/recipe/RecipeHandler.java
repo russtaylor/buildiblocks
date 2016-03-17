@@ -22,6 +22,7 @@ import net.minecraftforge.fml.common.registry.GameRegistry;
 public class RecipeHandler {
     public void registerRecipes() {
         removeVanillaRecipes();
+        registerPillarRecipes();
         registerWallRecipes();
         registerStairRecipes();
         registerSlabRecipes();
@@ -42,6 +43,10 @@ public class RecipeHandler {
         GameRegistry.addRecipe(outputItemStack, "x", "x", 'x', inputItemStack);
     }
 
+    private void registerPillarRecipes() {
+        registerPillar(BlockList.stonePillar, Blocks.stone);
+    }
+
     private void registerFenceRecipes() {
         registerFence(BlockList.ironFence, Blocks.iron_ore, ItemList.ironRod);
         registerFence(BlockList.goldFence, Blocks.gold_ore, ItemList.goldRod);
@@ -56,6 +61,9 @@ public class RecipeHandler {
         registerWall(BlockList.sandstoneWall, Blocks.sandstone);
         registerWall(BlockList.sandstoneBrickWall, Blocks.sandstone, BlockSandStone.EnumType.SMOOTH.getMetadata());
         registerWall(BlockList.brickWall, Blocks.brick_block);
+        registerWall(BlockList.polishedAndesiteWall, Blocks.stone, BlockStone.EnumType.ANDESITE_SMOOTH.getMetadata());
+        registerWall(BlockList.polishedDioriteWall, Blocks.stone, BlockStone.EnumType.DIORITE_SMOOTH.getMetadata());
+        registerWall(BlockList.polishedGraniteWall, Blocks.stone, BlockStone.EnumType.GRANITE_SMOOTH.getMetadata());
     }
 
     private void registerStairRecipes() {
@@ -148,6 +156,16 @@ public class RecipeHandler {
         ItemStack stickItemStack = new ItemStack(stickItem, 1, 0);
         ItemStack fenceStack = new ItemStack(fenceBlock, 3, 0);
         GameRegistry.addRecipe(fenceStack, "xyx", "xyx", 'x', plankBlockStack, 'y', stickItemStack);
+    }
+
+    private void registerPillar(Block pillarBlock, Block sourceBlock) {
+        this.registerPillar(pillarBlock, sourceBlock, 0);
+    }
+
+    private void registerPillar(Block pillarBlock, Block sourceBlock, int meta) {
+        ItemStack sourceItemStack = new ItemStack(sourceBlock, 1, meta);
+        ItemStack pillarStack = new ItemStack(pillarBlock, 2);
+        GameRegistry.addRecipe(pillarStack, "x", "x", 'x', sourceItemStack);
     }
 
     private void registerStair(Block stairBlock, Block sourceBlock) {

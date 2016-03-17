@@ -20,9 +20,6 @@ public class ModBlockGenerator implements IWorldGenerator {
     public void generate(Random random, int x, int z, World world, IChunkProvider iChunkProvider, IChunkProvider iChunkProvider1) {
         if(world.provider.getDimensionId() == 0) { // Only spawn in the normal world.
             //Overworld spawning should occur here.
-            addBlockSpawn(BlockList.andesiteStone.getDefaultState(), world, random, x, z, 100, 33, 10);
-            addBlockSpawn(BlockList.basaltStone.getDefaultState(), world, random, x, z, 100, 33, 10);
-            addBlockSpawn(BlockList.bauxiteStone.getDefaultState(), world, random, x, z, 100, 33, 10);
         }
     }
 

@@ -6,6 +6,7 @@ import net.minecraft.buildiblocks.recipe.RecipeHandler;
 import net.minecraft.buildiblocks.world.ModBlockGenerator;
 import net.minecraft.buildiblocks.world.ModWorldGenerator;
 import net.minecraft.world.World;
+import net.minecraftforge.client.model.ModelLoader;
 import net.minecraftforge.event.world.WorldEvent;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.Mod.EventHandler;
@@ -14,6 +15,7 @@ import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
 import net.minecraftforge.fml.common.registry.GameRegistry;
 
+@SuppressWarnings("unused")
 @Mod(modid = BuildiblocksMod.MOD_ID, name = BuildiblocksMod.MOD_NAME, version = BuildiblocksMod.VERSION)
 public class BuildiblocksMod
 {
@@ -50,17 +52,11 @@ public class BuildiblocksMod
         blockHandler.registerBlocks();
         itemHandler.registerItems();
         recipeHandler.registerRecipes();
-        GameRegistry.registerWorldGenerator(generator, 50);
     }
 
     @SubscribeEvent
     public void onWorldLoad(WorldEvent.Load event) {
-        world = event.world;
-        worldSeed = world.getSeed();
-        worldGenerator = new ModWorldGenerator(
-                worldSeed,
-                world.getWorldInfo().getTerrainType(),
-                world.getWorldInfo().getGeneratorOptions());
+        // No-op
     }
 
 }

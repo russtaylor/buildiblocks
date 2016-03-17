@@ -3,6 +3,7 @@ package net.minecraft.buildiblocks.block;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockStairs;
 import net.minecraft.block.state.IBlockState;
+import net.minecraft.buildiblocks.common.ModBlockHelper;
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraftforge.fml.common.registry.GameRegistry;
 
@@ -19,6 +20,7 @@ public class ModBlockStairs extends BlockStairs implements IModBlock {
         super(blockState);
         this.blockName = blockName;
         setUnlocalizedName(blockName);
+        setRegistryName(blockName);
         setCreativeTab(CreativeTabs.tabBlock);
         useNeighborBrightness = true;
     }
@@ -31,6 +33,7 @@ public class ModBlockStairs extends BlockStairs implements IModBlock {
     public ModBlockStairs register(String blockName) {
         GameRegistry.registerBlock(this, blockName);
         BlockList.blockList.add(this);
+        ModBlockHelper.registerItemRender(this, this.getBlockName());
         return this;
     }
 }

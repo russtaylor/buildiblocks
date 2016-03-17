@@ -17,6 +17,7 @@ import net.minecraftforge.fml.common.registry.GameRegistry;
  *
  * Created by russt on 11/21/14.
  */
+@SuppressWarnings("unused")
 public class ClientProxy extends CommonProxy {
     @Override
     public void registerRenderers() {

@@ -14,8 +14,4 @@ public class StoneBrickWall extends ModBlockWall {
     public StoneBrickWall(Block block) {
         super(block, BLOCK_NAME);
     }
-
-    public ModBlockWall register() {
-        return register(BLOCK_NAME);
-    }
 }
