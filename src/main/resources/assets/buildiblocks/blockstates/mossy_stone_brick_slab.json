@@ -1,0 +1,6 @@
+{
+  "variants": {
+    "half=bottom": { "model": "buildiblocks:mossy_stone_brick_slab_bottom" },
+    "half=top": { "model": "buildiblocks:mossy_stone_brick_slab_top" }
+  }
+}

@@ -2,21 +2,13 @@ package net.minecraft.buildiblocks.block;
 
 import net.minecraft.block.BlockColored;
 import net.minecraft.buildiblocks.block.blocks.StonePillar;
+import net.minecraft.buildiblocks.block.stairs.*;
 import net.minecraft.buildiblocks.block.walls.*;
 import net.minecraft.init.Blocks;
 import net.minecraft.buildiblocks.block.fences.DiamondFence;
 import net.minecraft.buildiblocks.block.fences.GoldFence;
 import net.minecraft.buildiblocks.block.fences.IronFence;
 import net.minecraft.buildiblocks.block.slabs.*;
-import net.minecraft.buildiblocks.block.stairs.DiamondStairs;
-import net.minecraft.buildiblocks.block.stairs.GoldStairs;
-import net.minecraft.buildiblocks.block.stairs.HardenedClayStairs;
-import net.minecraft.buildiblocks.block.stairs.IronStairs;
-import net.minecraft.buildiblocks.block.stairs.LapisLazuliStairs;
-import net.minecraft.buildiblocks.block.stairs.PolishedAndesiteStairs;
-import net.minecraft.buildiblocks.block.stairs.PolishedDioriteStairs;
-import net.minecraft.buildiblocks.block.stairs.PolishedGraniteStairs;
-import net.minecraft.buildiblocks.block.stairs.SmoothSandstoneStairs;
 
 /**
  * Handles the creation of various types of blocks.
@@ -58,6 +50,8 @@ public class BlockHandler {
         BlockList.polishedAndesiteWall = new PolishedAndesiteWall(Blocks.stone).register();
         BlockList.polishedGraniteWall = new PolishedGraniteWall(Blocks.stone).register();
         BlockList.polishedDioriteWall = new PolishedDioriteWall(Blocks.stone).register();
+        BlockList.crackedStoneBrickWall = new CrackedStoneBrickWall(Blocks.stone).register();
+        BlockList.mossyStoneBrickWall = new MossyStoneBrickWall(Blocks.stone).register();
     }
 
     private void registerVanillaFences() {
@@ -76,6 +70,8 @@ public class BlockHandler {
         BlockList.lapisLazuliStairs = new LapisLazuliStairs(Blocks.lapis_block).register();
         BlockList.smoothSandstoneStairs = new SmoothSandstoneStairs(Blocks.sandstone).register();
         BlockList.hardenedClayStairs = new HardenedClayStairs((BlockColored) Blocks.stained_hardened_clay).register();
+        BlockList.crackedStoneBrickStairs = new CrackedStoneBrickStairs(Blocks.stonebrick).register();
+        BlockList.mossyStoneBrickStairs = new MossyStoneBrickStairs(Blocks.stonebrick).register();
     }
 
     private void registerVanillaSlabs() {
@@ -89,5 +85,7 @@ public class BlockHandler {
         BlockList.polishedGraniteSlab = new PolishedGraniteSlab(Blocks.stone).register();
         BlockList.lapisLazuliSlab = new LapisLazuliSlab(Blocks.lapis_block).register();
         BlockList.smoothSandstoneSlab = new SmoothSandstoneSlab(Blocks.sandstone).register();
+        BlockList.crackedStoneBrickSlab = new CrackedStoneBrickSlab(Blocks.stone).register();
+        BlockList.mossyStoneBrickSlab = new MossyStoneBrickSlab(Blocks.stone).register();
     }
 }

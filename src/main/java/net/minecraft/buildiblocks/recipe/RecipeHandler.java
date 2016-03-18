@@ -64,9 +64,11 @@ public class RecipeHandler {
         registerWall(BlockList.polishedAndesiteWall, Blocks.stone, BlockStone.EnumType.ANDESITE_SMOOTH.getMetadata());
         registerWall(BlockList.polishedDioriteWall, Blocks.stone, BlockStone.EnumType.DIORITE_SMOOTH.getMetadata());
         registerWall(BlockList.polishedGraniteWall, Blocks.stone, BlockStone.EnumType.GRANITE_SMOOTH.getMetadata());
+        registerWall(BlockList.crackedStoneBrickWall, Blocks.stonebrick, BlockStoneBrick.EnumType.CRACKED.getMetadata());
     }
 
     private void registerStairRecipes() {
+        registerStair(BlockList.diamondStairs, Blocks.diamond_block);
         registerStair(BlockList.ironStairs, Blocks.iron_block);
         registerStair(BlockList.goldStairs, Blocks.gold_block);
         registerStair(BlockList.polishedAndesiteStairs, Blocks.stone, BlockStone.EnumType.ANDESITE_SMOOTH.getMetadata());
@@ -74,9 +76,11 @@ public class RecipeHandler {
         registerStair(BlockList.polishedGraniteStairs, Blocks.stone, BlockStone.EnumType.GRANITE_SMOOTH.getMetadata());
         registerStair(BlockList.lapisLazuliStairs, Blocks.lapis_block);
         registerStair(BlockList.smoothSandstoneStairs, Blocks.sandstone, BlockSandStone.EnumType.SMOOTH.getMetadata());
+        registerStair(BlockList.crackedStoneBrickStairs, Blocks.stonebrick, BlockStoneBrick.EnumType.CRACKED.getMetadata());
     }
 
     private void registerSlabRecipes() {
+        registerSlab(BlockList.diamondSlab.getSingleSlab(), Blocks.diamond_block);
         registerSlab(BlockList.ironSlab.getSingleSlab(), Blocks.iron_block);
         registerSlab(BlockList.goldSlab.getSingleSlab(), Blocks.gold_block);
         registerSlab(BlockList.gravelSlab.getSingleSlab(), Blocks.gravel);
@@ -86,6 +90,8 @@ public class RecipeHandler {
         registerSlab(BlockList.polishedGraniteSlab.getSingleSlab(), 0, Blocks.stone, BlockStone.EnumType.GRANITE_SMOOTH.getMetadata());
         registerSlab(BlockList.lapisLazuliSlab.getSingleSlab(), Blocks.lapis_block);
         registerSlab(BlockList.smoothSandstoneSlab.getSingleSlab(), 0, Blocks.sandstone, BlockSandStone.EnumType.SMOOTH.getMetadata());
+        registerSlab(BlockList.crackedStoneBrickSlab.getSingleSlab(), 0, Blocks.stonebrick, BlockStoneBrick.EnumType.CRACKED.getMetadata());
+
     }
 
     private void removeVanillaRecipes() {
@@ -104,6 +110,7 @@ public class RecipeHandler {
         removeBlockRecipe(Blocks.red_sandstone_stairs);
         removeBlockRecipe(Blocks.nether_brick_stairs);
         removeBlockRecipe(Blocks.brick_stairs);
+        removeBlockRecipe(Blocks.stone_brick_stairs);
     }
 
     private void reregisterVanillaRecipes() {
@@ -119,6 +126,7 @@ public class RecipeHandler {
         registerStair(Blocks.red_sandstone_stairs, Blocks.red_sandstone);
         registerStair(Blocks.nether_brick_stairs, Blocks.nether_brick);
         registerStair(Blocks.sandstone_stairs, Blocks.sandstone, BlockSandStone.EnumType.DEFAULT.getMetadata());
+        registerStair(Blocks.stone_brick_stairs, Blocks.stonebrick, BlockStoneBrick.EnumType.DEFAULT.getMetadata());
 
         // Re-register normal slabs.
         registerSlab(Blocks.stone_slab, BlockStoneSlab.EnumType.COBBLESTONE.getMetadata(), Blocks.cobblestone, 0);
