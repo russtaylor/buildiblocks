@@ -1,0 +1,6 @@
+{
+  "variants": {
+    "half=bottom": { "model": "buildiblocks:obsidian_slab_bottom" },
+    "half=top": { "model": "buildiblocks:obsidian_slab_top" }
+  }
+}

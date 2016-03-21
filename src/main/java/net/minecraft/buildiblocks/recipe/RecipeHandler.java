@@ -65,6 +65,8 @@ public class RecipeHandler {
         registerWall(BlockList.polishedDioriteWall, Blocks.stone, BlockStone.EnumType.DIORITE_SMOOTH.getMetadata());
         registerWall(BlockList.polishedGraniteWall, Blocks.stone, BlockStone.EnumType.GRANITE_SMOOTH.getMetadata());
         registerWall(BlockList.crackedStoneBrickWall, Blocks.stonebrick, BlockStoneBrick.EnumType.CRACKED.getMetadata());
+        registerWall(BlockList.mossyStoneBrickWall, Blocks.stonebrick, BlockStoneBrick.EnumType.MOSSY.getMetadata());
+        registerWall(BlockList.obsidianWall, Blocks.obsidian);
     }
 
     private void registerStairRecipes() {
@@ -77,6 +79,8 @@ public class RecipeHandler {
         registerStair(BlockList.lapisLazuliStairs, Blocks.lapis_block);
         registerStair(BlockList.smoothSandstoneStairs, Blocks.sandstone, BlockSandStone.EnumType.SMOOTH.getMetadata());
         registerStair(BlockList.crackedStoneBrickStairs, Blocks.stonebrick, BlockStoneBrick.EnumType.CRACKED.getMetadata());
+        registerStair(BlockList.mossyStoneBrickStairs, Blocks.stonebrick, BlockStoneBrick.EnumType.MOSSY.getMetadata());
+        registerStair(BlockList.obsidianStairs, Blocks.obsidian);
     }
 
     private void registerSlabRecipes() {
@@ -91,7 +95,8 @@ public class RecipeHandler {
         registerSlab(BlockList.lapisLazuliSlab.getSingleSlab(), Blocks.lapis_block);
         registerSlab(BlockList.smoothSandstoneSlab.getSingleSlab(), 0, Blocks.sandstone, BlockSandStone.EnumType.SMOOTH.getMetadata());
         registerSlab(BlockList.crackedStoneBrickSlab.getSingleSlab(), 0, Blocks.stonebrick, BlockStoneBrick.EnumType.CRACKED.getMetadata());
-
+        registerSlab(BlockList.mossyStoneBrickSlab.getSingleSlab(), 0, Blocks.stonebrick, BlockStoneBrick.EnumType.MOSSY.getMetadata());
+        registerSlab(BlockList.obsidianSlab.getSingleSlab(), Blocks.obsidian);
     }
 
     private void removeVanillaRecipes() {
@@ -157,13 +162,6 @@ public class RecipeHandler {
                 }
             }
         }
-    }
-
-    private void registerFence(Block fenceBlock, Block plankBlock, Item stickItem) {
-        ItemStack plankBlockStack = new ItemStack(plankBlock, 1, 0);
-        ItemStack stickItemStack = new ItemStack(stickItem, 1, 0);
-        ItemStack fenceStack = new ItemStack(fenceBlock, 3, 0);
-        GameRegistry.addRecipe(fenceStack, "xyx", "xyx", 'x', plankBlockStack, 'y', stickItemStack);
     }
 
     private void registerFence(Block fenceBlock, Item plankItem, Item stickItem) {

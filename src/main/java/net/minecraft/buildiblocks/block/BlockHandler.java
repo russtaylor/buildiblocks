@@ -52,6 +52,7 @@ public class BlockHandler {
         BlockList.polishedDioriteWall = new PolishedDioriteWall(Blocks.stone).register();
         BlockList.crackedStoneBrickWall = new CrackedStoneBrickWall(Blocks.stone).register();
         BlockList.mossyStoneBrickWall = new MossyStoneBrickWall(Blocks.stone).register();
+        BlockList.obsidianWall = new ObsidianWall(Blocks.obsidian).register();
     }
 
     private void registerVanillaFences() {
@@ -72,6 +73,7 @@ public class BlockHandler {
         BlockList.hardenedClayStairs = new HardenedClayStairs((BlockColored) Blocks.stained_hardened_clay).register();
         BlockList.crackedStoneBrickStairs = new CrackedStoneBrickStairs(Blocks.stonebrick).register();
         BlockList.mossyStoneBrickStairs = new MossyStoneBrickStairs(Blocks.stonebrick).register();
+        BlockList.obsidianStairs = new ObsidianStairs(Blocks.obsidian).register();
     }
 
     private void registerVanillaSlabs() {
@@ -87,5 +89,6 @@ public class BlockHandler {
         BlockList.smoothSandstoneSlab = new SmoothSandstoneSlab(Blocks.sandstone).register();
         BlockList.crackedStoneBrickSlab = new CrackedStoneBrickSlab(Blocks.stone).register();
         BlockList.mossyStoneBrickSlab = new MossyStoneBrickSlab(Blocks.stone).register();
+        BlockList.obsidianSlab = new ObsidianSlab(Blocks.obsidian).register();
     }
 }
