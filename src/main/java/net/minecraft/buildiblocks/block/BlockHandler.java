@@ -10,18 +10,14 @@ import net.minecraft.buildiblocks.block.fences.GoldFence;
 import net.minecraft.buildiblocks.block.fences.IronFence;
 import net.minecraft.buildiblocks.block.slabs.*;
 
+import static net.minecraft.buildiblocks.block.BlockList.blockList;
+
 /**
  * Handles the creation of various types of blocks.
  *
  * Created by russt on 11/26/14.
  */
 public class BlockHandler {
-
-    public BlockList blockList;
-
-    public BlockHandler() {
-        blockList = new BlockList();
-    }
 
     public void registerBlocks() {
         registerVanillaBlockExtensions();
@@ -47,12 +43,14 @@ public class BlockHandler {
         BlockList.sandstoneWall = new SandstoneWall(Blocks.sandstone).register();
         BlockList.sandstoneBrickWall = new SandstoneBrickWall(Blocks.sandstone).register();
         BlockList.brickWall = new BrickWall(Blocks.brick_block).register();
+        BlockList.lapisLazuliWall = new LapisLazuliWall(Blocks.lapis_block).register();
         BlockList.polishedAndesiteWall = new PolishedAndesiteWall(Blocks.stone).register();
         BlockList.polishedGraniteWall = new PolishedGraniteWall(Blocks.stone).register();
         BlockList.polishedDioriteWall = new PolishedDioriteWall(Blocks.stone).register();
         BlockList.crackedStoneBrickWall = new CrackedStoneBrickWall(Blocks.stone).register();
         BlockList.mossyStoneBrickWall = new MossyStoneBrickWall(Blocks.stone).register();
         BlockList.obsidianWall = new ObsidianWall(Blocks.obsidian).register();
+        BlockList.emeraldWall = new EmeraldWall(Blocks.emerald_block).register();
     }
 
     private void registerVanillaFences() {
@@ -74,6 +72,8 @@ public class BlockHandler {
         BlockList.crackedStoneBrickStairs = new CrackedStoneBrickStairs(Blocks.stonebrick).register();
         BlockList.mossyStoneBrickStairs = new MossyStoneBrickStairs(Blocks.stonebrick).register();
         BlockList.obsidianStairs = new ObsidianStairs(Blocks.obsidian).register();
+        BlockList.emeraldStairs = new EmeraldStairs(Blocks.emerald_block).register();
+        BlockList.hayStairs = new HayStairs(Blocks.hay_block).register();
     }
 
     private void registerVanillaSlabs() {
@@ -90,5 +90,7 @@ public class BlockHandler {
         BlockList.crackedStoneBrickSlab = new CrackedStoneBrickSlab(Blocks.stone).register();
         BlockList.mossyStoneBrickSlab = new MossyStoneBrickSlab(Blocks.stone).register();
         BlockList.obsidianSlab = new ObsidianSlab(Blocks.obsidian).register();
+        BlockList.emeraldSlab = new EmeraldSlab(Blocks.emerald_block).register();
+        BlockList.haySlab = new HaySlab(Blocks.hay_block).register();
     }
 }

@@ -61,12 +61,14 @@ public class RecipeHandler {
         registerWall(BlockList.sandstoneWall, Blocks.sandstone);
         registerWall(BlockList.sandstoneBrickWall, Blocks.sandstone, BlockSandStone.EnumType.SMOOTH.getMetadata());
         registerWall(BlockList.brickWall, Blocks.brick_block);
+        registerWall(BlockList.lapisLazuliWall, Blocks.lapis_block);
         registerWall(BlockList.polishedAndesiteWall, Blocks.stone, BlockStone.EnumType.ANDESITE_SMOOTH.getMetadata());
         registerWall(BlockList.polishedDioriteWall, Blocks.stone, BlockStone.EnumType.DIORITE_SMOOTH.getMetadata());
         registerWall(BlockList.polishedGraniteWall, Blocks.stone, BlockStone.EnumType.GRANITE_SMOOTH.getMetadata());
         registerWall(BlockList.crackedStoneBrickWall, Blocks.stonebrick, BlockStoneBrick.EnumType.CRACKED.getMetadata());
         registerWall(BlockList.mossyStoneBrickWall, Blocks.stonebrick, BlockStoneBrick.EnumType.MOSSY.getMetadata());
         registerWall(BlockList.obsidianWall, Blocks.obsidian);
+        registerWall(BlockList.emeraldWall, Blocks.emerald_block);
     }
 
     private void registerStairRecipes() {
@@ -81,6 +83,8 @@ public class RecipeHandler {
         registerStair(BlockList.crackedStoneBrickStairs, Blocks.stonebrick, BlockStoneBrick.EnumType.CRACKED.getMetadata());
         registerStair(BlockList.mossyStoneBrickStairs, Blocks.stonebrick, BlockStoneBrick.EnumType.MOSSY.getMetadata());
         registerStair(BlockList.obsidianStairs, Blocks.obsidian);
+        registerStair(BlockList.emeraldStairs, Blocks.emerald_block);
+        registerStair(BlockList.hayStairs, Blocks.hay_block);
     }
 
     private void registerSlabRecipes() {
@@ -97,6 +101,9 @@ public class RecipeHandler {
         registerSlab(BlockList.crackedStoneBrickSlab.getSingleSlab(), 0, Blocks.stonebrick, BlockStoneBrick.EnumType.CRACKED.getMetadata());
         registerSlab(BlockList.mossyStoneBrickSlab.getSingleSlab(), 0, Blocks.stonebrick, BlockStoneBrick.EnumType.MOSSY.getMetadata());
         registerSlab(BlockList.obsidianSlab.getSingleSlab(), Blocks.obsidian);
+        registerSlab(BlockList.emeraldSlab.getSingleSlab(), Blocks.emerald_block);
+        registerSlab(BlockList.haySlab.getSingleSlab(), Blocks.hay_block);
+
     }
 
     private void removeVanillaRecipes() {

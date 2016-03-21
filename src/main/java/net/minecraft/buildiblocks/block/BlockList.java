@@ -24,12 +24,14 @@ public class BlockList {
     public static ModBlockWall sandstoneWall;
     public static ModBlockWall sandstoneBrickWall;
     public static ModBlockWall brickWall;
+    public static ModBlockWall lapisLazuliWall;
     public static ModBlockWall polishedAndesiteWall;
     public static ModBlockWall polishedGraniteWall;
     public static ModBlockWall polishedDioriteWall;
     public static ModBlockWall crackedStoneBrickWall;
     public static ModBlockWall mossyStoneBrickWall;
     public static ModBlockWall obsidianWall;
+    public static ModBlockWall emeraldWall;
 
     // Fences
     public static ModBlockFence ironFence;
@@ -49,6 +51,8 @@ public class BlockList {
     public static ModBlockStairs crackedStoneBrickStairs;
     public static ModBlockStairs mossyStoneBrickStairs;
     public static ModBlockStairs obsidianStairs;
+    public static ModBlockStairs emeraldStairs;
+    public static ModBlockStairs hayStairs;
 
     // Slabs
     public static ModBlockSlab diamondSlab;
@@ -64,4 +68,6 @@ public class BlockList {
     public static ModBlockSlab crackedStoneBrickSlab;
     public static ModBlockSlab mossyStoneBrickSlab;
     public static ModBlockSlab obsidianSlab;
+    public static ModBlockSlab emeraldSlab;
+    public static ModBlockSlab haySlab;
 }
