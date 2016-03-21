@@ -9,8 +9,6 @@ import net.minecraftforge.fml.common.registry.GameRegistry;
 
 /**
  * A parent class for BlockStairs in the mod.
- *
- * Created by russt on 12/2/14.
  */
 public class ModBlockStairs extends BlockStairs implements IModBlock {
 

@@ -6,8 +6,6 @@ import com.google.common.collect.Lists;
 
 /**
  * The entirety of the list of blocks added by this mod.
- *
- * Created by russt on 12/1/14.
  */
 public class BlockList {
 

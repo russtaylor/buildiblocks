@@ -6,13 +6,13 @@ import net.minecraft.block.state.IBlockState;
 import net.minecraft.item.Item;
 
 /**
-* Created by russt on 12/9/14.
+* Handles the double slabs.
 */
 public class ModBlockDoubleSlab extends ModBlockSingleSlab {
 
     private ModBlockSingleSlab singleSlabBlock;
 
-    public ModBlockDoubleSlab(ModBlockSingleSlab singleSlabBlock, String blockName,
+    ModBlockDoubleSlab(ModBlockSingleSlab singleSlabBlock, String blockName,
                               float blockHardness, float blockResistance) {
         super(singleSlabBlock, blockName + "_double", blockHardness, blockResistance);
         this.singleSlabBlock = singleSlabBlock;

@@ -10,8 +10,6 @@ import net.minecraft.item.ItemStack;
 
 /**
  * Parent class for all the slabs in the mod.
- *
- * Created by russt on 12/5/14.
  */
 public class ModBlockSingleSlab extends BlockSlab implements IModBlock {
 

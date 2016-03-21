@@ -14,8 +14,6 @@ import static net.minecraft.buildiblocks.block.BlockList.blockList;
 
 /**
  * Handles the creation of various types of blocks.
- *
- * Created by russt on 11/26/14.
  */
 public class BlockHandler {
 

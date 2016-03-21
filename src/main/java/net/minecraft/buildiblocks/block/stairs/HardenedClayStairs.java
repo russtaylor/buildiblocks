@@ -7,8 +7,6 @@ import net.minecraft.buildiblocks.block.ModBlockStairs;
 
 /**
  * Custom class for Hardened Clay Stairs.
- *
- * Created by russt on 12/16/14.
  */
 public class HardenedClayStairs extends ModBlockStairs {
 

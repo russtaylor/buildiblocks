@@ -21,8 +21,6 @@ import net.minecraftforge.fml.relauncher.SideOnly;
 
 /**
  * Parent class for all walls.
- *
- * Created by russt on 12/2/14.
  */
 public class ModBlockWall extends Block implements IModBlock {
 

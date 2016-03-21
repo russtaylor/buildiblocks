@@ -14,8 +14,6 @@ import net.minecraftforge.fml.relauncher.SideOnly;
 
 /**
  * The parent class for all normal Blocks in this mod.
- *
- * Created by russt on 11/21/14.
  */
 public class ModBlock extends Block implements IModBlock {
 

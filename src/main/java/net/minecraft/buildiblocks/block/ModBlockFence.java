@@ -23,8 +23,6 @@ import net.minecraftforge.fml.relauncher.SideOnly;
 
 /**
  * Parent class for all fences.
- *
- * Created by russt on 12/22/14.
  */
 public class ModBlockFence extends Block implements IModBlock {
 

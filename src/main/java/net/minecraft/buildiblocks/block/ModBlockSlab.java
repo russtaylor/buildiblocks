@@ -7,8 +7,6 @@ import net.minecraftforge.fml.common.registry.GameRegistry;
 
 /**
  * Class to act as a container for singleSlabs and doubleSlabs
- *
- * Created by russt on 12/17/14.
  */
 public class ModBlockSlab {
     private final ModBlockSingleSlab singleSlab;

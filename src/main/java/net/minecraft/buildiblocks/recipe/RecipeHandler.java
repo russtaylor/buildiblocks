@@ -85,6 +85,7 @@ public class RecipeHandler {
         registerStair(BlockList.obsidianStairs, Blocks.obsidian);
         registerStair(BlockList.emeraldStairs, Blocks.emerald_block);
         registerStair(BlockList.hayStairs, Blocks.hay_block);
+        registerStair(BlockList.hardenedClayStairs, Blocks.hardened_clay);
     }
 
     private void registerSlabRecipes() {
