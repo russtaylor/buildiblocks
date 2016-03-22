@@ -5,17 +5,25 @@ texture=$2
 parent_block=$3
 title=$4
 name=$5
+varname=$6
+material_name=$7
+enum_name=$8
 
 originalPath=../src/main/java/net/minecraft/buildiblocks/block
 originalName=WhiteWool
 
-# Generate Walls
+# Generate Stairs
 ruby ./generate-json.rb -t stairs -n ${block}_stairs -o bottom_texture_name=${texture},top_texture_name=${texture},side_texture_name=${texture} -v
 sed -e s/${originalName}Stairs/${name}Stairs/g ${originalPath}/stairs/${originalName}Stairs.java > ${originalPath}/stairs/${name}Stairs.java
 sed -i.bak "s/White Wool/${title}/g" "${originalPath}/stairs/${name}Stairs.java"
 sed -i.bak s/white_wool_stairs/${block}_stairs/g ${originalPath}/stairs/${name}Stairs.java
 rm ${originalPath}/stairs/${name}Stairs.java.bak
+gawk -i inplace -v varname="${varname}" '/stairadder/ { print "    public static ModBlockStairs "varname"Stairs;"; print; next}1' ${originalPath}/BlockList.java
+gawk -i inplace -v varname="${varname}" -v blockname="${name}" -v matname="${material_name}" '/stairsadder/ { print "        BlockList."varname"Stairs = new "blockname"Stairs(Blocks."matname").register();"; print; next}1' ${originalPath}/BlockHandler.java
+gawk -i inplace -v varname="${varname}" -v enumname="${enum_name}" -v matname="${material_name}" '/stairsadder/ { print "        registerStair(BlockList."varname"Stairs, Blocks."matname", EnumDyeColor."enumname".getMetadata());"; print; next}1' ${originalPath}/../recipe/RecipeHandler.java
+gawk -i inplace -v blockname="${block}" -v blocktitle="${title}" '/wordadder/ {print "tile."blockname"_stairs.name="blocktitle" Stairs"; print; next}1' ../src/main/resources/assets/buildiblocks/lang/en_US.lang
 
+# Generate Walls
 # ruby ./generate-json.rb -t wall -n ${block}_wall -o texture_name=${texture} -v
 
 # Generate Slabs
@@ -24,3 +32,7 @@ sed -e s/${originalName}Slab/${name}Slab/g ${originalPath}/slabs/${originalName}
 sed -i.bak "s/White Wool/${title}/g" "${originalPath}/slabs/${name}Slab.java"
 sed -i.bak s/white_wool_slab/${block}_slab/g ${originalPath}/slabs/${name}Slab.java
 rm ${originalPath}/slabs/${name}Slab.java.bak
+gawk -i inplace -v varname="${varname}" '/slabadder/ { print "    public static ModBlockSlab "varname"Slab;"; print; next}1' ${originalPath}/BlockList.java
+gawk -i inplace -v varname="${varname}" -v blockname="${name}" -v matname="${material_name}" '/slabadder/ { print "        BlockList."varname"Slab = new "blockname"Slab(Blocks."matname").register();"; print; next}1' ${originalPath}/BlockHandler.java
+gawk -i inplace -v varname="${varname}" -v enumname="${enum_name}" -v matname="${material_name}" '/slabadder/ { print "        registerSlab(BlockList."varname"Slab.getSingleSlab(), 0, Blocks."matname", EnumDyeColor."enumname".getMetadata());"; print; next}1' ${originalPath}/../recipe/RecipeHandler.java
+gawk -i inplace -v blockname="${block}" -v blocktitle="${title}" '/wordadder/ {print "tile."blockname"_slab.name="blocktitle" Slab"; print; next}1' ../src/main/resources/assets/buildiblocks/lang/en_US.lang
