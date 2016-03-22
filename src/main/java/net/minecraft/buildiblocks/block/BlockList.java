@@ -60,8 +60,6 @@ public class BlockList {
     public static ModBlockSlab diamondSlab;
     public static ModBlockSlab ironSlab;
     public static ModBlockSlab goldSlab;
-    public static ModBlockSlab gravelSlab;
-    public static ModBlockSlab dirtSlab;
     public static ModBlockSlab polishedAndesiteSlab;
     public static ModBlockSlab polishedDioriteSlab;
     public static ModBlockSlab polishedGraniteSlab;

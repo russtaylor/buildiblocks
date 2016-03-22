@@ -97,8 +97,6 @@ public class RecipeHandler {
         registerSlab(BlockList.diamondSlab.getSingleSlab(), Blocks.diamond_block);
         registerSlab(BlockList.ironSlab.getSingleSlab(), Blocks.iron_block);
         registerSlab(BlockList.goldSlab.getSingleSlab(), Blocks.gold_block);
-        registerSlab(BlockList.gravelSlab.getSingleSlab(), Blocks.gravel);
-        registerSlab(BlockList.dirtSlab.getSingleSlab(), Blocks.dirt);
         registerSlab(BlockList.polishedAndesiteSlab.getSingleSlab(), 0, Blocks.stone, BlockStone.EnumType.ANDESITE_SMOOTH.getMetadata());
         registerSlab(BlockList.polishedDioriteSlab.getSingleSlab(), 0, Blocks.stone, BlockStone.EnumType.DIORITE_SMOOTH.getMetadata());
         registerSlab(BlockList.polishedGraniteSlab.getSingleSlab(), 0, Blocks.stone, BlockStone.EnumType.GRANITE_SMOOTH.getMetadata());

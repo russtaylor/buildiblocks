@@ -1,6 +1,0 @@
-{
-  "variants": {
-    "half=bottom": { "model": "buildiblocks:gravel_slab_bottom" },
-    "half=top": { "model": "buildiblocks:gravel_slab_top" }
-  }
-}
