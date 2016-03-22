@@ -68,6 +68,22 @@ public class BlockList {
     public static ModBlockStairs greenWoolStairs;
     public static ModBlockStairs redWoolStairs;
     public static ModBlockStairs blackWoolStairs;
+    public static ModBlockStairs whiteHardenedClayStairs;
+    public static ModBlockStairs orangeHardenedClayStairs;
+    public static ModBlockStairs magentaHardenedClayStairs;
+    public static ModBlockStairs light_blueHardenedClayStairs;
+    public static ModBlockStairs yellowHardenedClayStairs;
+    public static ModBlockStairs limeHardenedClayStairs;
+    public static ModBlockStairs pinkHardenedClayStairs;
+    public static ModBlockStairs grayHardenedClayStairs;
+    public static ModBlockStairs silverHardenedClayStairs;
+    public static ModBlockStairs cyanHardenedClayStairs;
+    public static ModBlockStairs purpleHardenedClayStairs;
+    public static ModBlockStairs blueHardenedClayStairs;
+    public static ModBlockStairs brownHardenedClayStairs;
+    public static ModBlockStairs greenHardenedClayStairs;
+    public static ModBlockStairs redHardenedClayStairs;
+    public static ModBlockStairs blackHardenedClayStairs;
     //stairadder
 
     // Slabs
@@ -100,5 +116,21 @@ public class BlockList {
     public static ModBlockSlab greenWoolSlab;
     public static ModBlockSlab redWoolSlab;
     public static ModBlockSlab blackWoolSlab;
+    public static ModBlockSlab whiteHardenedClaySlab;
+    public static ModBlockSlab orangeHardenedClaySlab;
+    public static ModBlockSlab magentaHardenedClaySlab;
+    public static ModBlockSlab light_blueHardenedClaySlab;
+    public static ModBlockSlab yellowHardenedClaySlab;
+    public static ModBlockSlab limeHardenedClaySlab;
+    public static ModBlockSlab pinkHardenedClaySlab;
+    public static ModBlockSlab grayHardenedClaySlab;
+    public static ModBlockSlab silverHardenedClaySlab;
+    public static ModBlockSlab cyanHardenedClaySlab;
+    public static ModBlockSlab purpleHardenedClaySlab;
+    public static ModBlockSlab blueHardenedClaySlab;
+    public static ModBlockSlab brownHardenedClaySlab;
+    public static ModBlockSlab greenHardenedClaySlab;
+    public static ModBlockSlab redHardenedClaySlab;
+    public static ModBlockSlab blackHardenedClaySlab;
     //slabadder
 }

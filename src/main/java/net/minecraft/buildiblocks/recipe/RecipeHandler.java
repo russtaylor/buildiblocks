@@ -103,6 +103,22 @@ public class RecipeHandler {
         registerStair(BlockList.greenWoolStairs, Blocks.wool, EnumDyeColor.GREEN.getMetadata());
         registerStair(BlockList.redWoolStairs, Blocks.wool, EnumDyeColor.RED.getMetadata());
         registerStair(BlockList.blackWoolStairs, Blocks.wool, EnumDyeColor.BLACK.getMetadata());
+        registerStair(BlockList.whiteHardenedClayStairs, Blocks.stained_hardened_clay, EnumDyeColor.WHITE.getMetadata());
+        registerStair(BlockList.orangeHardenedClayStairs, Blocks.stained_hardened_clay, EnumDyeColor.ORANGE.getMetadata());
+        registerStair(BlockList.magentaHardenedClayStairs, Blocks.stained_hardened_clay, EnumDyeColor.MAGENTA.getMetadata());
+        registerStair(BlockList.light_blueHardenedClayStairs, Blocks.stained_hardened_clay, EnumDyeColor.LIGHT_BLUE.getMetadata());
+        registerStair(BlockList.yellowHardenedClayStairs, Blocks.stained_hardened_clay, EnumDyeColor.YELLOW.getMetadata());
+        registerStair(BlockList.limeHardenedClayStairs, Blocks.stained_hardened_clay, EnumDyeColor.LIME.getMetadata());
+        registerStair(BlockList.pinkHardenedClayStairs, Blocks.stained_hardened_clay, EnumDyeColor.PINK.getMetadata());
+        registerStair(BlockList.grayHardenedClayStairs, Blocks.stained_hardened_clay, EnumDyeColor.GRAY.getMetadata());
+        registerStair(BlockList.silverHardenedClayStairs, Blocks.stained_hardened_clay, EnumDyeColor.SILVER.getMetadata());
+        registerStair(BlockList.cyanHardenedClayStairs, Blocks.stained_hardened_clay, EnumDyeColor.CYAN.getMetadata());
+        registerStair(BlockList.purpleHardenedClayStairs, Blocks.stained_hardened_clay, EnumDyeColor.PURPLE.getMetadata());
+        registerStair(BlockList.blueHardenedClayStairs, Blocks.stained_hardened_clay, EnumDyeColor.BLUE.getMetadata());
+        registerStair(BlockList.brownHardenedClayStairs, Blocks.stained_hardened_clay, EnumDyeColor.BROWN.getMetadata());
+        registerStair(BlockList.greenHardenedClayStairs, Blocks.stained_hardened_clay, EnumDyeColor.GREEN.getMetadata());
+        registerStair(BlockList.redHardenedClayStairs, Blocks.stained_hardened_clay, EnumDyeColor.RED.getMetadata());
+        registerStair(BlockList.blackHardenedClayStairs, Blocks.stained_hardened_clay, EnumDyeColor.BLACK.getMetadata());
         //stairsadder
     }
 
@@ -136,6 +152,22 @@ public class RecipeHandler {
         registerSlab(BlockList.greenWoolSlab.getSingleSlab(), 0, Blocks.wool, EnumDyeColor.GREEN.getMetadata());
         registerSlab(BlockList.redWoolSlab.getSingleSlab(), 0, Blocks.wool, EnumDyeColor.RED.getMetadata());
         registerSlab(BlockList.blackWoolSlab.getSingleSlab(), 0, Blocks.wool, EnumDyeColor.BLACK.getMetadata());
+        registerSlab(BlockList.whiteHardenedClaySlab.getSingleSlab(), 0, Blocks.stained_hardened_clay, EnumDyeColor.WHITE.getMetadata());
+        registerSlab(BlockList.orangeHardenedClaySlab.getSingleSlab(), 0, Blocks.stained_hardened_clay, EnumDyeColor.ORANGE.getMetadata());
+        registerSlab(BlockList.magentaHardenedClaySlab.getSingleSlab(), 0, Blocks.stained_hardened_clay, EnumDyeColor.MAGENTA.getMetadata());
+        registerSlab(BlockList.light_blueHardenedClaySlab.getSingleSlab(), 0, Blocks.stained_hardened_clay, EnumDyeColor.LIGHT_BLUE.getMetadata());
+        registerSlab(BlockList.yellowHardenedClaySlab.getSingleSlab(), 0, Blocks.stained_hardened_clay, EnumDyeColor.YELLOW.getMetadata());
+        registerSlab(BlockList.limeHardenedClaySlab.getSingleSlab(), 0, Blocks.stained_hardened_clay, EnumDyeColor.LIME.getMetadata());
+        registerSlab(BlockList.pinkHardenedClaySlab.getSingleSlab(), 0, Blocks.stained_hardened_clay, EnumDyeColor.PINK.getMetadata());
+        registerSlab(BlockList.grayHardenedClaySlab.getSingleSlab(), 0, Blocks.stained_hardened_clay, EnumDyeColor.GRAY.getMetadata());
+        registerSlab(BlockList.silverHardenedClaySlab.getSingleSlab(), 0, Blocks.stained_hardened_clay, EnumDyeColor.SILVER.getMetadata());
+        registerSlab(BlockList.cyanHardenedClaySlab.getSingleSlab(), 0, Blocks.stained_hardened_clay, EnumDyeColor.CYAN.getMetadata());
+        registerSlab(BlockList.purpleHardenedClaySlab.getSingleSlab(), 0, Blocks.stained_hardened_clay, EnumDyeColor.PURPLE.getMetadata());
+        registerSlab(BlockList.blueHardenedClaySlab.getSingleSlab(), 0, Blocks.stained_hardened_clay, EnumDyeColor.BLUE.getMetadata());
+        registerSlab(BlockList.brownHardenedClaySlab.getSingleSlab(), 0, Blocks.stained_hardened_clay, EnumDyeColor.BROWN.getMetadata());
+        registerSlab(BlockList.greenHardenedClaySlab.getSingleSlab(), 0, Blocks.stained_hardened_clay, EnumDyeColor.GREEN.getMetadata());
+        registerSlab(BlockList.redHardenedClaySlab.getSingleSlab(), 0, Blocks.stained_hardened_clay, EnumDyeColor.RED.getMetadata());
+        registerSlab(BlockList.blackHardenedClaySlab.getSingleSlab(), 0, Blocks.stained_hardened_clay, EnumDyeColor.BLACK.getMetadata());
         //slabadder
     }
 

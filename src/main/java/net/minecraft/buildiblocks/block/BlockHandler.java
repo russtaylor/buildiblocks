@@ -88,6 +88,22 @@ public class BlockHandler {
         BlockList.greenWoolStairs = new GreenWoolStairs(Blocks.wool).register();
         BlockList.redWoolStairs = new RedWoolStairs(Blocks.wool).register();
         BlockList.blackWoolStairs = new BlackWoolStairs(Blocks.wool).register();
+        BlockList.whiteHardenedClayStairs = new WhiteHardenedClayStairs(Blocks.stained_hardened_clay).register();
+        BlockList.orangeHardenedClayStairs = new OrangeHardenedClayStairs(Blocks.stained_hardened_clay).register();
+        BlockList.magentaHardenedClayStairs = new MagentaHardenedClayStairs(Blocks.stained_hardened_clay).register();
+        BlockList.light_blueHardenedClayStairs = new Light_blueHardenedClayStairs(Blocks.stained_hardened_clay).register();
+        BlockList.yellowHardenedClayStairs = new YellowHardenedClayStairs(Blocks.stained_hardened_clay).register();
+        BlockList.limeHardenedClayStairs = new LimeHardenedClayStairs(Blocks.stained_hardened_clay).register();
+        BlockList.pinkHardenedClayStairs = new PinkHardenedClayStairs(Blocks.stained_hardened_clay).register();
+        BlockList.grayHardenedClayStairs = new GrayHardenedClayStairs(Blocks.stained_hardened_clay).register();
+        BlockList.silverHardenedClayStairs = new SilverHardenedClayStairs(Blocks.stained_hardened_clay).register();
+        BlockList.cyanHardenedClayStairs = new CyanHardenedClayStairs(Blocks.stained_hardened_clay).register();
+        BlockList.purpleHardenedClayStairs = new PurpleHardenedClayStairs(Blocks.stained_hardened_clay).register();
+        BlockList.blueHardenedClayStairs = new BlueHardenedClayStairs(Blocks.stained_hardened_clay).register();
+        BlockList.brownHardenedClayStairs = new BrownHardenedClayStairs(Blocks.stained_hardened_clay).register();
+        BlockList.greenHardenedClayStairs = new GreenHardenedClayStairs(Blocks.stained_hardened_clay).register();
+        BlockList.redHardenedClayStairs = new RedHardenedClayStairs(Blocks.stained_hardened_clay).register();
+        BlockList.blackHardenedClayStairs = new BlackHardenedClayStairs(Blocks.stained_hardened_clay).register();
         //stairsadder
     }
 
@@ -121,6 +137,22 @@ public class BlockHandler {
         BlockList.greenWoolSlab = new GreenWoolSlab(Blocks.wool).register();
         BlockList.redWoolSlab = new RedWoolSlab(Blocks.wool).register();
         BlockList.blackWoolSlab = new BlackWoolSlab(Blocks.wool).register();
+        BlockList.whiteHardenedClaySlab = new WhiteHardenedClaySlab(Blocks.stained_hardened_clay).register();
+        BlockList.orangeHardenedClaySlab = new OrangeHardenedClaySlab(Blocks.stained_hardened_clay).register();
+        BlockList.magentaHardenedClaySlab = new MagentaHardenedClaySlab(Blocks.stained_hardened_clay).register();
+        BlockList.light_blueHardenedClaySlab = new Light_blueHardenedClaySlab(Blocks.stained_hardened_clay).register();
+        BlockList.yellowHardenedClaySlab = new YellowHardenedClaySlab(Blocks.stained_hardened_clay).register();
+        BlockList.limeHardenedClaySlab = new LimeHardenedClaySlab(Blocks.stained_hardened_clay).register();
+        BlockList.pinkHardenedClaySlab = new PinkHardenedClaySlab(Blocks.stained_hardened_clay).register();
+        BlockList.grayHardenedClaySlab = new GrayHardenedClaySlab(Blocks.stained_hardened_clay).register();
+        BlockList.silverHardenedClaySlab = new SilverHardenedClaySlab(Blocks.stained_hardened_clay).register();
+        BlockList.cyanHardenedClaySlab = new CyanHardenedClaySlab(Blocks.stained_hardened_clay).register();
+        BlockList.purpleHardenedClaySlab = new PurpleHardenedClaySlab(Blocks.stained_hardened_clay).register();
+        BlockList.blueHardenedClaySlab = new BlueHardenedClaySlab(Blocks.stained_hardened_clay).register();
+        BlockList.brownHardenedClaySlab = new BrownHardenedClaySlab(Blocks.stained_hardened_clay).register();
+        BlockList.greenHardenedClaySlab = new GreenHardenedClaySlab(Blocks.stained_hardened_clay).register();
+        BlockList.redHardenedClaySlab = new RedHardenedClaySlab(Blocks.stained_hardened_clay).register();
+        BlockList.blackHardenedClaySlab = new BlackHardenedClaySlab(Blocks.stained_hardened_clay).register();
         //slabadder
     }
 }
