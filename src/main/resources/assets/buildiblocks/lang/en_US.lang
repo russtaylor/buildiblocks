@@ -53,6 +53,10 @@ tile.magenta_wool_stairs.name=Magenta Wool Stairs
 tile.magenta_wool_slab.name=Magenta Wool Slab
 tile.light_blue_wool_stairs.name=Light Blue Wool Stairs
 tile.light_blue_wool_slab.name=Light Blue Wool Slab
+tile.yellow_wool_stairs.name=Yellow Wool Stairs
+tile.yellow_wool_slab.name=Yellow Wool Slab
+tile.lime_wool_stairs.name=Lime Wool Stairs
+tile.lime_wool_slab.name=Lime Wool Slab
 
 item.iron_rod.name=Iron Rod
 item.gold_rod.name=Gold Rod

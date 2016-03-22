@@ -55,6 +55,8 @@ public class BlockList {
     public static ModBlockStairs whiteWoolStairs;
     public static ModBlockStairs magentaWoolStairs;
     public static ModBlockStairs lightBlueWoolStairs;
+    public static ModBlockStairs yellowWoolStairs;
+    public static ModBlockStairs limeWoolStairs;
 
     // Slabs
     public static ModBlockSlab diamondSlab;
@@ -74,4 +76,6 @@ public class BlockList {
     public static ModBlockSlab whiteWoolSlab;
     public static ModBlockSlab magentaWoolSlab;
     public static ModBlockSlab lightBlueWoolSlab;
+    public static ModBlockSlab yellowWoolSlab;
+    public static ModBlockSlab limeWoolSlab;
 }

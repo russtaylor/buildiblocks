@@ -76,6 +76,8 @@ public class BlockHandler {
         BlockList.whiteWoolStairs = new WhiteWoolStairs(Blocks.wool).register();
         BlockList.magentaWoolStairs = new MagentaWoolStairs(Blocks.wool).register();
         BlockList.lightBlueWoolStairs = new LightBlueWoolStairs(Blocks.wool).register();
+        BlockList.yellowWoolStairs = new YellowWoolStairs(Blocks.wool).register();
+        BlockList.limeWoolStairs = new LimeWoolStairs(Blocks.wool).register();
     }
 
     private void registerVanillaSlabs() {
@@ -96,5 +98,7 @@ public class BlockHandler {
         BlockList.whiteWoolSlab = new WhiteWoolSlab(Blocks.wool).register();
         BlockList.magentaWoolSlab = new MagentaWoolSlab(Blocks.wool).register();
         BlockList.lightBlueWoolSlab = new LightBlueWoolSlab(Blocks.wool).register();
+        BlockList.yellowWoolSlab = new YellowWoolSlab(Blocks.wool).register();
+        BlockList.limeWoolSlab = new LimeWoolSlab(Blocks.wool).register();
     }
 }

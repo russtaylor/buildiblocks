@@ -1,0 +1,6 @@
+{
+  "variants": {
+    "half=bottom": { "model": "buildiblocks:yellow_wool_slab_bottom" },
+    "half=top": { "model": "buildiblocks:yellow_wool_slab_top" }
+  }
+}
