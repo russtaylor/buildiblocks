@@ -72,6 +72,8 @@ public class BlockHandler {
         BlockList.obsidianStairs = new ObsidianStairs(Blocks.obsidian).register();
         BlockList.emeraldStairs = new EmeraldStairs(Blocks.emerald_block).register();
         BlockList.hayStairs = new HayStairs(Blocks.hay_block).register();
+        BlockList.orangeWoolStairs = new OrangeWoolStairs(Blocks.wool).register();
+        BlockList.whiteWoolStairs = new WhiteWoolStairs(Blocks.wool).register();
     }
 
     private void registerVanillaSlabs() {
@@ -90,5 +92,7 @@ public class BlockHandler {
         BlockList.obsidianSlab = new ObsidianSlab(Blocks.obsidian).register();
         BlockList.emeraldSlab = new EmeraldSlab(Blocks.emerald_block).register();
         BlockList.haySlab = new HaySlab(Blocks.hay_block).register();
+        BlockList.orangeWoolSlab = new OrangeWoolSlab(Blocks.wool).register();
+        BlockList.whiteWoolSlab = new WhiteWoolSlab(Blocks.wool).register();
     }
 }

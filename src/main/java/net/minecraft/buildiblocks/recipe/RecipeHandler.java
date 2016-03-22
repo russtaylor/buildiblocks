@@ -6,6 +6,7 @@ import java.util.List;
 import net.minecraft.block.*;
 import net.minecraft.init.Blocks;
 import net.minecraft.init.Items;
+import net.minecraft.item.EnumDyeColor;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.crafting.CraftingManager;
@@ -86,6 +87,8 @@ public class RecipeHandler {
         registerStair(BlockList.emeraldStairs, Blocks.emerald_block);
         registerStair(BlockList.hayStairs, Blocks.hay_block);
         registerStair(BlockList.hardenedClayStairs, Blocks.hardened_clay);
+        registerStair(BlockList.orangeWoolStairs, Blocks.wool, EnumDyeColor.ORANGE.getMetadata());
+        registerStair(BlockList.whiteWoolStairs, Blocks.wool, EnumDyeColor.WHITE.getMetadata());
     }
 
     private void registerSlabRecipes() {
@@ -104,7 +107,8 @@ public class RecipeHandler {
         registerSlab(BlockList.obsidianSlab.getSingleSlab(), Blocks.obsidian);
         registerSlab(BlockList.emeraldSlab.getSingleSlab(), Blocks.emerald_block);
         registerSlab(BlockList.haySlab.getSingleSlab(), Blocks.hay_block);
-
+        registerSlab(BlockList.orangeWoolSlab.getSingleSlab(), 0, Blocks.wool, EnumDyeColor.ORANGE.getMetadata());
+        registerSlab(BlockList.whiteWoolSlab.getSingleSlab(), 0, Blocks.wool, EnumDyeColor.WHITE.getMetadata());
     }
 
     private void removeVanillaRecipes() {
