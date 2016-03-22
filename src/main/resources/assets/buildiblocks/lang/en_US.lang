@@ -51,6 +51,8 @@ tile.orange_wool_stairs.name=Orange Wool Stairs
 tile.orange_wool_slab.name=Orange Wool Slab
 tile.white_wool_stairs.name=White Wool Stairs
 tile.white_wool_slab.name=White Wool Slab
+tile.magenta_wool_stairs.name=Magenta Wool Stairs
+tile.magenta_wool_slab.name=Magenta Wool Slab
 
 item.iron_rod.name=Iron Rod
 item.gold_rod.name=Gold Rod
