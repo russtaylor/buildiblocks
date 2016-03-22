@@ -80,6 +80,14 @@ public class BlockHandler {
         BlockList.limeWoolStairs = new LimeWoolStairs(Blocks.wool).register();
         BlockList.pinkWoolStairs = new PinkWoolStairs(Blocks.wool).register();
         BlockList.grayWoolStairs = new GrayWoolStairs(Blocks.wool).register();
+        BlockList.silverWoolStairs = new SilverWoolStairs(Blocks.wool).register();
+        BlockList.cyanWoolStairs = new CyanWoolStairs(Blocks.wool).register();
+        BlockList.purpleWoolStairs = new PurpleWoolStairs(Blocks.wool).register();
+        BlockList.blueWoolStairs = new BlueWoolStairs(Blocks.wool).register();
+        BlockList.brownWoolStairs = new BrownWoolStairs(Blocks.wool).register();
+        BlockList.greenWoolStairs = new GreenWoolStairs(Blocks.wool).register();
+        BlockList.redWoolStairs = new RedWoolStairs(Blocks.wool).register();
+        BlockList.blackWoolStairs = new BlackWoolStairs(Blocks.wool).register();
         //stairsadder
     }
 
@@ -105,6 +113,14 @@ public class BlockHandler {
         BlockList.limeWoolSlab = new LimeWoolSlab(Blocks.wool).register();
         BlockList.pinkWoolSlab = new PinkWoolSlab(Blocks.wool).register();
         BlockList.grayWoolSlab = new GrayWoolSlab(Blocks.wool).register();
+        BlockList.silverWoolSlab = new SilverWoolSlab(Blocks.wool).register();
+        BlockList.cyanWoolSlab = new CyanWoolSlab(Blocks.wool).register();
+        BlockList.purpleWoolSlab = new PurpleWoolSlab(Blocks.wool).register();
+        BlockList.blueWoolSlab = new BlueWoolSlab(Blocks.wool).register();
+        BlockList.brownWoolSlab = new BrownWoolSlab(Blocks.wool).register();
+        BlockList.greenWoolSlab = new GreenWoolSlab(Blocks.wool).register();
+        BlockList.redWoolSlab = new RedWoolSlab(Blocks.wool).register();
+        BlockList.blackWoolSlab = new BlackWoolSlab(Blocks.wool).register();
         //slabadder
     }
 }

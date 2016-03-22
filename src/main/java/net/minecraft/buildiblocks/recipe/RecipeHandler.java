@@ -95,6 +95,14 @@ public class RecipeHandler {
         registerStair(BlockList.limeWoolStairs, Blocks.wool, EnumDyeColor.LIME.getMetadata());
         registerStair(BlockList.pinkWoolStairs, Blocks.wool, EnumDyeColor.PINK.getMetadata());
         registerStair(BlockList.grayWoolStairs, Blocks.wool, EnumDyeColor.GRAY.getMetadata());
+        registerStair(BlockList.silverWoolStairs, Blocks.wool, EnumDyeColor.SILVER.getMetadata());
+        registerStair(BlockList.cyanWoolStairs, Blocks.wool, EnumDyeColor.CYAN.getMetadata());
+        registerStair(BlockList.purpleWoolStairs, Blocks.wool, EnumDyeColor.PURPLE.getMetadata());
+        registerStair(BlockList.blueWoolStairs, Blocks.wool, EnumDyeColor.BLUE.getMetadata());
+        registerStair(BlockList.brownWoolStairs, Blocks.wool, EnumDyeColor.BROWN.getMetadata());
+        registerStair(BlockList.greenWoolStairs, Blocks.wool, EnumDyeColor.GREEN.getMetadata());
+        registerStair(BlockList.redWoolStairs, Blocks.wool, EnumDyeColor.RED.getMetadata());
+        registerStair(BlockList.blackWoolStairs, Blocks.wool, EnumDyeColor.BLACK.getMetadata());
         //stairsadder
     }
 
@@ -120,6 +128,14 @@ public class RecipeHandler {
         registerSlab(BlockList.limeWoolSlab.getSingleSlab(), 0, Blocks.wool, EnumDyeColor.LIME.getMetadata());
         registerSlab(BlockList.pinkWoolSlab.getSingleSlab(), 0, Blocks.wool, EnumDyeColor.PINK.getMetadata());
         registerSlab(BlockList.grayWoolSlab.getSingleSlab(), 0, Blocks.wool, EnumDyeColor.GRAY.getMetadata());
+        registerSlab(BlockList.silverWoolSlab.getSingleSlab(), 0, Blocks.wool, EnumDyeColor.SILVER.getMetadata());
+        registerSlab(BlockList.cyanWoolSlab.getSingleSlab(), 0, Blocks.wool, EnumDyeColor.CYAN.getMetadata());
+        registerSlab(BlockList.purpleWoolSlab.getSingleSlab(), 0, Blocks.wool, EnumDyeColor.PURPLE.getMetadata());
+        registerSlab(BlockList.blueWoolSlab.getSingleSlab(), 0, Blocks.wool, EnumDyeColor.BLUE.getMetadata());
+        registerSlab(BlockList.brownWoolSlab.getSingleSlab(), 0, Blocks.wool, EnumDyeColor.BROWN.getMetadata());
+        registerSlab(BlockList.greenWoolSlab.getSingleSlab(), 0, Blocks.wool, EnumDyeColor.GREEN.getMetadata());
+        registerSlab(BlockList.redWoolSlab.getSingleSlab(), 0, Blocks.wool, EnumDyeColor.RED.getMetadata());
+        registerSlab(BlockList.blackWoolSlab.getSingleSlab(), 0, Blocks.wool, EnumDyeColor.BLACK.getMetadata());
         //slabadder
     }
 

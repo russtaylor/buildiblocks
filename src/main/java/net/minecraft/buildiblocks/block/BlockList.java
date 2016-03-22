@@ -60,6 +60,14 @@ public class BlockList {
     public static ModBlockStairs limeWoolStairs;
     public static ModBlockStairs pinkWoolStairs;
     public static ModBlockStairs grayWoolStairs;
+    public static ModBlockStairs silverWoolStairs;
+    public static ModBlockStairs cyanWoolStairs;
+    public static ModBlockStairs purpleWoolStairs;
+    public static ModBlockStairs blueWoolStairs;
+    public static ModBlockStairs brownWoolStairs;
+    public static ModBlockStairs greenWoolStairs;
+    public static ModBlockStairs redWoolStairs;
+    public static ModBlockStairs blackWoolStairs;
     //stairadder
 
     // Slabs
@@ -84,5 +92,13 @@ public class BlockList {
     public static ModBlockSlab limeWoolSlab;
     public static ModBlockSlab pinkWoolSlab;
     public static ModBlockSlab grayWoolSlab;
+    public static ModBlockSlab silverWoolSlab;
+    public static ModBlockSlab cyanWoolSlab;
+    public static ModBlockSlab purpleWoolSlab;
+    public static ModBlockSlab blueWoolSlab;
+    public static ModBlockSlab brownWoolSlab;
+    public static ModBlockSlab greenWoolSlab;
+    public static ModBlockSlab redWoolSlab;
+    public static ModBlockSlab blackWoolSlab;
     //slabadder
 }
