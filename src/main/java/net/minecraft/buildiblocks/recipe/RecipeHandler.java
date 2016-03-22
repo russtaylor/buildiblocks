@@ -93,6 +93,9 @@ public class RecipeHandler {
         registerStair(BlockList.lightBlueWoolStairs, Blocks.wool, EnumDyeColor.LIGHT_BLUE.getMetadata());
         registerStair(BlockList.yellowWoolStairs, Blocks.wool, EnumDyeColor.YELLOW.getMetadata());
         registerStair(BlockList.limeWoolStairs, Blocks.wool, EnumDyeColor.LIME.getMetadata());
+        registerStair(BlockList.pinkWoolStairs, Blocks.wool, EnumDyeColor.PINK.getMetadata());
+        registerStair(BlockList.grayWoolStairs, Blocks.wool, EnumDyeColor.GRAY.getMetadata());
+        //stairsadder
     }
 
     private void registerSlabRecipes() {
@@ -115,6 +118,9 @@ public class RecipeHandler {
         registerSlab(BlockList.lightBlueWoolSlab.getSingleSlab(), 0, Blocks.wool, EnumDyeColor.LIGHT_BLUE.getMetadata());
         registerSlab(BlockList.yellowWoolSlab.getSingleSlab(), 0, Blocks.wool, EnumDyeColor.YELLOW.getMetadata());
         registerSlab(BlockList.limeWoolSlab.getSingleSlab(), 0, Blocks.wool, EnumDyeColor.LIME.getMetadata());
+        registerSlab(BlockList.pinkWoolSlab.getSingleSlab(), 0, Blocks.wool, EnumDyeColor.PINK.getMetadata());
+        registerSlab(BlockList.grayWoolSlab.getSingleSlab(), 0, Blocks.wool, EnumDyeColor.GRAY.getMetadata());
+        //slabadder
     }
 
     private void removeVanillaRecipes() {
