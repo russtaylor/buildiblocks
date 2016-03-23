@@ -70,6 +70,8 @@ public class RecipeHandler {
         registerWall(BlockList.mossyStoneBrickWall, Blocks.stonebrick, BlockStoneBrick.EnumType.MOSSY.getMetadata());
         registerWall(BlockList.obsidianWall, Blocks.obsidian);
         registerWall(BlockList.emeraldWall, Blocks.emerald_block);
+        registerWall(BlockList.mossyCobblestoneWall, Blocks.mossy_cobblestone);
+        //walladder
     }
 
     private void registerStairRecipes() {
@@ -119,6 +121,7 @@ public class RecipeHandler {
         registerStair(BlockList.greenHardenedClayStairs, Blocks.stained_hardened_clay, EnumDyeColor.GREEN.getMetadata());
         registerStair(BlockList.redHardenedClayStairs, Blocks.stained_hardened_clay, EnumDyeColor.RED.getMetadata());
         registerStair(BlockList.blackHardenedClayStairs, Blocks.stained_hardened_clay, EnumDyeColor.BLACK.getMetadata());
+        registerStair(BlockList.mossyCobblestoneStairs, Blocks.mossy_cobblestone);
         //stairsadder
     }
 
@@ -168,6 +171,7 @@ public class RecipeHandler {
         registerSlab(BlockList.greenHardenedClaySlab.getSingleSlab(), 0, Blocks.stained_hardened_clay, EnumDyeColor.GREEN.getMetadata());
         registerSlab(BlockList.redHardenedClaySlab.getSingleSlab(), 0, Blocks.stained_hardened_clay, EnumDyeColor.RED.getMetadata());
         registerSlab(BlockList.blackHardenedClaySlab.getSingleSlab(), 0, Blocks.stained_hardened_clay, EnumDyeColor.BLACK.getMetadata());
+        registerSlab(BlockList.mossyCobblestoneSlab.getSingleSlab(), Blocks.mossy_cobblestone);
         //slabadder
     }
 

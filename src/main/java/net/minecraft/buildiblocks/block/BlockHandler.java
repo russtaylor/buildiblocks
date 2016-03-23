@@ -49,6 +49,8 @@ public class BlockHandler {
         BlockList.mossyStoneBrickWall = new MossyStoneBrickWall(Blocks.stone).register();
         BlockList.obsidianWall = new ObsidianWall(Blocks.obsidian).register();
         BlockList.emeraldWall = new EmeraldWall(Blocks.emerald_block).register();
+        BlockList.mossyCobblestoneWall = new MossyCobblestoneWall(Blocks.mossy_cobblestone).register();
+        //walladder
     }
 
     private void registerVanillaFences() {
@@ -104,6 +106,7 @@ public class BlockHandler {
         BlockList.greenHardenedClayStairs = new GreenHardenedClayStairs(Blocks.stained_hardened_clay).register();
         BlockList.redHardenedClayStairs = new RedHardenedClayStairs(Blocks.stained_hardened_clay).register();
         BlockList.blackHardenedClayStairs = new BlackHardenedClayStairs(Blocks.stained_hardened_clay).register();
+        BlockList.mossyCobblestoneStairs = new MossyCobblestoneStairs(Blocks.mossy_cobblestone).register();
         //stairsadder
     }
 
@@ -153,6 +156,7 @@ public class BlockHandler {
         BlockList.greenHardenedClaySlab = new GreenHardenedClaySlab(Blocks.stained_hardened_clay).register();
         BlockList.redHardenedClaySlab = new RedHardenedClaySlab(Blocks.stained_hardened_clay).register();
         BlockList.blackHardenedClaySlab = new BlackHardenedClaySlab(Blocks.stained_hardened_clay).register();
+        BlockList.mossyCobblestoneSlab = new MossyCobblestoneSlab(Blocks.mossy_cobblestone).register();
         //slabadder
     }
 }

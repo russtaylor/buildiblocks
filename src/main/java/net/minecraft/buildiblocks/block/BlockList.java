@@ -30,6 +30,7 @@ public class BlockList {
     public static ModBlockWall mossyStoneBrickWall;
     public static ModBlockWall obsidianWall;
     public static ModBlockWall emeraldWall;
+    public static ModBlockWall mossyCobblestoneWall;
     //walladder
 
     // Fences
@@ -84,6 +85,7 @@ public class BlockList {
     public static ModBlockStairs greenHardenedClayStairs;
     public static ModBlockStairs redHardenedClayStairs;
     public static ModBlockStairs blackHardenedClayStairs;
+    public static ModBlockStairs mossyCobblestoneStairs;
     //stairadder
 
     // Slabs
@@ -132,5 +134,6 @@ public class BlockList {
     public static ModBlockSlab greenHardenedClaySlab;
     public static ModBlockSlab redHardenedClaySlab;
     public static ModBlockSlab blackHardenedClaySlab;
+    public static ModBlockSlab mossyCobblestoneSlab;
     //slabadder
 }

@@ -109,6 +109,9 @@ tile.red_hardened_clay_stairs.name=Red Stained Clay Stairs
 tile.red_hardened_clay_slab.name=Red Stained Clay Slab
 tile.black_hardened_clay_stairs.name=Black Stained Clay Stairs
 tile.black_hardened_clay_slab.name=Black Stained Clay Slab
+tile.mossy_cobblestone_stairs.name=Moss Stone Stairs
+tile.mossy_cobblestone_wall.name=Moss Stone Wall
+tile.mossy_cobblestone_slab.name=Moss Stone Slab
 tile.wordadder=nothing
 
 item.iron_rod.name=Iron Rod
