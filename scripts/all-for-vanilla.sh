@@ -23,15 +23,15 @@ gawk -i inplace -v varname="${varname}" -v matname="${material_name}" '/stairsad
 gawk -i inplace -v blockname="${block}" -v blocktitle="${title}" '/wordadder/ {print "tile."blockname"_stairs.name="blocktitle" Stairs"; print; next}1' ../src/main/resources/assets/buildiblocks/lang/en_US.lang
 
 # Generate Walls
-ruby ./generate-json.rb -t wall -n ${block}_wall -o texture_name=${texture} -v
-sed -e s/${originalName}Wall/${name}Wall/g ${originalPath}/walls/${originalName}Wall.java > ${originalPath}/walls/${name}Wall.java
-sed -i.bak "s/${originalName}/${title}/g" "${originalPath}/walls/${name}Wall.java"
-sed -i.bak s/obsidian_wall/${block}_wall/g ${originalPath}/walls/${name}Wall.java
-rm ${originalPath}/walls/${name}Wall.java.bak
-gawk -i inplace -v varname="${varname}" '/walladder/ { print "    public static ModBlockWall "varname"Wall;"; print; next}1' ${originalPath}/BlockList.java
-gawk -i inplace -v varname="${varname}" -v blockname="${name}" -v matname="${material_name}" '/walladder/ { print "        BlockList."varname"Wall = new "blockname"Wall(Blocks."matname").register();"; print; next}1' ${originalPath}/BlockHandler.java
-gawk -i inplace -v varname="${varname}" -v matname="${material_name}" '/walladder/ { print "        registerWall(BlockList."varname"Wall, Blocks."matname");"; print; next}1' ${originalPath}/../recipe/RecipeHandler.java
-gawk -i inplace -v blockname="${block}" -v blocktitle="${title}" '/wordadder/ {print "tile."blockname"_wall.name="blocktitle" Wall"; print; next}1' ../src/main/resources/assets/buildiblocks/lang/en_US.lang
+# ruby ./generate-json.rb -t wall -n ${block}_wall -o texture_name=${texture} -v
+# sed -e s/${originalName}Wall/${name}Wall/g ${originalPath}/walls/${originalName}Wall.java > ${originalPath}/walls/${name}Wall.java
+# sed -i.bak "s/${originalName}/${title}/g" "${originalPath}/walls/${name}Wall.java"
+# sed -i.bak s/obsidian_wall/${block}_wall/g ${originalPath}/walls/${name}Wall.java
+# rm ${originalPath}/walls/${name}Wall.java.bak
+# gawk -i inplace -v varname="${varname}" '/walladder/ { print "    public static ModBlockWall "varname"Wall;"; print; next}1' ${originalPath}/BlockList.java
+# gawk -i inplace -v varname="${varname}" -v blockname="${name}" -v matname="${material_name}" '/walladder/ { print "        BlockList."varname"Wall = new "blockname"Wall(Blocks."matname").register();"; print; next}1' ${originalPath}/BlockHandler.java
+# gawk -i inplace -v varname="${varname}" -v matname="${material_name}" '/walladder/ { print "        registerWall(BlockList."varname"Wall, Blocks."matname");"; print; next}1' ${originalPath}/../recipe/RecipeHandler.java
+# gawk -i inplace -v blockname="${block}" -v blocktitle="${title}" '/wordadder/ {print "tile."blockname"_wall.name="blocktitle" Wall"; print; next}1' ../src/main/resources/assets/buildiblocks/lang/en_US.lang
 
 # Generate Slabs
 ruby ./generate-json.rb -t slab -n ${block}_slab -o bottom_texture_name=${texture},top_texture_name=${texture},side_texture_name=${texture},parent_model=${parent_block} -v
