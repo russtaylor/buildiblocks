@@ -11,6 +11,8 @@ material_name=$7
 originalPath=../src/main/java/net/minecraft/buildiblocks/block
 originalName=Obsidian
 
+ruby ./generate-json.rb -t block
+
 # Generate Stairs
 ruby ./generate-json.rb -t stairs -n ${block}_stairs -o bottom_texture_name=${texture},top_texture_name=${texture},side_texture_name=${texture} -v
 sed -e s/${originalName}Stairs/${name}Stairs/g ${originalPath}/stairs/${originalName}Stairs.java > ${originalPath}/stairs/${name}Stairs.java

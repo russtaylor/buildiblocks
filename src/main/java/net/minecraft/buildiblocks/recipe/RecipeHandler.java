@@ -123,6 +123,7 @@ public class RecipeHandler {
         registerStair(BlockList.blackHardenedClayStairs, Blocks.stained_hardened_clay, EnumDyeColor.BLACK.getMetadata());
         registerStair(BlockList.mossyCobblestoneStairs, Blocks.mossy_cobblestone);
         registerStair(BlockList.prismarineBrickStairs, Blocks.prismarine, BlockPrismarine.BRICKS_META);
+        registerStair(BlockList.darkPrismarineStairs, Blocks.prismarine, BlockPrismarine.DARK_META);
         //stairsadder
     }
 
@@ -174,6 +175,7 @@ public class RecipeHandler {
         registerSlab(BlockList.blackHardenedClaySlab.getSingleSlab(), 0, Blocks.stained_hardened_clay, EnumDyeColor.BLACK.getMetadata());
         registerSlab(BlockList.mossyCobblestoneSlab.getSingleSlab(), Blocks.mossy_cobblestone);
         registerSlab(BlockList.prismarineBrickSlab.getSingleSlab(), 0, Blocks.prismarine, BlockPrismarine.BRICKS_META);
+        registerSlab(BlockList.darkPrismarineSlab.getSingleSlab(), 0, Blocks.prismarine, BlockPrismarine.DARK_META);
         //slabadder
     }
 
@@ -291,5 +293,15 @@ public class RecipeHandler {
         ItemStack sourceItemStack = new ItemStack(sourceBlock, 1, meta);
         ItemStack wallStack = new ItemStack(wallBlock, 6);
         GameRegistry.addRecipe(wallStack, "xxx", "xxx", 'x', sourceItemStack);
+    }
+
+    private void registerBrick(Block brickBlock, Block sourceBlock) {
+        this.registerBrick(brickBlock, sourceBlock, 0);
+    }
+
+    private void registerBrick(Block brickBlock, Block sourceBlock, int meta) {
+        ItemStack sourceItemStack = new ItemStack(sourceBlock, 1, meta);
+        ItemStack brickStack = new ItemStack(brickBlock, 4);
+        GameRegistry.addRecipe(brickStack, "xx", "xx", 'x', sourceItemStack);
     }
 }
