@@ -107,6 +107,7 @@ public class BlockHandler {
         BlockList.redHardenedClayStairs = new RedHardenedClayStairs(Blocks.stained_hardened_clay).register();
         BlockList.blackHardenedClayStairs = new BlackHardenedClayStairs(Blocks.stained_hardened_clay).register();
         BlockList.mossyCobblestoneStairs = new MossyCobblestoneStairs(Blocks.mossy_cobblestone).register();
+        BlockList.prismarineBrickStairs = new PrismarineBrickStairs(Blocks.prismarine).register();
         //stairsadder
     }
 
@@ -157,6 +158,7 @@ public class BlockHandler {
         BlockList.redHardenedClaySlab = new RedHardenedClaySlab(Blocks.stained_hardened_clay).register();
         BlockList.blackHardenedClaySlab = new BlackHardenedClaySlab(Blocks.stained_hardened_clay).register();
         BlockList.mossyCobblestoneSlab = new MossyCobblestoneSlab(Blocks.mossy_cobblestone).register();
+        BlockList.prismarineBrickSlab = new PrismarineBrickSlab(Blocks.prismarine).register();
         //slabadder
     }
 }

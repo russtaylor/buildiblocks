@@ -86,6 +86,7 @@ public class BlockList {
     public static ModBlockStairs redHardenedClayStairs;
     public static ModBlockStairs blackHardenedClayStairs;
     public static ModBlockStairs mossyCobblestoneStairs;
+    public static ModBlockStairs prismarineBrickStairs;
     //stairadder
 
     // Slabs
@@ -135,5 +136,6 @@ public class BlockList {
     public static ModBlockSlab redHardenedClaySlab;
     public static ModBlockSlab blackHardenedClaySlab;
     public static ModBlockSlab mossyCobblestoneSlab;
+    public static ModBlockSlab prismarineBrickSlab;
     //slabadder
 }

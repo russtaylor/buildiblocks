@@ -122,6 +122,7 @@ public class RecipeHandler {
         registerStair(BlockList.redHardenedClayStairs, Blocks.stained_hardened_clay, EnumDyeColor.RED.getMetadata());
         registerStair(BlockList.blackHardenedClayStairs, Blocks.stained_hardened_clay, EnumDyeColor.BLACK.getMetadata());
         registerStair(BlockList.mossyCobblestoneStairs, Blocks.mossy_cobblestone);
+        registerStair(BlockList.prismarineBrickStairs, Blocks.prismarine, BlockPrismarine.BRICKS_META);
         //stairsadder
     }
 
@@ -172,6 +173,7 @@ public class RecipeHandler {
         registerSlab(BlockList.redHardenedClaySlab.getSingleSlab(), 0, Blocks.stained_hardened_clay, EnumDyeColor.RED.getMetadata());
         registerSlab(BlockList.blackHardenedClaySlab.getSingleSlab(), 0, Blocks.stained_hardened_clay, EnumDyeColor.BLACK.getMetadata());
         registerSlab(BlockList.mossyCobblestoneSlab.getSingleSlab(), Blocks.mossy_cobblestone);
+        registerSlab(BlockList.prismarineBrickSlab.getSingleSlab(), 0, Blocks.prismarine, BlockPrismarine.BRICKS_META);
         //slabadder
     }
 
