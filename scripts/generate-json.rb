@@ -115,7 +115,7 @@ def copy_templates(options, templates, destination)
   templates.each do |current_file|
     new_filename = current_file.gsub(/template/, options['block_name'])
     new_filename = new_filename.gsub(/json-source\//, '')
-    new_filename = new_filename.gsub(/#{options['type']}\//, '')
+    new_filename = new_filename.gsub(/(.*)(#{options['type']})(.*)\//, '\1\3')
     FileUtils.cp(current_file, "#{destination}/#{new_filename}")
     new_sources << new_filename
   end

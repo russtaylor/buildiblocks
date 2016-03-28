@@ -161,6 +161,7 @@ public class BlockHandler {
         BlockList.mossyCobblestoneSlab = new MossyCobblestoneSlab(Blocks.mossy_cobblestone).register();
         BlockList.prismarineBrickSlab = new PrismarineBrickSlab(Blocks.prismarine).register();
         BlockList.darkPrismarineSlab = new DarkPrismarineSlab(Blocks.prismarine).register();
+        BlockList.hardenedClaySlab = new HardenedClaySlab(Blocks.hardened_clay).register();
         //slabadder
     }
 }

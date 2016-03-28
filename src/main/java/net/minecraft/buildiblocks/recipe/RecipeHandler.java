@@ -176,6 +176,7 @@ public class RecipeHandler {
         registerSlab(BlockList.mossyCobblestoneSlab.getSingleSlab(), Blocks.mossy_cobblestone);
         registerSlab(BlockList.prismarineBrickSlab.getSingleSlab(), 0, Blocks.prismarine, BlockPrismarine.BRICKS_META);
         registerSlab(BlockList.darkPrismarineSlab.getSingleSlab(), 0, Blocks.prismarine, BlockPrismarine.DARK_META);
+        registerSlab(BlockList.hardenedClaySlab.getSingleSlab(), Blocks.hardened_clay);
         //slabadder
     }
 
