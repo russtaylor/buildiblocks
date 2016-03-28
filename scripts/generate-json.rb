@@ -20,7 +20,7 @@ optionParser = OptionParser.new do |opts|
   end
 
   opts.on('-n', '--name NAME', 'The name of the block you\'re generating.') do |name|
-    options['block_name'] = name;
+    options['block_name'] = name
   end
 
   opts.on('-x', '--texture NAME', 'The name of the texture used for this block') do |texture|

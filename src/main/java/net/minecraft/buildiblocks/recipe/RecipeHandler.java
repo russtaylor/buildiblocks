@@ -31,12 +31,19 @@ public class RecipeHandler {
         registerFenceRecipes();
         registerTileRecipes();
         reregisterVanillaRecipes();
+        registerRandomRecipes();
     }
 
     private void registerRodRecipes() {
         registerRod(Items.iron_ingot, ItemList.ironRod);
         registerRod(Items.diamond, ItemList.diamondRod);
         registerRod(Items.gold_ingot, ItemList.goldRod);
+    }
+
+    private void registerRandomRecipes() {
+        ItemStack packedIceStack = new ItemStack(Blocks.packed_ice, 2);
+        ItemStack iceStack = new ItemStack(Blocks.ice, 1);
+        GameRegistry.addRecipe(packedIceStack, "xx", "xx", 'x', iceStack);
     }
 
     private void registerRod(Item inputItem, Item outputItem) {
