@@ -13,6 +13,8 @@ public class BlockList {
 
     // Blocks
     public static ModBlock stonePillar;
+    public static ModBlock clayTile;
+    //blockadder
 
     // Walls
     public static ModBlockWall netherQuartzWall;
@@ -88,6 +90,7 @@ public class BlockList {
     public static ModBlockStairs mossyCobblestoneStairs;
     public static ModBlockStairs prismarineBrickStairs;
     public static ModBlockStairs darkPrismarineStairs;
+    public static ModBlockStairs clayTileStairs;
     //stairadder
 
     // Slabs
@@ -140,5 +143,6 @@ public class BlockList {
     public static ModBlockSlab prismarineBrickSlab;
     public static ModBlockSlab darkPrismarineSlab;
     public static ModBlockSlab hardenedClaySlab;
+    public static ModBlockSlab clayTileSlab;
     //slabadder
 }

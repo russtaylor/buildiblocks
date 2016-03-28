@@ -29,6 +29,7 @@ public class RecipeHandler {
         registerSlabRecipes();
         registerRodRecipes();
         registerFenceRecipes();
+        registerTileRecipes();
         reregisterVanillaRecipes();
     }
 
@@ -42,6 +43,10 @@ public class RecipeHandler {
         ItemStack inputItemStack = new ItemStack(inputItem, 1);
         ItemStack outputItemStack = new ItemStack(outputItem, 4);
         GameRegistry.addRecipe(outputItemStack, "x", "x", 'x', inputItemStack);
+    }
+
+    private void registerTileRecipes() {
+        registerTile(BlockList.clayTile, Blocks.hardened_clay);
     }
 
     private void registerPillarRecipes() {
@@ -124,6 +129,7 @@ public class RecipeHandler {
         registerStair(BlockList.mossyCobblestoneStairs, Blocks.mossy_cobblestone);
         registerStair(BlockList.prismarineBrickStairs, Blocks.prismarine, BlockPrismarine.BRICKS_META);
         registerStair(BlockList.darkPrismarineStairs, Blocks.prismarine, BlockPrismarine.DARK_META);
+        registerStair(BlockList.clayTileStairs, BlockList.clayTile);
         //stairsadder
     }
 
@@ -177,6 +183,7 @@ public class RecipeHandler {
         registerSlab(BlockList.prismarineBrickSlab.getSingleSlab(), 0, Blocks.prismarine, BlockPrismarine.BRICKS_META);
         registerSlab(BlockList.darkPrismarineSlab.getSingleSlab(), 0, Blocks.prismarine, BlockPrismarine.DARK_META);
         registerSlab(BlockList.hardenedClaySlab.getSingleSlab(), Blocks.hardened_clay);
+        registerSlab(BlockList.clayTileSlab.getSingleSlab(), BlockList.clayTile);
         //slabadder
     }
 
@@ -296,13 +303,13 @@ public class RecipeHandler {
         GameRegistry.addRecipe(wallStack, "xxx", "xxx", 'x', sourceItemStack);
     }
 
-    private void registerBrick(Block brickBlock, Block sourceBlock) {
-        this.registerBrick(brickBlock, sourceBlock, 0);
+    private void registerTile(Block tileBlock, Block sourceBlock) {
+        this.registerTile(tileBlock, sourceBlock, 0);
     }
 
-    private void registerBrick(Block brickBlock, Block sourceBlock, int meta) {
+    private void registerTile(Block tileBlock, Block sourceBlock, int meta) {
         ItemStack sourceItemStack = new ItemStack(sourceBlock, 1, meta);
-        ItemStack brickStack = new ItemStack(brickBlock, 4);
-        GameRegistry.addRecipe(brickStack, "xx", "xx", 'x', sourceItemStack);
+        ItemStack tileStack = new ItemStack(tileBlock, 4);
+        GameRegistry.addRecipe(tileStack, "xx", "xx", 'x', sourceItemStack);
     }
 }

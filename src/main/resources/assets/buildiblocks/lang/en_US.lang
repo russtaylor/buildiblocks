@@ -117,6 +117,9 @@ tile.prismarine_brick_slab.name=Prismarine Brick Slab
 tile.dark_prismarine_stairs.name=Dark Prismarine Stairs
 tile.dark_prismarine_slab.name=Dark Prismarine Slab
 tile.hardened_clay_slab.name=Hardened Clay Slab
+tile.clay_tile.name=Clay Tile
+tile.clay_tile_stairs.name=Clay Tile Stairs
+tile.clay_tile_slab.name=Clay Tile Slab
 tile.wordadder=nothing
 
 item.iron_rod.name=Iron Rod

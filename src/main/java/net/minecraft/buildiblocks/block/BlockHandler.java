@@ -1,6 +1,7 @@
 package net.minecraft.buildiblocks.block;
 
 import net.minecraft.block.BlockColored;
+import net.minecraft.buildiblocks.block.blocks.ClayTile;
 import net.minecraft.buildiblocks.block.blocks.StonePillar;
 import net.minecraft.buildiblocks.block.stairs.*;
 import net.minecraft.buildiblocks.block.walls.*;
@@ -31,6 +32,8 @@ public class BlockHandler {
 
     private void registerVanillaBlocks() {
         BlockList.stonePillar = new StonePillar(Blocks.stone).register();
+        BlockList.clayTile = new ClayTile(Blocks.hardened_clay).register();
+        //blockadder
     }
 
     private void registerVanillaWalls() {
@@ -109,6 +112,7 @@ public class BlockHandler {
         BlockList.mossyCobblestoneStairs = new MossyCobblestoneStairs(Blocks.mossy_cobblestone).register();
         BlockList.prismarineBrickStairs = new PrismarineBrickStairs(Blocks.prismarine).register();
         BlockList.darkPrismarineStairs = new DarkPrismarineStairs(Blocks.prismarine).register();
+        BlockList.clayTileStairs = new ClayTileStairs(BlockList.clayTile).register();
         //stairsadder
     }
 
@@ -162,6 +166,7 @@ public class BlockHandler {
         BlockList.prismarineBrickSlab = new PrismarineBrickSlab(Blocks.prismarine).register();
         BlockList.darkPrismarineSlab = new DarkPrismarineSlab(Blocks.prismarine).register();
         BlockList.hardenedClaySlab = new HardenedClaySlab(Blocks.hardened_clay).register();
+        BlockList.clayTileSlab = new ClayTileSlab(BlockList.clayTile).register();
         //slabadder
     }
 }
