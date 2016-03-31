@@ -22,7 +22,7 @@ sed -e s/${originalName}Stairs/${name}Stairs/g ${originalPath}/stairs/${original
 sed -i.bak "s/${originalName}/${title}/g" "${originalPath}/stairs/${name}Stairs.java"
 sed -i.bak s/${originalNameNoCap}_stairs/${block}_stairs/g ${originalPath}/stairs/${name}Stairs.java
 rm ${originalPath}/stairs/${name}Stairs.java.bak
-gawk -i inplace -v varname="${varname}" '/stairadder/ { print "    public static ModBlockStairs "varname"Stairs;"; print; next}1' ${originalPath}/BlockList.java
+gawk -i inplace -v varname="${varname}" '/stairsadder/ { print "    public static ModBlockStairs "varname"Stairs;"; print; next}1' ${originalPath}/BlockList.java
 gawk -i inplace -v varname="${varname}" -v blockname="${name}" -v matname="${material_name}" '/stairsadder/ { print "        BlockList."varname"Stairs = new "blockname"Stairs(Blocks."matname").register();"; print; next}1' ${originalPath}/BlockHandler.java
 gawk -i inplace -v varname="${varname}" -v matname="${material_name}" '/stairsadder/ { print "        registerStair(BlockList."varname"Stairs, Blocks."matname");"; print; next}1' ${originalPath}/../recipe/RecipeHandler.java
 gawk -i inplace -v blockname="${block}" -v blocktitle="${title}" '/wordadder/ {print "tile."blockname"_stairs.name="blocktitle" Stairs"; print; next}1' ../src/main/resources/assets/buildiblocks/lang/en_US.lang
