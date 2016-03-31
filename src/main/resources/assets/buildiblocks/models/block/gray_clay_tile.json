@@ -1,0 +1,6 @@
+{
+  "parent": "block/stone",
+  "textures": {
+    "all": "buildiblocks:blocks/clay_tile_gray"
+  }
+}

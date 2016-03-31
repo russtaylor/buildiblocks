@@ -58,6 +58,17 @@ public class RecipeHandler {
         registerTile(BlockList.magentaClayTile, Blocks.stained_hardened_clay, EnumDyeColor.MAGENTA.getMetadata());
         registerTile(BlockList.lightBlueClayTile, Blocks.stained_hardened_clay, EnumDyeColor.LIGHT_BLUE.getMetadata());
         registerTile(BlockList.yellowClayTile, Blocks.stained_hardened_clay, EnumDyeColor.YELLOW.getMetadata());
+        registerTile(BlockList.limeClayTile, Blocks.stained_hardened_clay, EnumDyeColor.LIME.getMetadata());
+        registerTile(BlockList.pinkClayTile, Blocks.stained_hardened_clay, EnumDyeColor.PINK.getMetadata());
+        registerTile(BlockList.grayClayTile, Blocks.stained_hardened_clay, EnumDyeColor.GRAY.getMetadata());
+        registerTile(BlockList.silverClayTile, Blocks.stained_hardened_clay, EnumDyeColor.SILVER.getMetadata());
+        registerTile(BlockList.cyanClayTile, Blocks.stained_hardened_clay, EnumDyeColor.CYAN.getMetadata());
+        registerTile(BlockList.purpleClayTile, Blocks.stained_hardened_clay, EnumDyeColor.PURPLE.getMetadata());
+        registerTile(BlockList.blueClayTile, Blocks.stained_hardened_clay, EnumDyeColor.BLUE.getMetadata());
+        registerTile(BlockList.brownClayTile, Blocks.stained_hardened_clay, EnumDyeColor.BROWN.getMetadata());
+        registerTile(BlockList.greenClayTile, Blocks.stained_hardened_clay, EnumDyeColor.GREEN.getMetadata());
+        registerTile(BlockList.redClayTile, Blocks.stained_hardened_clay, EnumDyeColor.RED.getMetadata());
+        registerTile(BlockList.blackClayTile, Blocks.stained_hardened_clay, EnumDyeColor.BLACK.getMetadata());
         //tileadder
     }
 
@@ -149,6 +160,17 @@ public class RecipeHandler {
         registerStairs(BlockList.magentaClayTileStairs, BlockList.magentaClayTile);
         registerStairs(BlockList.lightBlueClayTileStairs, BlockList.lightBlueClayTile);
         registerStairs(BlockList.yellowClayTileStairs, BlockList.yellowClayTile);
+        registerStairs(BlockList.limeClayTileStairs, BlockList.limeClayTile);
+        registerStairs(BlockList.pinkClayTileStairs, BlockList.pinkClayTile);
+        registerStairs(BlockList.grayClayTileStairs, BlockList.grayClayTile);
+        registerStairs(BlockList.silverClayTileStairs, BlockList.silverClayTile);
+        registerStairs(BlockList.cyanClayTileStairs, BlockList.cyanClayTile);
+        registerStairs(BlockList.purpleClayTileStairs, BlockList.purpleClayTile);
+        registerStairs(BlockList.blueClayTileStairs, BlockList.blueClayTile);
+        registerStairs(BlockList.brownClayTileStairs, BlockList.brownClayTile);
+        registerStairs(BlockList.greenClayTileStairs, BlockList.greenClayTile);
+        registerStairs(BlockList.redClayTileStairs, BlockList.redClayTile);
+        registerStairs(BlockList.blackClayTileStairs, BlockList.blackClayTile);
         //stairsadder
     }
 
@@ -207,6 +229,17 @@ public class RecipeHandler {
         registerSlab(BlockList.magentaClayTileSlab.getSingleSlab(), BlockList.magentaClayTile);
         registerSlab(BlockList.lightBlueClayTileSlab.getSingleSlab(), BlockList.lightBlueClayTile);
         registerSlab(BlockList.yellowClayTileSlab.getSingleSlab(), BlockList.yellowClayTile);
+        registerSlab(BlockList.limeClayTileSlab.getSingleSlab(), BlockList.limeClayTile);
+        registerSlab(BlockList.pinkClayTileSlab.getSingleSlab(), BlockList.pinkClayTile);
+        registerSlab(BlockList.grayClayTileSlab.getSingleSlab(), BlockList.grayClayTile);
+        registerSlab(BlockList.silverClayTileSlab.getSingleSlab(), BlockList.silverClayTile);
+        registerSlab(BlockList.cyanClayTileSlab.getSingleSlab(), BlockList.cyanClayTile);
+        registerSlab(BlockList.purpleClayTileSlab.getSingleSlab(), BlockList.purpleClayTile);
+        registerSlab(BlockList.blueClayTileSlab.getSingleSlab(), BlockList.blueClayTile);
+        registerSlab(BlockList.brownClayTileSlab.getSingleSlab(), BlockList.brownClayTile);
+        registerSlab(BlockList.greenClayTileSlab.getSingleSlab(), BlockList.greenClayTile);
+        registerSlab(BlockList.redClayTileSlab.getSingleSlab(), BlockList.redClayTile);
+        registerSlab(BlockList.blackClayTileSlab.getSingleSlab(), BlockList.blackClayTile);
         //slabadder
     }
 

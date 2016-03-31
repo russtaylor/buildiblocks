@@ -18,6 +18,17 @@ public class BlockList {
     public static ModBlock magentaClayTile;
     public static ModBlock lightBlueClayTile;
     public static ModBlock yellowClayTile;
+    public static ModBlock limeClayTile;
+    public static ModBlock pinkClayTile;
+    public static ModBlock grayClayTile;
+    public static ModBlock silverClayTile;
+    public static ModBlock cyanClayTile;
+    public static ModBlock purpleClayTile;
+    public static ModBlock blueClayTile;
+    public static ModBlock brownClayTile;
+    public static ModBlock greenClayTile;
+    public static ModBlock redClayTile;
+    public static ModBlock blackClayTile;
     //blockadder
 
     // Walls
@@ -100,6 +111,17 @@ public class BlockList {
     public static ModBlockStairs magentaClayTileStairs;
     public static ModBlockStairs lightBlueClayTileStairs;
     public static ModBlockStairs yellowClayTileStairs;
+    public static ModBlockStairs limeClayTileStairs;
+    public static ModBlockStairs pinkClayTileStairs;
+    public static ModBlockStairs grayClayTileStairs;
+    public static ModBlockStairs silverClayTileStairs;
+    public static ModBlockStairs cyanClayTileStairs;
+    public static ModBlockStairs purpleClayTileStairs;
+    public static ModBlockStairs blueClayTileStairs;
+    public static ModBlockStairs brownClayTileStairs;
+    public static ModBlockStairs greenClayTileStairs;
+    public static ModBlockStairs redClayTileStairs;
+    public static ModBlockStairs blackClayTileStairs;
     //stairsadder
 
     // Slabs
@@ -157,5 +179,16 @@ public class BlockList {
     public static ModBlockSlab magentaClayTileSlab;
     public static ModBlockSlab lightBlueClayTileSlab;
     public static ModBlockSlab yellowClayTileSlab;
+    public static ModBlockSlab limeClayTileSlab;
+    public static ModBlockSlab pinkClayTileSlab;
+    public static ModBlockSlab grayClayTileSlab;
+    public static ModBlockSlab silverClayTileSlab;
+    public static ModBlockSlab cyanClayTileSlab;
+    public static ModBlockSlab purpleClayTileSlab;
+    public static ModBlockSlab blueClayTileSlab;
+    public static ModBlockSlab brownClayTileSlab;
+    public static ModBlockSlab greenClayTileSlab;
+    public static ModBlockSlab redClayTileSlab;
+    public static ModBlockSlab blackClayTileSlab;
     //slabadder
 }

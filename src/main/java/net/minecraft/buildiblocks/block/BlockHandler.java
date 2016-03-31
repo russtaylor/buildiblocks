@@ -34,6 +34,17 @@ public class BlockHandler {
         BlockList.magentaClayTile = new MagentaClayTile(BlockList.clayTile).register();
         BlockList.lightBlueClayTile = new LightBlueClayTile(BlockList.clayTile).register();
         BlockList.yellowClayTile = new YellowClayTile(BlockList.clayTile).register();
+        BlockList.limeClayTile = new LimeClayTile(BlockList.clayTile).register();
+        BlockList.pinkClayTile = new PinkClayTile(BlockList.clayTile).register();
+        BlockList.grayClayTile = new GrayClayTile(BlockList.clayTile).register();
+        BlockList.silverClayTile = new SilverClayTile(BlockList.clayTile).register();
+        BlockList.cyanClayTile = new CyanClayTile(BlockList.clayTile).register();
+        BlockList.purpleClayTile = new PurpleClayTile(BlockList.clayTile).register();
+        BlockList.blueClayTile = new BlueClayTile(BlockList.clayTile).register();
+        BlockList.brownClayTile = new BrownClayTile(BlockList.clayTile).register();
+        BlockList.greenClayTile = new GreenClayTile(BlockList.clayTile).register();
+        BlockList.redClayTile = new RedClayTile(BlockList.clayTile).register();
+        BlockList.blackClayTile = new BlackClayTile(BlockList.clayTile).register();
         //blockadder
     }
 
@@ -118,6 +129,17 @@ public class BlockHandler {
         BlockList.magentaClayTileStairs = new MagentaClayTileStairs(BlockList.clayTile).register();
         BlockList.lightBlueClayTileStairs = new LightBlueClayTileStairs(BlockList.clayTile).register();
         BlockList.yellowClayTileStairs = new YellowClayTileStairs(BlockList.clayTile).register();
+        BlockList.limeClayTileStairs = new LimeClayTileStairs(BlockList.clayTile).register();
+        BlockList.pinkClayTileStairs = new PinkClayTileStairs(BlockList.clayTile).register();
+        BlockList.grayClayTileStairs = new GrayClayTileStairs(BlockList.clayTile).register();
+        BlockList.silverClayTileStairs = new SilverClayTileStairs(BlockList.clayTile).register();
+        BlockList.cyanClayTileStairs = new CyanClayTileStairs(BlockList.clayTile).register();
+        BlockList.purpleClayTileStairs = new PurpleClayTileStairs(BlockList.clayTile).register();
+        BlockList.blueClayTileStairs = new BlueClayTileStairs(BlockList.clayTile).register();
+        BlockList.brownClayTileStairs = new BrownClayTileStairs(BlockList.clayTile).register();
+        BlockList.greenClayTileStairs = new GreenClayTileStairs(BlockList.clayTile).register();
+        BlockList.redClayTileStairs = new RedClayTileStairs(BlockList.clayTile).register();
+        BlockList.blackClayTileStairs = new BlackClayTileStairs(BlockList.clayTile).register();
         //stairsadder
     }
 
@@ -176,6 +198,17 @@ public class BlockHandler {
         BlockList.magentaClayTileSlab = new MagentaClayTileSlab(BlockList.clayTile).register();
         BlockList.lightBlueClayTileSlab = new LightBlueClayTileSlab(BlockList.clayTile).register();
         BlockList.yellowClayTileSlab = new YellowClayTileSlab(BlockList.clayTile).register();
+        BlockList.limeClayTileSlab = new LimeClayTileSlab(BlockList.clayTile).register();
+        BlockList.pinkClayTileSlab = new PinkClayTileSlab(BlockList.clayTile).register();
+        BlockList.grayClayTileSlab = new GrayClayTileSlab(BlockList.clayTile).register();
+        BlockList.silverClayTileSlab = new SilverClayTileSlab(BlockList.clayTile).register();
+        BlockList.cyanClayTileSlab = new CyanClayTileSlab(BlockList.clayTile).register();
+        BlockList.purpleClayTileSlab = new PurpleClayTileSlab(BlockList.clayTile).register();
+        BlockList.blueClayTileSlab = new BlueClayTileSlab(BlockList.clayTile).register();
+        BlockList.brownClayTileSlab = new BrownClayTileSlab(BlockList.clayTile).register();
+        BlockList.greenClayTileSlab = new GreenClayTileSlab(BlockList.clayTile).register();
+        BlockList.redClayTileSlab = new RedClayTileSlab(BlockList.clayTile).register();
+        BlockList.blackClayTileSlab = new BlackClayTileSlab(BlockList.clayTile).register();
         //slabadder
     }
 }
