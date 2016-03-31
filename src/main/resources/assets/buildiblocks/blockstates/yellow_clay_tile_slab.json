@@ -1,0 +1,6 @@
+{
+  "variants": {
+    "half=bottom": { "model": "buildiblocks:yellow_clay_tile_slab_bottom" },
+    "half=top": { "model": "buildiblocks:yellow_clay_tile_slab_top" }
+  }
+}

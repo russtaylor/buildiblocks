@@ -8,13 +8,13 @@ import net.minecraft.util.EnumFacing;
 import net.minecraft.world.IBlockAccess;
 
 /**
- * Class Name
+ * Light Blue Clay Tile
  */
-public class ClassName extends ModBlock {
+public class LightBlueClayTile extends ModBlock {
 
-    public static final String BLOCK_NAME = "class_name";
+    public static final String BLOCK_NAME = "light_blue_clay_tile";
 
-    public ClassName(Block block) {
+    public LightBlueClayTile(Block block) {
         super(block, BLOCK_NAME);
     }
 

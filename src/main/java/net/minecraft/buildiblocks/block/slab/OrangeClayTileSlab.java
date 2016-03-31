@@ -4,13 +4,13 @@ import net.minecraft.block.Block;
 import net.minecraft.buildiblocks.block.ModBlockSlab;
 
 /**
- * Class Name Slab
+ * Orange Clay Tile Slab
  */
-public class ClassNameSlab extends ModBlockSlab {
+public class OrangeClayTileSlab extends ModBlockSlab {
 
-    public static final String BLOCK_NAME = "class_name_slab";
+    public static final String BLOCK_NAME = "orange_clay_tile_slab";
 
-    public ClassNameSlab(Block block) {
+    public OrangeClayTileSlab(Block block) {
         super(BLOCK_NAME, block, block.getBlockHardness(null, null), block.getExplosionResistance(null));
     }
 

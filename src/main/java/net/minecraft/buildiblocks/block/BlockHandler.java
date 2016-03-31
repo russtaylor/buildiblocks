@@ -1,17 +1,14 @@
 package net.minecraft.buildiblocks.block;
 
 import net.minecraft.block.BlockColored;
-import net.minecraft.buildiblocks.block.blocks.ClayTile;
-import net.minecraft.buildiblocks.block.blocks.StonePillar;
+import net.minecraft.buildiblocks.block.block.*;
 import net.minecraft.buildiblocks.block.stairs.*;
-import net.minecraft.buildiblocks.block.walls.*;
+import net.minecraft.buildiblocks.block.wall.*;
 import net.minecraft.init.Blocks;
-import net.minecraft.buildiblocks.block.fences.DiamondFence;
-import net.minecraft.buildiblocks.block.fences.GoldFence;
-import net.minecraft.buildiblocks.block.fences.IronFence;
-import net.minecraft.buildiblocks.block.slabs.*;
-
-import static net.minecraft.buildiblocks.block.BlockList.blockList;
+import net.minecraft.buildiblocks.block.fence.DiamondFence;
+import net.minecraft.buildiblocks.block.fence.GoldFence;
+import net.minecraft.buildiblocks.block.fence.IronFence;
+import net.minecraft.buildiblocks.block.slab.*;
 
 /**
  * Handles the creation of various types of blocks.
@@ -33,6 +30,10 @@ public class BlockHandler {
     private void registerVanillaBlocks() {
         BlockList.stonePillar = new StonePillar(Blocks.stone).register();
         BlockList.clayTile = new ClayTile(Blocks.hardened_clay).register();
+        BlockList.orangeClayTile = new OrangeClayTile(BlockList.clayTile).register();
+        BlockList.magentaClayTile = new MagentaClayTile(BlockList.clayTile).register();
+        BlockList.lightBlueClayTile = new LightBlueClayTile(BlockList.clayTile).register();
+        BlockList.yellowClayTile = new YellowClayTile(BlockList.clayTile).register();
         //blockadder
     }
 
@@ -113,6 +114,10 @@ public class BlockHandler {
         BlockList.prismarineBrickStairs = new PrismarineBrickStairs(Blocks.prismarine).register();
         BlockList.darkPrismarineStairs = new DarkPrismarineStairs(Blocks.prismarine).register();
         BlockList.clayTileStairs = new ClayTileStairs(BlockList.clayTile).register();
+        BlockList.orangeClayTileStairs = new OrangeClayTileStairs(BlockList.clayTile).register();
+        BlockList.magentaClayTileStairs = new MagentaClayTileStairs(BlockList.clayTile).register();
+        BlockList.lightBlueClayTileStairs = new LightBlueClayTileStairs(BlockList.clayTile).register();
+        BlockList.yellowClayTileStairs = new YellowClayTileStairs(BlockList.clayTile).register();
         //stairsadder
     }
 
@@ -167,6 +172,10 @@ public class BlockHandler {
         BlockList.darkPrismarineSlab = new DarkPrismarineSlab(Blocks.prismarine).register();
         BlockList.hardenedClaySlab = new HardenedClaySlab(Blocks.hardened_clay).register();
         BlockList.clayTileSlab = new ClayTileSlab(BlockList.clayTile).register();
+        BlockList.orangeClayTileSlab = new OrangeClayTileSlab(BlockList.clayTile).register();
+        BlockList.magentaClayTileSlab = new MagentaClayTileSlab(BlockList.clayTile).register();
+        BlockList.lightBlueClayTileSlab = new LightBlueClayTileSlab(BlockList.clayTile).register();
+        BlockList.yellowClayTileSlab = new YellowClayTileSlab(BlockList.clayTile).register();
         //slabadder
     }
 }

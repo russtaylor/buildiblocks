@@ -4,13 +4,13 @@ import net.minecraft.block.Block;
 import net.minecraft.buildiblocks.block.ModBlockStairs;
 
 /**
- * Class Name Stairs
+ * Orange Clay Tile Stairs
  */
-public class ClassNameStairs extends ModBlockStairs {
+public class OrangeClayTileStairs extends ModBlockStairs {
 
-    public static String BLOCK_NAME = "class_name_stairs";
+    public static String BLOCK_NAME = "orange_clay_tile_stairs";
 
-    public ClassNameStairs(Block parent) {
+    public OrangeClayTileStairs(Block parent) {
         super(parent, parent.getDefaultState(), BLOCK_NAME);
     }
 

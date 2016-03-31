@@ -171,7 +171,7 @@ class BlockGenerator
     block_string = "        register#{register_cap_type}(BlockList.#{varname}, #{parent_string}#{enum_string});"
     if type == 'slab'
       block_string = "        registerSlab(BlockList.#{varname}.getSingleSlab(), #{parent_string}#{enum_string});"
-      if @has_enum
+      unless enum_string.nil?
         block_string.gsub!(/getSingleSlab\(\)/, 'getSingleSlab(), 0')
       end
     end

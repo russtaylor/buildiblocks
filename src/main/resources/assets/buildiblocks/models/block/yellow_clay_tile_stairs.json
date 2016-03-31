@@ -1,0 +1,8 @@
+{
+  "parent": "block/stairs",
+  "textures": {
+    "bottom": "buildiblocks:blocks/clay_tile_yellow",
+    "top": "buildiblocks:blocks/clay_tile_yellow",
+    "side": "buildiblocks:blocks/clay_tile_yellow"
+  }
+}

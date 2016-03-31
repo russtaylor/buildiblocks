@@ -4,14 +4,12 @@ import net.minecraft.block.Block;
 import net.minecraft.buildiblocks.block.ModBlockWall;
 
 /**
- * Brick walls.
- *
- * Created by russt on 12/2/14.
+ * Class Name Wall
  */
-public class BrickWall extends ModBlockWall {
-    public static final String BLOCK_NAME = "brick_wall";
+public class ClassNameWall extends ModBlockWall {
+    public static final String BLOCK_NAME = "class_name_wall";
 
-    public BrickWall(Block block) {
+    public ClassNameWall(Block block) {
         super(block, BLOCK_NAME);
     }
 }
