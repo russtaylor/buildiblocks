@@ -25,10 +25,10 @@ public class BlockHandler {
         registerVanillaFences();
         registerVanillaStairs();
         registerVanillaSlabs();
+        registerPillars();
     }
 
     private void registerVanillaBlocks() {
-        BlockList.stonePillar = new StonePillar(Blocks.stone).register();
         BlockList.clayTile = new ClayTile(Blocks.hardened_clay).register();
         BlockList.orangeClayTile = new OrangeClayTile(BlockList.clayTile).register();
         BlockList.magentaClayTile = new MagentaClayTile(BlockList.clayTile).register();
@@ -46,6 +46,10 @@ public class BlockHandler {
         BlockList.redClayTile = new RedClayTile(BlockList.clayTile).register();
         BlockList.blackClayTile = new BlackClayTile(BlockList.clayTile).register();
         //blockadder
+    }
+
+    private void registerPillars() {
+        BlockList.stonePillar = new StonePillar(Blocks.stone).register();
     }
 
     private void registerVanillaWalls() {

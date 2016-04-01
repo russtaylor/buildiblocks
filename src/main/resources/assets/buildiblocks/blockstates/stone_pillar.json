@@ -1,5 +1,8 @@
 {
   "variants": {
-    "normal": { "model": "buildiblocks:stone_pillar" }
+    "axis=y":  { "model": "buildiblocks:stone_pillar" },
+    "axis=z":   { "model": "buildiblocks:stone_pillar_side" },
+    "axis=x":   { "model": "buildiblocks:stone_pillar_side", "y": 90 },
+    "axis=none": { "model": "buildiblocks:stone_pillar" }
   }
 }

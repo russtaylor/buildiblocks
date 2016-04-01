@@ -12,7 +12,6 @@ public class BlockList {
     public static List<IModBlock> blockList = Lists.newArrayList();
 
     // Blocks
-    public static ModBlock stonePillar;
     public static ModBlock clayTile;
     public static ModBlock orangeClayTile;
     public static ModBlock magentaClayTile;
@@ -30,6 +29,9 @@ public class BlockList {
     public static ModBlock redClayTile;
     public static ModBlock blackClayTile;
     //blockadder
+
+    // Pillars
+    public static ModBlockPillar stonePillar;
 
     // Walls
     public static ModBlockWall netherQuartzWall;

@@ -17,8 +17,6 @@ import net.minecraftforge.fml.common.registry.GameRegistry;
 
 /**
  * Handles creating the recipes needed by the mod.
- *
- * Created by russt on 12/12/14.
  */
 public class RecipeHandler {
     public void registerRecipes() {
