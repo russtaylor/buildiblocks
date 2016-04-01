@@ -2,6 +2,9 @@ package net.minecraft.buildiblocks.block;
 
 import net.minecraft.block.BlockColored;
 import net.minecraft.buildiblocks.block.block.*;
+import net.minecraft.buildiblocks.block.pillar.CarvedBirchLog;
+import net.minecraft.buildiblocks.block.pillar.CarvedBirchWood;
+import net.minecraft.buildiblocks.block.pillar.StonePillar;
 import net.minecraft.buildiblocks.block.stairs.*;
 import net.minecraft.buildiblocks.block.wall.*;
 import net.minecraft.init.Blocks;
@@ -50,6 +53,8 @@ public class BlockHandler {
 
     private void registerPillars() {
         BlockList.stonePillar = new StonePillar(Blocks.stone).register();
+        BlockList.carvedBirchWood = new CarvedBirchWood(Blocks.log).register();
+        BlockList.carvedBirchLog = new CarvedBirchLog(Blocks.log).register();
     }
 
     private void registerVanillaWalls() {

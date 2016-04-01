@@ -26,7 +26,7 @@ public class ModBlockPillar extends BlockRotatedPillar implements IModBlock {
 
     private String blockName;
 
-    public static final PropertyEnum<EnumFacing.Axis> AXIS = PropertyEnum.create("axis", EnumFacing.Axis.class);
+    private static final PropertyEnum<EnumFacing.Axis> AXIS = PropertyEnum.create("axis", EnumFacing.Axis.class);
 
     public ModBlockPillar(Block block, String blockName) {
         super(block.getMaterial());

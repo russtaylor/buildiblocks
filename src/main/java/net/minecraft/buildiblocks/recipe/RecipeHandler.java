@@ -72,6 +72,8 @@ public class RecipeHandler {
 
     private void registerPillarRecipes() {
         registerPillar(BlockList.stonePillar, Blocks.stone);
+        registerPillar(BlockList.carvedBirchWood, Blocks.wooden_slab, BlockPlanks.EnumType.BIRCH.getMetadata(), 1);
+        registerPillar(BlockList.carvedBirchLog, Blocks.log, BlockPlanks.EnumType.BIRCH.getMetadata());
         //pillaradder
     }
 
@@ -318,8 +320,12 @@ public class RecipeHandler {
     }
 
     private void registerPillar(Block pillarBlock, Block sourceBlock, int meta) {
+        this.registerPillar(pillarBlock, sourceBlock, meta, 2);
+    }
+
+    private void registerPillar(Block pillarBlock, Block sourceBlock, int meta, int numReturn) {
         ItemStack sourceItemStack = new ItemStack(sourceBlock, 1, meta);
-        ItemStack pillarStack = new ItemStack(pillarBlock, 2);
+        ItemStack pillarStack = new ItemStack(pillarBlock, numReturn);
         GameRegistry.addRecipe(pillarStack, "x", "x", 'x', sourceItemStack);
     }
 

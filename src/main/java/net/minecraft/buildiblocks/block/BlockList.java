@@ -32,6 +32,8 @@ public class BlockList {
 
     // Pillars
     public static ModBlockPillar stonePillar;
+    public static ModBlockPillar carvedBirchWood;
+    public static ModBlockPillar carvedBirchLog;
 
     // Walls
     public static ModBlockWall netherQuartzWall;

@@ -1,4 +1,4 @@
-package net.minecraft.buildiblocks.block.block;
+package net.minecraft.buildiblocks.block.pillar;
 
 import net.minecraft.block.Block;
 import net.minecraft.buildiblocks.block.ModBlock;

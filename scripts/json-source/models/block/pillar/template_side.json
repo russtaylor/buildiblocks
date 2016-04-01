@@ -1,0 +1,7 @@
+{
+  "parent": "block/column_side",
+  "textures": {
+    "end": "{mod_name}blocks/{top_texture}",
+    "side": "{mod_name}blocks/{side_texture}"
+  }
+}

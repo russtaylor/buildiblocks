@@ -1,0 +1,8 @@
+{
+  "variants": {
+    "axis=y":  { "model": "{mod_name}{block_name}" },
+    "axis=z":   { "model": "{mod_name}{block_name}_side" },
+    "axis=x":   { "model": "{mod_name}{block_name}_side", "y": 90 },
+    "axis=none": { "model": "{mod_name}{block_name}" }
+  }
+}

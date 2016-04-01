@@ -167,6 +167,8 @@ tile.red_clay_tile_slab.name=Red Clay Tile Slab
 tile.black_clay_tile.name=Black Clay Tile
 tile.black_clay_tile_stairs.name=Black Clay Tile Stairs
 tile.black_clay_tile_slab.name=Black Clay Tile Slab
+tile.carved_birch_wood.name=Carved Birch Wood
+tile.carved_birch_log.name=Carved Birch Log
 tile.wordadder=nothing
 
 item.iron_rod.name=Iron Rod

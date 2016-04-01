@@ -1,0 +1,8 @@
+{
+  "variants": {
+    "axis=y":  { "model": "buildiblocks:carved_birch_wood" },
+    "axis=z":   { "model": "buildiblocks:carved_birch_wood_side" },
+    "axis=x":   { "model": "buildiblocks:carved_birch_wood_side", "y": 90 },
+    "axis=none": { "model": "buildiblocks:carved_birch_wood" }
+  }
+}
