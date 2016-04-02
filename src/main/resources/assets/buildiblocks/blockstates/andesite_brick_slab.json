@@ -1,0 +1,6 @@
+{
+  "variants": {
+    "half=bottom": { "model": "buildiblocks:andesite_brick_slab_bottom" },
+    "half=top": { "model": "buildiblocks:andesite_brick_slab_top" }
+  }
+}

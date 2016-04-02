@@ -169,6 +169,10 @@ tile.black_clay_tile_stairs.name=Black Clay Tile Stairs
 tile.black_clay_tile_slab.name=Black Clay Tile Slab
 tile.carved_birch_wood.name=Carved Birch Wood
 tile.carved_birch_log.name=Carved Birch Log
+tile.andesite_brick.name=Andesite Brick
+tile.andesite_brick_stairs.name=Andesite Brick Stairs
+tile.andesite_brick_wall.name=Andesite Brick Wall
+tile.andesite_brick_slab.name=Andesite Brick Slab
 tile.wordadder=nothing
 
 item.iron_rod.name=Iron Rod

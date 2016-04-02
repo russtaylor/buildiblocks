@@ -22,6 +22,7 @@ public class RecipeHandler {
     public void registerRecipes() {
         removeVanillaRecipes();
         registerPillarRecipes();
+        registerBrickRecipes();
         registerWallRecipes();
         registerStairRecipes();
         registerSlabRecipes();
@@ -70,6 +71,11 @@ public class RecipeHandler {
         //tileadder
     }
 
+    private void registerBrickRecipes() {
+        registerBrick(BlockList.andesiteBrick, Blocks.stone, BlockStone.EnumType.ANDESITE.getMetadata());
+        //brickadder
+    }
+
     private void registerPillarRecipes() {
         registerPillar(BlockList.stonePillar, Blocks.stone);
         registerPillar(BlockList.carvedBirchWood, Blocks.wooden_slab, BlockPlanks.EnumType.BIRCH.getMetadata(), 1);
@@ -101,6 +107,7 @@ public class RecipeHandler {
         registerWall(BlockList.obsidianWall, Blocks.obsidian);
         registerWall(BlockList.emeraldWall, Blocks.emerald_block);
         registerWall(BlockList.mossyCobblestoneWall, Blocks.mossy_cobblestone);
+        registerWall(BlockList.andesiteBrickWall, BlockList.andesiteBrick);
         //walladder
     }
 
@@ -171,6 +178,7 @@ public class RecipeHandler {
         registerStairs(BlockList.greenClayTileStairs, BlockList.greenClayTile);
         registerStairs(BlockList.redClayTileStairs, BlockList.redClayTile);
         registerStairs(BlockList.blackClayTileStairs, BlockList.blackClayTile);
+        registerStairs(BlockList.andesiteBrickStairs, BlockList.andesiteBrick);
         //stairsadder
     }
 
@@ -240,11 +248,17 @@ public class RecipeHandler {
         registerSlab(BlockList.greenClayTileSlab.getSingleSlab(), BlockList.greenClayTile);
         registerSlab(BlockList.redClayTileSlab.getSingleSlab(), BlockList.redClayTile);
         registerSlab(BlockList.blackClayTileSlab.getSingleSlab(), BlockList.blackClayTile);
+        registerSlab(BlockList.andesiteBrickSlab.getSingleSlab(), BlockList.andesiteBrick);
         //slabadder
     }
 
     private void removeVanillaRecipes() {
         removeBlockRecipe(Blocks.stone_slab);
+
+        // Remove polished andesite/diorite/granite recipes
+        removeBlockRecipe(Blocks.stone, BlockStone.EnumType.ANDESITE_SMOOTH.getMetadata());
+        removeBlockRecipe(Blocks.stone, BlockStone.EnumType.DIORITE_SMOOTH.getMetadata());
+        removeBlockRecipe(Blocks.stone, BlockStone.EnumType.GRANITE_SMOOTH.getMetadata());
 
         // Remove Stair recipes
         removeBlockRecipe(Blocks.sandstone_stairs);
@@ -263,6 +277,14 @@ public class RecipeHandler {
     }
 
     private void reregisterVanillaRecipes() {
+        // Re-register polished andesite/diorite/granite
+        registerBlock(Blocks.stone, BlockStone.EnumType.ANDESITE_SMOOTH.getMetadata(),
+                Blocks.stone, BlockStone.EnumType.ANDESITE.getMetadata());
+        registerBlock(Blocks.stone, BlockStone.EnumType.DIORITE_SMOOTH.getMetadata(),
+                Blocks.stone, BlockStone.EnumType.DIORITE.getMetadata());
+        registerBlock(Blocks.stone, BlockStone.EnumType.GRANITE_SMOOTH.getMetadata(),
+                Blocks.stone, BlockStone.EnumType.GRANITE.getMetadata());
+
         // Re-register default stairs.
         registerStairs(Blocks.stone_stairs, Blocks.cobblestone);
         registerStairs(Blocks.spruce_stairs, Blocks.planks, BlockPlanks.EnumType.SPRUCE.getMetadata());
@@ -288,7 +310,11 @@ public class RecipeHandler {
     }
 
     private void removeBlockRecipe(Block block) {
-        Item item = Item.getItemFromBlock(block);
+        this.removeBlockRecipe(block, 0);
+    }
+
+    private void removeBlockRecipe(Block block, int meta) {
+        Item item = new ItemStack(block, 1, meta).getItem();
         this.removeRecipe(item);
     }
 
@@ -306,6 +332,16 @@ public class RecipeHandler {
                 }
             }
         }
+    }
+
+    private void registerBlock(Block outputBlock, Block inputBlock) {
+        this.registerBlock(outputBlock, 0, inputBlock, 0);
+    }
+
+    private void registerBlock(Block outputBlock, int outputMeta, Block inputBlock, int inputMeta) {
+        ItemStack outputStack = new ItemStack(outputBlock, 1, outputMeta);
+        ItemStack inputStack = new ItemStack(inputBlock, 1, inputMeta);
+        GameRegistry.addRecipe(outputStack, "x", 'x', inputStack);
     }
 
     private void registerFence(Block fenceBlock, Item plankItem, Item stickItem) {
@@ -327,6 +363,16 @@ public class RecipeHandler {
         ItemStack sourceItemStack = new ItemStack(sourceBlock, 1, meta);
         ItemStack pillarStack = new ItemStack(pillarBlock, numReturn);
         GameRegistry.addRecipe(pillarStack, "x", "x", 'x', sourceItemStack);
+    }
+
+    private void registerBrick(Block brickBlock, Block sourceBlock) {
+        this.registerBrick(brickBlock, sourceBlock, 0);
+    }
+
+    private void registerBrick(Block brickBlock, Block sourceBlock, int meta) {
+        ItemStack sourceItemStack = new ItemStack(sourceBlock, 1, meta);
+        ItemStack brickStack = new ItemStack(brickBlock, 4);
+        GameRegistry.addRecipe(brickStack, "xx", "xx", 'x', sourceItemStack);
     }
 
     private void registerStairs(Block stairBlock, Block sourceBlock) {

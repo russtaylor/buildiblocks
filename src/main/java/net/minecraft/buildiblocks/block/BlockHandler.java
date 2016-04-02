@@ -48,6 +48,7 @@ public class BlockHandler {
         BlockList.greenClayTile = new GreenClayTile(BlockList.clayTile).register();
         BlockList.redClayTile = new RedClayTile(BlockList.clayTile).register();
         BlockList.blackClayTile = new BlackClayTile(BlockList.clayTile).register();
+        BlockList.andesiteBrick = new AndesiteBrick(Blocks.stone).register();
         //blockadder
     }
 
@@ -74,6 +75,7 @@ public class BlockHandler {
         BlockList.obsidianWall = new ObsidianWall(Blocks.obsidian).register();
         BlockList.emeraldWall = new EmeraldWall(Blocks.emerald_block).register();
         BlockList.mossyCobblestoneWall = new MossyCobblestoneWall(Blocks.mossy_cobblestone).register();
+        BlockList.andesiteBrickWall = new AndesiteBrickWall(Blocks.stone).register();
         //walladder
     }
 
@@ -149,6 +151,7 @@ public class BlockHandler {
         BlockList.greenClayTileStairs = new GreenClayTileStairs(BlockList.clayTile).register();
         BlockList.redClayTileStairs = new RedClayTileStairs(BlockList.clayTile).register();
         BlockList.blackClayTileStairs = new BlackClayTileStairs(BlockList.clayTile).register();
+        BlockList.andesiteBrickStairs = new AndesiteBrickStairs(Blocks.stone).register();
         //stairsadder
     }
 
@@ -218,6 +221,7 @@ public class BlockHandler {
         BlockList.greenClayTileSlab = new GreenClayTileSlab(BlockList.clayTile).register();
         BlockList.redClayTileSlab = new RedClayTileSlab(BlockList.clayTile).register();
         BlockList.blackClayTileSlab = new BlackClayTileSlab(BlockList.clayTile).register();
+        BlockList.andesiteBrickSlab = new AndesiteBrickSlab(Blocks.stone).register();
         //slabadder
     }
 }

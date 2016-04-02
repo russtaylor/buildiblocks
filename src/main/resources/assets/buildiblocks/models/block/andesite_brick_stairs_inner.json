@@ -1,0 +1,8 @@
+{
+  "parent": "block/inner_stairs",
+  "textures": {
+    "bottom": "buildiblocks:blocks/andesite_brick",
+    "top": "buildiblocks:blocks/andesite_brick",
+    "side": "buildiblocks:blocks/andesite_brick"
+  }
+}
