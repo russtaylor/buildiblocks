@@ -7,7 +7,6 @@ import net.minecraft.block.properties.PropertyBool;
 import net.minecraft.block.state.BlockState;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.buildiblocks.BuildiblocksMod;
-import net.minecraft.buildiblocks.common.ModBlockHelper;
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.init.Blocks;
 import net.minecraft.util.AxisAlignedBB;
@@ -173,7 +172,6 @@ public class ModBlockWall extends Block implements IModBlock {
     public ModBlockWall register() {
         GameRegistry.registerBlock(this);
         BlockList.blockList.add(this);
-        ModBlockHelper.registerItemRender(this, this.getBlockName());
         return this;
     }
 

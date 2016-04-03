@@ -1,7 +1,6 @@
 package net.minecraft.buildiblocks.block;
 
 import net.minecraft.block.Block;
-import net.minecraft.buildiblocks.common.ModBlockHelper;
 import net.minecraft.buildiblocks.item.ModBlockSlabItem;
 import net.minecraftforge.fml.common.registry.GameRegistry;
 
@@ -29,7 +28,6 @@ public class ModBlockSlab {
         GameRegistry.registerBlock(doubleSlab, null, doubleSlab.getBlockName(), singleSlab, doubleSlab);
         GameRegistry.registerBlock(singleSlab, ModBlockSlabItem.class, singleSlab.getBlockName(), singleSlab, doubleSlab);
         BlockList.blockList.add(singleSlab);
-        ModBlockHelper.registerItemRender(this.getSingleSlab(), singleSlab.getBlockName());
         return this;
     }
 }

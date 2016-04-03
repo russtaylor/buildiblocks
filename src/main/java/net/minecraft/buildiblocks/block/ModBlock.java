@@ -1,13 +1,8 @@
 package net.minecraft.buildiblocks.block;
 
 import net.minecraft.block.Block;
-import net.minecraft.block.material.Material;
-import net.minecraft.buildiblocks.common.ModBlockHelper;
 import net.minecraft.creativetab.CreativeTabs;
-import net.minecraft.util.BlockPos;
-import net.minecraft.util.EnumFacing;
 import net.minecraft.util.EnumWorldBlockLayer;
-import net.minecraft.world.IBlockAccess;
 import net.minecraftforge.fml.common.registry.GameRegistry;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
@@ -42,7 +37,6 @@ public class ModBlock extends Block implements IModBlock {
     public ModBlock register() {
         GameRegistry.registerBlock(this);
         BlockList.blockList.add(this);
-        ModBlockHelper.registerItemRender(this, this.getBlockName());
         return this;
     }
 }

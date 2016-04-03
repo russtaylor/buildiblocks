@@ -1,14 +1,11 @@
 package net.minecraft.buildiblocks.block;
 
 import net.minecraft.block.Block;
-import net.minecraft.block.BlockLog;
-import net.minecraft.block.BlockLog.EnumAxis;
 import net.minecraft.block.BlockRotatedPillar;
 import net.minecraft.block.properties.IProperty;
 import net.minecraft.block.properties.PropertyEnum;
 import net.minecraft.block.state.BlockState;
 import net.minecraft.block.state.IBlockState;
-import net.minecraft.buildiblocks.common.ModBlockHelper;
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.util.BlockPos;
@@ -51,7 +48,6 @@ public class ModBlockPillar extends BlockRotatedPillar implements IModBlock {
     public ModBlockPillar register() {
         GameRegistry.registerBlock(this);
         BlockList.blockList.add(this);
-        ModBlockHelper.registerItemRender(this, this.getBlockName());
         return this;
     }
 

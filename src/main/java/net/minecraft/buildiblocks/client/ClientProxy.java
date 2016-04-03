@@ -10,12 +10,11 @@ import net.minecraft.buildiblocks.block.BlockList;
 import net.minecraft.buildiblocks.block.IModBlock;
 import net.minecraft.buildiblocks.item.IModItem;
 import net.minecraft.buildiblocks.item.ItemList;
+import net.minecraftforge.client.model.ModelLoader;
 import net.minecraftforge.fml.common.registry.GameRegistry;
 
 /**
  * A proxy to handle registering the renderers for the blocks we have.
- *
- * Created by russt on 11/21/14.
  */
 @SuppressWarnings("unused")
 public class ClientProxy extends CommonProxy {
@@ -32,12 +31,14 @@ public class ClientProxy extends CommonProxy {
         }
     }
 
-    public void registerBlockRenderer(Item item, int metadata, String itemName) {
+    private void registerBlockRenderer(Item item, int metadata, String itemName) {
         ItemModelMesher mesher = Minecraft.getMinecraft().getRenderItem().getItemModelMesher();
         mesher.register(item, metadata, new ModelResourceLocation(itemName, "inventory"));
+        ModelLoader.setCustomModelResourceLocation(item, 0,
+                new ModelResourceLocation(BuildiblocksMod.MOD_ID + ":" + itemName, "inventory"));
     }
 
-    public void registerBlockRenderer(Item item, String itemName) {
+    private void registerBlockRenderer(Item item, String itemName) {
         registerBlockRenderer(item, 0, itemName);
     }
 }
