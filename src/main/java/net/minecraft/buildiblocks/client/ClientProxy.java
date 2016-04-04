@@ -18,8 +18,8 @@ import net.minecraftforge.fml.common.registry.GameRegistry;
  */
 @SuppressWarnings("unused")
 public class ClientProxy extends CommonProxy {
-    @Override
-    public void registerRenderers() {
+
+    public void preInit() {
         for (IModBlock block : BlockList.blockList) {
             Item item = GameRegistry.findItem(BuildiblocksMod.MOD_ID, block.getBlockName());
             registerBlockRenderer(item, BuildiblocksMod.MOD_ID + ":" + block.getBlockName());
@@ -32,10 +32,7 @@ public class ClientProxy extends CommonProxy {
     }
 
     private void registerBlockRenderer(Item item, int metadata, String itemName) {
-        ItemModelMesher mesher = Minecraft.getMinecraft().getRenderItem().getItemModelMesher();
-        mesher.register(item, metadata, new ModelResourceLocation(itemName, "inventory"));
-        ModelLoader.setCustomModelResourceLocation(item, 0,
-                new ModelResourceLocation(BuildiblocksMod.MOD_ID + ":" + itemName, "inventory"));
+        ModelLoader.setCustomModelResourceLocation(item, metadata, new ModelResourceLocation(itemName, "inventory"));
     }
 
     private void registerBlockRenderer(Item item, String itemName) {

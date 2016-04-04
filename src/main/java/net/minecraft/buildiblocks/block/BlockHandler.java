@@ -2,6 +2,7 @@ package net.minecraft.buildiblocks.block;
 
 import net.minecraft.block.BlockColored;
 import net.minecraft.buildiblocks.block.block.*;
+import net.minecraft.buildiblocks.block.fence.EmeraldFence;
 import net.minecraft.buildiblocks.block.pillar.CarvedBirchLog;
 import net.minecraft.buildiblocks.block.pillar.CarvedBirchWood;
 import net.minecraft.buildiblocks.block.pillar.StonePillar;
@@ -83,6 +84,7 @@ public class BlockHandler {
         BlockList.ironFence = new IronFence(Blocks.iron_block).register();
         BlockList.goldFence = new GoldFence(Blocks.gold_block).register();
         BlockList.diamondFence = new DiamondFence(Blocks.diamond_block).register();
+        BlockList.emeraldFence = new EmeraldFence(Blocks.emerald_block).register();
     }
 
     private void registerVanillaStairs() {

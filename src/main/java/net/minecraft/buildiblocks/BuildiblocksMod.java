@@ -20,8 +20,8 @@ import net.minecraftforge.fml.common.registry.GameRegistry;
 public class BuildiblocksMod
 {
     public static final String MOD_ID = "buildiblocks";
-    public static final String VERSION = "0.2.2";
-    public static final String MOD_NAME = "Buildiblocks";
+    static final String VERSION = "0.2.2";
+    static final String MOD_NAME = "Buildiblocks";
 
     // World
     public static World world;
@@ -29,13 +29,13 @@ public class BuildiblocksMod
     public static ModWorldGenerator worldGenerator;
 
     // Blocks
-    public static BlockHandler blockHandler = new BlockHandler();
+    private static BlockHandler blockHandler = new BlockHandler();
 
     // Items
-    public static ItemHandler itemHandler = new ItemHandler();
+    private static ItemHandler itemHandler = new ItemHandler();
 
     // Recipes
-    public static RecipeHandler recipeHandler = new RecipeHandler();
+    private static RecipeHandler recipeHandler = new RecipeHandler();
 
     // World generation
     private ModBlockGenerator generator = new ModBlockGenerator();
@@ -52,6 +52,7 @@ public class BuildiblocksMod
         blockHandler.registerBlocks();
         itemHandler.registerItems();
         recipeHandler.registerRecipes();
+        proxy.preInit();
     }
 
     @SubscribeEvent

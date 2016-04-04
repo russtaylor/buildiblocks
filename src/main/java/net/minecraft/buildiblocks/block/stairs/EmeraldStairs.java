@@ -4,7 +4,7 @@ import net.minecraft.block.Block;
 import net.minecraft.buildiblocks.block.ModBlockStairs;
 
 /**
- * Custom class for Emerald Stairs.
+ * Emerald Stairs
  */
 public class EmeraldStairs extends ModBlockStairs {
 

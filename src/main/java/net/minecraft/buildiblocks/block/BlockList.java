@@ -60,6 +60,7 @@ public class BlockList {
     public static ModBlockFence ironFence;
     public static ModBlockFence goldFence;
     public static ModBlockFence diamondFence;
+    public static ModBlockFence emeraldFence;
     //fenceadder
 
     // Stairs
@@ -75,7 +76,6 @@ public class BlockList {
     public static ModBlockStairs crackedStoneBrickStairs;
     public static ModBlockStairs mossyStoneBrickStairs;
     public static ModBlockStairs obsidianStairs;
-    public static ModBlockStairs emeraldStairs;
     public static ModBlockStairs hayStairs;
     public static ModBlockStairs orangeWoolStairs;
     public static ModBlockStairs whiteWoolStairs;
@@ -129,6 +129,7 @@ public class BlockList {
     public static ModBlockStairs redClayTileStairs;
     public static ModBlockStairs blackClayTileStairs;
     public static ModBlockStairs andesiteBrickStairs;
+    public static ModBlockStairs emeraldStairs;
     //stairsadder
 
     // Slabs
@@ -143,7 +144,6 @@ public class BlockList {
     public static ModBlockSlab crackedStoneBrickSlab;
     public static ModBlockSlab mossyStoneBrickSlab;
     public static ModBlockSlab obsidianSlab;
-    public static ModBlockSlab emeraldSlab;
     public static ModBlockSlab haySlab;
     public static ModBlockSlab orangeWoolSlab;
     public static ModBlockSlab whiteWoolSlab;
@@ -198,5 +198,6 @@ public class BlockList {
     public static ModBlockSlab redClayTileSlab;
     public static ModBlockSlab blackClayTileSlab;
     public static ModBlockSlab andesiteBrickSlab;
+    public static ModBlockSlab emeraldSlab;
     //slabadder
 }

@@ -37,6 +37,7 @@ public class RecipeHandler {
         registerRod(Items.iron_ingot, ItemList.ironRod);
         registerRod(Items.diamond, ItemList.diamondRod);
         registerRod(Items.gold_ingot, ItemList.goldRod);
+        registerRod(Items.emerald, ItemList.emeraldRod);
     }
 
     private void registerRandomRecipes() {
@@ -87,6 +88,7 @@ public class RecipeHandler {
         registerFence(BlockList.ironFence, Items.iron_ingot, ItemList.ironRod);
         registerFence(BlockList.goldFence, Items.gold_ingot, ItemList.goldRod);
         registerFence(BlockList.diamondFence, Items.diamond, ItemList.diamondRod);
+        registerFence(BlockList.emeraldFence, Items.emerald, ItemList.emeraldRod);
         //fenceadder
     }
 

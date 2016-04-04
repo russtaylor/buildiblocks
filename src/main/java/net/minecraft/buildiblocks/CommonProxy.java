@@ -5,8 +5,9 @@ package net.minecraft.buildiblocks;
  *
  * Created by russt on 11/21/14.
  */
+@SuppressWarnings("unused")
 public class CommonProxy {
-    public void registerRenderers() {
-
+    public void preInit() {
+        // No-op
     }
 }
