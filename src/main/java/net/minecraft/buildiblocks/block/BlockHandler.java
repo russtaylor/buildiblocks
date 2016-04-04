@@ -50,6 +50,8 @@ public class BlockHandler {
         BlockList.redClayTile = new RedClayTile(BlockList.clayTile).register();
         BlockList.blackClayTile = new BlackClayTile(BlockList.clayTile).register();
         BlockList.andesiteBrick = new AndesiteBrick(Blocks.stone).register();
+        BlockList.dioriteBrick = new DioriteBrick(Blocks.stone).register();
+        BlockList.graniteBrick = new GraniteBrick(Blocks.stone).register();
         //blockadder
     }
 
@@ -77,6 +79,8 @@ public class BlockHandler {
         BlockList.emeraldWall = new EmeraldWall(Blocks.emerald_block).register();
         BlockList.mossyCobblestoneWall = new MossyCobblestoneWall(Blocks.mossy_cobblestone).register();
         BlockList.andesiteBrickWall = new AndesiteBrickWall(Blocks.stone).register();
+        BlockList.dioriteBrickWall = new DioriteBrickWall(Blocks.stone).register();
+        BlockList.graniteBrickWall = new GraniteBrickWall(Blocks.stone).register();
         //walladder
     }
 
@@ -154,6 +158,8 @@ public class BlockHandler {
         BlockList.redClayTileStairs = new RedClayTileStairs(BlockList.clayTile).register();
         BlockList.blackClayTileStairs = new BlackClayTileStairs(BlockList.clayTile).register();
         BlockList.andesiteBrickStairs = new AndesiteBrickStairs(Blocks.stone).register();
+        BlockList.dioriteBrickStairs = new DioriteBrickStairs(Blocks.stone).register();
+        BlockList.graniteBrickStairs = new GraniteBrickStairs(Blocks.stone).register();
         //stairsadder
     }
 
@@ -224,6 +230,8 @@ public class BlockHandler {
         BlockList.redClayTileSlab = new RedClayTileSlab(BlockList.clayTile).register();
         BlockList.blackClayTileSlab = new BlackClayTileSlab(BlockList.clayTile).register();
         BlockList.andesiteBrickSlab = new AndesiteBrickSlab(Blocks.stone).register();
+        BlockList.dioriteBrickSlab = new DioriteBrickSlab(Blocks.stone).register();
+        BlockList.graniteBrickSlab = new GraniteBrickSlab(Blocks.stone).register();
         //slabadder
     }
 }

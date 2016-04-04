@@ -1,0 +1,8 @@
+{
+  "parent": "block/inner_stairs",
+  "textures": {
+    "bottom": "buildiblocks:blocks/diorite_brick",
+    "top": "buildiblocks:blocks/diorite_brick",
+    "side": "buildiblocks:blocks/diorite_brick"
+  }
+}

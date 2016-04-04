@@ -29,6 +29,8 @@ public class BlockList {
     public static ModBlock redClayTile;
     public static ModBlock blackClayTile;
     public static ModBlock andesiteBrick;
+    public static ModBlock dioriteBrick;
+    public static ModBlock graniteBrick;
     //blockadder
 
     // Pillars
@@ -54,6 +56,8 @@ public class BlockList {
     public static ModBlockWall emeraldWall;
     public static ModBlockWall mossyCobblestoneWall;
     public static ModBlockWall andesiteBrickWall;
+    public static ModBlockWall dioriteBrickWall;
+    public static ModBlockWall graniteBrickWall;
     //walladder
 
     // Fences
@@ -130,6 +134,8 @@ public class BlockList {
     public static ModBlockStairs blackClayTileStairs;
     public static ModBlockStairs andesiteBrickStairs;
     public static ModBlockStairs emeraldStairs;
+    public static ModBlockStairs dioriteBrickStairs;
+    public static ModBlockStairs graniteBrickStairs;
     //stairsadder
 
     // Slabs
@@ -199,5 +205,7 @@ public class BlockList {
     public static ModBlockSlab blackClayTileSlab;
     public static ModBlockSlab andesiteBrickSlab;
     public static ModBlockSlab emeraldSlab;
+    public static ModBlockSlab dioriteBrickSlab;
+    public static ModBlockSlab graniteBrickSlab;
     //slabadder
 }

@@ -74,6 +74,8 @@ public class RecipeHandler {
 
     private void registerBrickRecipes() {
         registerBrick(BlockList.andesiteBrick, Blocks.stone, BlockStone.EnumType.ANDESITE.getMetadata());
+        registerBrick(BlockList.dioriteBrick, Blocks.stone, BlockStone.EnumType.DIORITE.getMetadata());
+        registerBrick(BlockList.graniteBrick, Blocks.stone, BlockStone.EnumType.GRANITE.getMetadata());
         //brickadder
     }
 
@@ -110,6 +112,8 @@ public class RecipeHandler {
         registerWall(BlockList.emeraldWall, Blocks.emerald_block);
         registerWall(BlockList.mossyCobblestoneWall, Blocks.mossy_cobblestone);
         registerWall(BlockList.andesiteBrickWall, BlockList.andesiteBrick);
+        registerWall(BlockList.dioriteBrickWall, BlockList.dioriteBrick);
+        registerWall(BlockList.graniteBrickWall, BlockList.graniteBrick);
         //walladder
     }
 
@@ -181,6 +185,8 @@ public class RecipeHandler {
         registerStairs(BlockList.redClayTileStairs, BlockList.redClayTile);
         registerStairs(BlockList.blackClayTileStairs, BlockList.blackClayTile);
         registerStairs(BlockList.andesiteBrickStairs, BlockList.andesiteBrick);
+        registerStairs(BlockList.dioriteBrickStairs, BlockList.dioriteBrick);
+        registerStairs(BlockList.graniteBrickStairs, BlockList.graniteBrick);
         //stairsadder
     }
 
@@ -251,6 +257,8 @@ public class RecipeHandler {
         registerSlab(BlockList.redClayTileSlab.getSingleSlab(), BlockList.redClayTile);
         registerSlab(BlockList.blackClayTileSlab.getSingleSlab(), BlockList.blackClayTile);
         registerSlab(BlockList.andesiteBrickSlab.getSingleSlab(), BlockList.andesiteBrick);
+        registerSlab(BlockList.dioriteBrickSlab.getSingleSlab(), BlockList.dioriteBrick);
+        registerSlab(BlockList.graniteBrickSlab.getSingleSlab(), BlockList.graniteBrick);
         //slabadder
     }
 

@@ -1,0 +1,6 @@
+{
+  "variants": {
+    "half=bottom": { "model": "buildiblocks:diorite_brick_slab_bottom" },
+    "half=top": { "model": "buildiblocks:diorite_brick_slab_top" }
+  }
+}
