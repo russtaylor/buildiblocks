@@ -164,6 +164,8 @@ def replace_options(passed_option_list, file_option_list, file_text, file_path)
         replace_option = "#{replace_option}:"
       end
     end
+    # If we have any duplicate blocks/ references (useful for blocks using a vanilla and a non-vanilla texture)
+    file_text.gsub!(/"blocks\/(.*blocks\/)/, '"\1')
     unless replace_option.nil?
       file_text.gsub!(/\{#{option}\}/, replace_option)
     end
