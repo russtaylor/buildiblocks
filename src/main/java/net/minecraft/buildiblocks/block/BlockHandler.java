@@ -3,10 +3,9 @@ package net.minecraft.buildiblocks.block;
 import net.minecraft.block.BlockColored;
 import net.minecraft.buildiblocks.block.block.*;
 import net.minecraft.buildiblocks.block.fence.EmeraldFence;
-import net.minecraft.buildiblocks.block.pillar.CarvedBirchLog;
-import net.minecraft.buildiblocks.block.pillar.CarvedBirchWood;
-import net.minecraft.buildiblocks.block.pillar.StonePillar;
+import net.minecraft.buildiblocks.block.pillar.*;
 import net.minecraft.buildiblocks.block.stairs.*;
+import net.minecraft.buildiblocks.block.torch.IronTorch;
 import net.minecraft.buildiblocks.block.wall.*;
 import net.minecraft.init.Blocks;
 import net.minecraft.buildiblocks.block.fence.DiamondFence;
@@ -24,15 +23,16 @@ public class BlockHandler {
     }
 
     private void registerVanillaBlockExtensions() {
-        registerVanillaBlocks();
-        registerVanillaWalls();
-        registerVanillaFences();
-        registerVanillaStairs();
-        registerVanillaSlabs();
-        registerPillars();
+        registerModBlocks();
+        registerModTorches();
+        registerModWalls();
+        registerModFences();
+        registerModStairs();
+        registerModSlabs();
+        registerModPillars();
     }
 
-    private void registerVanillaBlocks() {
+    private void registerModBlocks() {
         BlockList.clayTile = new ClayTile(Blocks.hardened_clay).register();
         BlockList.orangeClayTile = new OrangeClayTile(BlockList.clayTile).register();
         BlockList.magentaClayTile = new MagentaClayTile(BlockList.clayTile).register();
@@ -55,13 +55,28 @@ public class BlockHandler {
         //blockadder
     }
 
-    private void registerPillars() {
+    private void registerModTorches() {
+        BlockList.ironTorch = new IronTorch().register();
+    }
+
+    private void registerModPillars() {
         BlockList.stonePillar = new StonePillar(Blocks.stone).register();
         BlockList.carvedBirchWood = new CarvedBirchWood(Blocks.log).register();
         BlockList.carvedBirchLog = new CarvedBirchLog(Blocks.log).register();
+        BlockList.carvedOakWood = new CarvedOakWood(Blocks.log).register();
+        BlockList.carvedOakLog = new CarvedOakLog(Blocks.log).register();
+        BlockList.carvedDarkOakWood = new CarvedDarkOakWood(Blocks.log).register();
+        BlockList.carvedDarkOakLog = new CarvedDarkOakLog(Blocks.log).register();
+        BlockList.carvedJungleWood = new CarvedJungleWood(Blocks.log).register();
+        BlockList.carvedJungleLog = new CarvedJungleLog(Blocks.log).register();
+        BlockList.carvedAcaciaWood = new CarvedAcaciaWood(Blocks.log).register();
+        BlockList.carvedAcaciaLog = new CarvedAcaciaLog(Blocks.log).register();
+        BlockList.carvedSpruceWood = new CarvedSpruceWood(Blocks.log).register();
+        BlockList.carvedSpruceLog = new CarvedSpruceLog(Blocks.log).register();
+        //pillaradder
     }
 
-    private void registerVanillaWalls() {
+    private void registerModWalls() {
         BlockList.netherQuartzWall = new NetherQuartzWall(Blocks.quartz_block).register();
         BlockList.netherBrickWall = new NetherBrickWall(Blocks.nether_brick).register();
         BlockList.stoneWall = new StoneWall(Blocks.stone).register();
@@ -84,14 +99,14 @@ public class BlockHandler {
         //walladder
     }
 
-    private void registerVanillaFences() {
+    private void registerModFences() {
         BlockList.ironFence = new IronFence(Blocks.iron_block).register();
         BlockList.goldFence = new GoldFence(Blocks.gold_block).register();
         BlockList.diamondFence = new DiamondFence(Blocks.diamond_block).register();
         BlockList.emeraldFence = new EmeraldFence(Blocks.emerald_block).register();
     }
 
-    private void registerVanillaStairs() {
+    private void registerModStairs() {
         BlockList.ironStairs = new IronStairs(Blocks.iron_block).register();
         BlockList.goldStairs = new GoldStairs(Blocks.gold_block).register();
         BlockList.diamondStairs = new DiamondStairs(Blocks.diamond_block).register();
@@ -163,7 +178,7 @@ public class BlockHandler {
         //stairsadder
     }
 
-    private void registerVanillaSlabs() {
+    private void registerModSlabs() {
         BlockList.diamondSlab = new DiamondSlab(Blocks.diamond_block).register();
         BlockList.ironSlab = new IronSlab(Blocks.iron_block).register();
         BlockList.goldSlab = new GoldSlab(Blocks.gold_block).register();

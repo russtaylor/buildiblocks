@@ -1,7 +1,16 @@
 package net.minecraft.buildiblocks.block.torch;
 
+import net.minecraft.buildiblocks.block.IModBlock;
+import net.minecraft.buildiblocks.block.ModBlockTorch;
+
 /**
- * Created by rtaylor on 2016-04-06.
+ * Iron Torches
  */
-public class IronTorch {
+public class IronTorch extends ModBlockTorch implements IModBlock {
+
+    public static final String BLOCK_NAME = "iron_torch";
+
+    public IronTorch() {
+        super(BLOCK_NAME);
+    }
 }

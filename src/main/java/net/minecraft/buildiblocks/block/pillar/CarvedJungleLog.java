@@ -4,11 +4,11 @@ import net.minecraft.block.Block;
 import net.minecraft.buildiblocks.block.ModBlockPillar;
 
 /**
- * Carved Oak Wood
+ * Carved Jungle Log
  */
 public class CarvedJungleLog extends ModBlockPillar {
 
-    public static final String BLOCK_NAME = "carved_oak_wood";
+    public static final String BLOCK_NAME = "carved_jungle_log";
 
     public CarvedJungleLog(Block block) {
         super(block, BLOCK_NAME);

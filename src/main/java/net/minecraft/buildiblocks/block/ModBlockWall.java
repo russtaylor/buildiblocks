@@ -23,11 +23,11 @@ import net.minecraftforge.fml.relauncher.SideOnly;
  */
 public class ModBlockWall extends Block implements IModBlock {
 
-    public static final PropertyBool UP = PropertyBool.create("up");
-    public static final PropertyBool NORTH = PropertyBool.create("north");
-    public static final PropertyBool EAST = PropertyBool.create("east");
-    public static final PropertyBool SOUTH = PropertyBool.create("south");
-    public static final PropertyBool WEST = PropertyBool.create("west");
+    private static final PropertyBool UP = PropertyBool.create("up");
+    private static final PropertyBool NORTH = PropertyBool.create("north");
+    private static final PropertyBool EAST = PropertyBool.create("east");
+    private static final PropertyBool SOUTH = PropertyBool.create("south");
+    private static final PropertyBool WEST = PropertyBool.create("west");
 
     private String blockName;
 
@@ -71,35 +71,11 @@ public class ModBlockWall extends Block implements IModBlock {
         return true;
     }
 
-    /**
-     * Calculates the directions that the wall should face, based on the materials/blocks in each
-     * adjacent block location.
-     *
-     * @param blockAccess block access
-     * @param blockPos the specified position
-     * @return Whether or not the wall should point toward the specified block.
-     */
-    public boolean calculateWallDirection(IBlockAccess blockAccess, BlockPos blockPos) {
-        Block block = blockAccess.getBlockState(blockPos).getBlock();
-        if (block != this) {
-            if (block != Blocks.barrier) {
-                if (block.getMaterial().isOpaque()) {
-                    if (block.isFullCube()) {
-                        return Material.gourd != block.getMaterial();
-                    }
-                }
-            }
-            return false;
-        } else {
-            return block != Blocks.barrier;
-        }
-    }
-
     public void setBlockBoundsBasedOnState(IBlockAccess access, BlockPos pos) {
-        boolean northFlag = this.calculateWallDirection(access, pos.north());
-        boolean flag1 = this.calculateWallDirection(access, pos.south());
-        boolean flag2 = this.calculateWallDirection(access, pos.west());
-        boolean flag3 = this.calculateWallDirection(access, pos.east());
+        boolean northFlag = BlockHelper.calculateWallDirection(access, pos.north(), this);
+        boolean flag1 = BlockHelper.calculateWallDirection(access, pos.south(), this);
+        boolean flag2 = BlockHelper.calculateWallDirection(access, pos.west(), this);
+        boolean flag3 = BlockHelper.calculateWallDirection(access, pos.east(), this);
         float f = 0.25F;
         float f1 = 0.75F;
         float f2 = 0.25F;
@@ -145,10 +121,10 @@ public class ModBlockWall extends Block implements IModBlock {
 
     public IBlockState getActualState(IBlockState state, IBlockAccess worldIn, BlockPos pos) {
         return state.withProperty(UP, !worldIn.isAirBlock(pos.up()))
-                .withProperty(NORTH, this.calculateWallDirection(worldIn, pos.north()))
-                .withProperty(EAST, this.calculateWallDirection(worldIn, pos.east()))
-                .withProperty(SOUTH, this.calculateWallDirection(worldIn, pos.south()))
-                .withProperty(WEST, this.calculateWallDirection(worldIn, pos.west()));
+                .withProperty(NORTH, BlockHelper.calculateWallDirection(worldIn, pos.north(), this))
+                .withProperty(EAST, BlockHelper.calculateWallDirection(worldIn, pos.east(), this))
+                .withProperty(SOUTH, BlockHelper.calculateWallDirection(worldIn, pos.south(), this))
+                .withProperty(WEST, BlockHelper.calculateWallDirection(worldIn, pos.west(), this));
     }
 
     public IBlockState getStateFromMeta(int meta) {

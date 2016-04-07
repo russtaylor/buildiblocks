@@ -1,0 +1,8 @@
+{
+  "variants": {
+    "axis=y":  { "model": "buildiblocks:carved_spruce_log" },
+    "axis=z":   { "model": "buildiblocks:carved_spruce_log_side" },
+    "axis=x":   { "model": "buildiblocks:carved_spruce_log_side", "y": 90 },
+    "axis=none": { "model": "buildiblocks:carved_spruce_log" }
+  }
+}

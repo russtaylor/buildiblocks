@@ -33,10 +33,23 @@ public class BlockList {
     public static ModBlock graniteBrick;
     //blockadder
 
+    // Torches
+    public static ModBlockTorch ironTorch;
+
     // Pillars
     public static ModBlockPillar stonePillar;
     public static ModBlockPillar carvedBirchWood;
     public static ModBlockPillar carvedBirchLog;
+    public static ModBlockPillar carvedOakWood;
+    public static ModBlockPillar carvedOakLog;
+    public static ModBlockPillar carvedDarkOakWood;
+    public static ModBlockPillar carvedDarkOakLog;
+    public static ModBlockPillar carvedJungleWood;
+    public static ModBlockPillar carvedJungleLog;
+    public static ModBlockPillar carvedAcaciaWood;
+    public static ModBlockPillar carvedAcaciaLog;
+    public static ModBlockPillar carvedSpruceWood;
+    public static ModBlockPillar carvedSpruceLog;
 
     // Walls
     public static ModBlockWall netherQuartzWall;
