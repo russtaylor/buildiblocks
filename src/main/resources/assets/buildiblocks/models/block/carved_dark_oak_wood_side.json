@@ -1,7 +1,7 @@
 {
   "parent": "block/column_side",
   "textures": {
-    "end": "blocks/log_big_oak_top",
+    "end": "buildiblocks:blocks/carved_dark_oak_wood",
     "side": "buildiblocks:blocks/carved_dark_oak_wood"
   }
 }

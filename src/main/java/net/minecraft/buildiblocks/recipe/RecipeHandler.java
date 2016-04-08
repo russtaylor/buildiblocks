@@ -123,11 +123,11 @@ public class RecipeHandler {
         registerPillar(BlockList.carvedOakWood, Blocks.wooden_slab, BlockPlanks.EnumType.OAK.getMetadata(), 1);
         registerPillar(BlockList.carvedOakLog, Blocks.log, BlockPlanks.EnumType.OAK.getMetadata());
         registerPillar(BlockList.carvedDarkOakWood, Blocks.wooden_slab, BlockPlanks.EnumType.DARK_OAK.getMetadata(), 1);
-        registerPillar(BlockList.carvedDarkOakLog, Blocks.log, BlockPlanks.EnumType.DARK_OAK.getMetadata());
+        registerPillar(BlockList.carvedDarkOakLog, Blocks.log2, BlockPlanks.EnumType.DARK_OAK.getMetadata() - 4); // DIE, MOJANG!
         registerPillar(BlockList.carvedJungleWood, Blocks.wooden_slab, BlockPlanks.EnumType.JUNGLE.getMetadata(), 1);
         registerPillar(BlockList.carvedJungleLog, Blocks.log, BlockPlanks.EnumType.JUNGLE.getMetadata());
         registerPillar(BlockList.carvedAcaciaWood, Blocks.wooden_slab, BlockPlanks.EnumType.ACACIA.getMetadata(), 1);
-        registerPillar(BlockList.carvedAcaciaLog, Blocks.log, BlockPlanks.EnumType.ACACIA.getMetadata());
+        registerPillar(BlockList.carvedAcaciaLog, Blocks.log2, BlockPlanks.EnumType.ACACIA.getMetadata() - 4); // DIE, MOJANG!
         registerPillar(BlockList.carvedSpruceWood, Blocks.wooden_slab, BlockPlanks.EnumType.SPRUCE.getMetadata(), 1);
         registerPillar(BlockList.carvedSpruceLog, Blocks.log, BlockPlanks.EnumType.SPRUCE.getMetadata());
         //pillaradder

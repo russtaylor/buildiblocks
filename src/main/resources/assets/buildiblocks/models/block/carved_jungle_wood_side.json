@@ -1,7 +1,7 @@
 {
   "parent": "block/column_side",
   "textures": {
-    "end": "blocks/log_jungle_top",
+    "end": "buildiblocks:blocks/carved_jungle_wood",
     "side": "buildiblocks:blocks/carved_jungle_wood"
   }
 }
