@@ -31,6 +31,9 @@ public class BlockList {
     public static ModBlock andesiteBrick;
     public static ModBlock dioriteBrick;
     public static ModBlock graniteBrick;
+    public static ModBlock chiseledGraniteBrick;
+    public static ModBlock chiseledDioriteBrick;
+    public static ModBlock chiseledAndesiteBrick;
     //blockadder
 
     // Torches
@@ -38,6 +41,9 @@ public class BlockList {
 
     // Pillars
     public static ModBlockPillar stonePillar;
+    public static ModBlockPillar andesitePillar;
+    public static ModBlockPillar dioritePillar;
+    public static ModBlockPillar granitePillar;
     public static ModBlockPillar carvedBirchWood;
     public static ModBlockPillar carvedBirchLog;
     public static ModBlockPillar carvedOakWood;

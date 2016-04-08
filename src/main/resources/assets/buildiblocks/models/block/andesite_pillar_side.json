@@ -1,0 +1,7 @@
+{
+  "parent": "block/column_side",
+  "textures": {
+    "end": "buildiblocks:blocks/andesite_brick_carved",
+    "side": "buildiblocks:blocks/andesite_pillar"
+  }
+}

@@ -1,0 +1,8 @@
+{
+  "variants": {
+    "axis=y":  { "model": "buildiblocks:diorite_pillar" },
+    "axis=z":   { "model": "buildiblocks:diorite_pillar_side" },
+    "axis=x":   { "model": "buildiblocks:diorite_pillar_side", "y": 90 },
+    "axis=none": { "model": "buildiblocks:diorite_pillar" }
+  }
+}

@@ -23,6 +23,8 @@ public class RecipeHandler {
         removeVanillaRecipes();
         registerPillarRecipes();
         registerBrickRecipes();
+        registerTorchRecipes();
+        registerChiseledRecipes();
         registerWallRecipes();
         registerStairRecipes();
         registerSlabRecipes();
@@ -40,6 +42,10 @@ public class RecipeHandler {
         registerRod(Items.emerald, ItemList.emeraldRod);
     }
 
+    private void registerTorchRecipes() {
+        registerTorch(BlockList.ironTorch, ItemList.ironRod);
+    }
+
     private void registerRandomRecipes() {
         ItemStack packedIceStack = new ItemStack(Blocks.packed_ice, 2);
         ItemStack iceStack = new ItemStack(Blocks.ice, 1);
@@ -50,6 +56,13 @@ public class RecipeHandler {
         ItemStack inputItemStack = new ItemStack(inputItem, 1);
         ItemStack outputItemStack = new ItemStack(outputItem, 4);
         GameRegistry.addRecipe(outputItemStack, "x", "x", 'x', inputItemStack);
+    }
+
+    private void registerChiseledRecipes() {
+        registerChiseled(BlockList.chiseledGraniteBrick, BlockList.graniteBrickSlab.getSingleSlab());
+        registerChiseled(BlockList.chiseledDioriteBrick, BlockList.dioriteBrickSlab.getSingleSlab());
+        registerChiseled(BlockList.chiseledAndesiteBrick, BlockList.andesiteBrickSlab.getSingleSlab());
+        //chiseledadder
     }
 
     private void registerTileRecipes() {
@@ -81,6 +94,9 @@ public class RecipeHandler {
 
     private void registerPillarRecipes() {
         registerPillar(BlockList.stonePillar, Blocks.stone);
+        registerPillar(BlockList.andesitePillar, BlockList.andesiteBrick);
+        registerPillar(BlockList.dioritePillar, BlockList.dioriteBrick);
+        registerPillar(BlockList.granitePillar, BlockList.graniteBrick);
         registerPillar(BlockList.carvedBirchWood, Blocks.wooden_slab, BlockPlanks.EnumType.BIRCH.getMetadata(), 1);
         registerPillar(BlockList.carvedBirchLog, Blocks.log, BlockPlanks.EnumType.BIRCH.getMetadata());
         registerPillar(BlockList.carvedOakWood, Blocks.wooden_slab, BlockPlanks.EnumType.OAK.getMetadata(), 1);
@@ -362,6 +378,21 @@ public class RecipeHandler {
         ItemStack outputStack = new ItemStack(outputBlock, 1, outputMeta);
         ItemStack inputStack = new ItemStack(inputBlock, 1, inputMeta);
         GameRegistry.addRecipe(outputStack, "x", 'x', inputStack);
+    }
+
+    private void registerChiseled(Block outputBlock, Block inputSlab) {
+        ItemStack chiseledBlockStack = new ItemStack(outputBlock, 1);
+        ItemStack slabStack = new ItemStack(inputSlab, 1);
+        GameRegistry.addRecipe(chiseledBlockStack, "x", "x", 'x', slabStack);
+    }
+
+    private void registerTorch(Block torchBlock, Item stickItem) {
+        ItemStack torchStack = new ItemStack(torchBlock, 4);
+        ItemStack stickStack = new ItemStack(stickItem, 1);
+        ItemStack coalStack = new ItemStack(Items.coal, 1);
+        ItemStack charcoalStack = new ItemStack(Items.coal, 1, 1);
+        GameRegistry.addRecipe(torchStack, "x", "y", 'x', coalStack, 'y', stickStack);
+        GameRegistry.addRecipe(torchStack, "x", "y", 'x', charcoalStack, 'y', stickStack);
     }
 
     private void registerFence(Block fenceBlock, Item plankItem, Item stickItem) {

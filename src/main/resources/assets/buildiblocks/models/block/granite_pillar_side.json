@@ -1,0 +1,7 @@
+{
+  "parent": "block/cube_column_side",
+  "textures": {
+    "end": "buildiblocks:blocks/granite_brick_carved",
+    "side": "buildiblocks:blocks/granite_pillar"
+  }
+}

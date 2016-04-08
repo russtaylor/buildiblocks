@@ -1,0 +1,7 @@
+{
+  "parent": "block/column_side",
+  "textures": {
+    "end": "buildiblocks:blocks/diorite_brick_carved",
+    "side": "buildiblocks:blocks/diorite_pillar"
+  }
+}

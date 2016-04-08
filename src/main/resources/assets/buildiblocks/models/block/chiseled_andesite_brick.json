@@ -1,0 +1,6 @@
+{
+  "parent": "block/stone",
+  "textures": {
+    "all": "buildiblocks:blocks/andesite_brick_carved"
+  }
+}

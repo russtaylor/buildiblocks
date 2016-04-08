@@ -52,6 +52,9 @@ public class BlockHandler {
         BlockList.andesiteBrick = new AndesiteBrick(Blocks.stone).register();
         BlockList.dioriteBrick = new DioriteBrick(Blocks.stone).register();
         BlockList.graniteBrick = new GraniteBrick(Blocks.stone).register();
+        BlockList.chiseledGraniteBrick = new ChiseledGraniteBrick(Blocks.stone).register();
+        BlockList.chiseledDioriteBrick = new ChiseledDioriteBrick(Blocks.stone).register();
+        BlockList.chiseledAndesiteBrick = new ChiseledAndesiteBrick(BlockList.andesiteBrick).register();
         //blockadder
     }
 
@@ -61,6 +64,9 @@ public class BlockHandler {
 
     private void registerModPillars() {
         BlockList.stonePillar = new StonePillar(Blocks.stone).register();
+        BlockList.andesitePillar = new AndesitePillar(BlockList.andesiteBrick).register();
+        BlockList.dioritePillar = new DioritePillar(Blocks.stone).register();
+        BlockList.granitePillar = new GranitePillar(BlockList.graniteBrick).register();
         BlockList.carvedBirchWood = new CarvedBirchWood(Blocks.log).register();
         BlockList.carvedBirchLog = new CarvedBirchLog(Blocks.log).register();
         BlockList.carvedOakWood = new CarvedOakWood(Blocks.log).register();

@@ -1,0 +1,8 @@
+{
+  "variants": {
+    "axis=y":  { "model": "buildiblocks:granite_pillar" },
+    "axis=z":   { "model": "buildiblocks:granite_pillar_side" },
+    "axis=x":   { "model": "buildiblocks:granite_pillar_side", "y": 90 },
+    "axis=none": { "model": "buildiblocks:granite_pillar" }
+  }
+}

@@ -1,0 +1,33 @@
+{
+  "forge_marker": 1,
+  "defaults": {
+    "textures": {
+      "torch": "buildiblocks:blocks/iron_torch"
+    },
+    "model": "buildiblocks:metal_torch_wall"
+  },
+  "variants": {
+    "facing": {
+      "up": {
+        "model": "buildiblocks:metal_torch"
+      },
+      "east": {
+      },
+      "south": {
+        "y": 90
+      },
+      "west": {
+        "y": 180
+      },
+      "north": {
+        "y": 270
+      },
+      "down": {
+        "model": "buildiblocks:metal_torch_hanging",
+        "textures": {
+          "torch": "buildiblocks:blocks/iron_torch_hanging"
+        }
+      }
+    }
+  }
+}

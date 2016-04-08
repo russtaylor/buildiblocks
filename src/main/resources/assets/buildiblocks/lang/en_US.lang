@@ -1,4 +1,7 @@
 tile.stone_pillar.name=Stone Pillar
+tile.granite_pillar.name=Andesite Pillar
+tile.diorite_pillar.name=Diorite Pillar
+tile.granite_pillar.name=Granite Pillar
 tile.nether_quartz_wall.name=Quartz Wall
 tile.nether_brick_wall.name=Nether Brick Wall
 tile.stone_wall.name=Stone Wall
@@ -192,6 +195,13 @@ tile.granite_brick.name=Granite Brick
 tile.granite_brick_stairs.name=Granite Brick Stairs
 tile.granite_brick_wall.name=Granite Brick Wall
 tile.granite_brick_slab.name=Granite Brick Slab
+tile.iron_torch.name=Iron Torch
+tile.chiseled_granite_brick.name=Chiseled Granite Brick
+tile.chiseled_granite_brick_stairs.name=Chiseled Granite Brick Stairs
+tile.chiseled_granite_brick_wall.name=Chiseled Granite Brick Wall
+tile.chiseled_granite_brick_slab.name=Chiseled Granite Brick Slab
+tile.chiseled_diorite_brick.name=Chiseled Diorite Brick
+tile.chiseled_andesite_brick.name=Chiseled Andesite Brick
 tile.wordadder=nothing
 
 item.iron_rod.name=Iron Rod
