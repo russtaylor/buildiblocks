@@ -21,6 +21,7 @@ import net.minecraftforge.fml.common.registry.GameRegistry;
 public class RecipeHandler {
     public void registerRecipes() {
         removeVanillaRecipes();
+        registerSmeltingRecipes();
         registerPillarRecipes();
         registerBrickRecipes();
         registerTorchRecipes();
@@ -40,6 +41,26 @@ public class RecipeHandler {
         registerRod(Items.diamond, ItemList.diamondRod);
         registerRod(Items.gold_ingot, ItemList.goldRod);
         registerRod(Items.emerald, ItemList.emeraldRod);
+    }
+
+    private void registerSmeltingRecipes() {
+        registerSmelt(Blocks.dirt, Blocks.hardened_clay);
+    }
+
+    private void registerSmelt(Block inputBlock, Block outputBlock) {
+        Item inputItem = inputBlock.getItem(null, null);
+        Item outputItem = outputBlock.getItem(null, null);
+        this.registerSmelt(inputItem, outputItem);
+    }
+
+    private void registerSmelt(Item inputItem, Item outputItem) {
+        this.registerSmelt(inputItem, outputItem, 0.1F);
+    }
+
+    private void registerSmelt(Item inputItem, Item outputItem, float xp) {
+        ItemStack inputStack = new ItemStack(inputItem, 1);
+        ItemStack outputStack = new ItemStack(outputItem, 1);
+        GameRegistry.addSmelting(inputStack, outputStack, xp);
     }
 
     private void registerTorchRecipes() {
