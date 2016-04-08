@@ -4,12 +4,12 @@
     "textures": {
       "torch": "buildiblocks:blocks/iron_torch"
     },
-    "model": "buildiblocks:metal_torch_wall"
+    "model": "torch_wall"
   },
   "variants": {
     "facing": {
       "up": {
-        "model": "buildiblocks:metal_torch"
+        "model": "torch"
       },
       "east": {
       },
@@ -23,7 +23,7 @@
         "y": 270
       },
       "down": {
-        "model": "buildiblocks:metal_torch_hanging",
+        "model": "torch",
         "textures": {
           "torch": "buildiblocks:blocks/iron_torch_hanging"
         }
