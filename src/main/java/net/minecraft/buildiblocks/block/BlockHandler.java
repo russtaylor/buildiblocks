@@ -5,6 +5,7 @@ import net.minecraft.buildiblocks.block.block.*;
 import net.minecraft.buildiblocks.block.fence.EmeraldFence;
 import net.minecraft.buildiblocks.block.pillar.*;
 import net.minecraft.buildiblocks.block.stairs.*;
+import net.minecraft.buildiblocks.block.torch.GoldTorch;
 import net.minecraft.buildiblocks.block.torch.IronTorch;
 import net.minecraft.buildiblocks.block.wall.*;
 import net.minecraft.init.Blocks;
@@ -60,6 +61,7 @@ public class BlockHandler {
 
     private void registerModTorches() {
         BlockList.ironTorch = new IronTorch().register();
+        BlockList.goldTorch = new GoldTorch().register();
     }
 
     private void registerModPillars() {

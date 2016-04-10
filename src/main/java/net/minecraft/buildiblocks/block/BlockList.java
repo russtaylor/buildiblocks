@@ -38,6 +38,7 @@ public class BlockList {
 
     // Torches
     public static ModBlockTorch ironTorch;
+    public static ModBlockTorch goldTorch;
 
     // Pillars
     public static ModBlockPillar stonePillar;

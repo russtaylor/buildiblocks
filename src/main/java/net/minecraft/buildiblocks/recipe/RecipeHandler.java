@@ -65,6 +65,7 @@ public class RecipeHandler {
 
     private void registerTorchRecipes() {
         registerTorch(BlockList.ironTorch, ItemList.ironRod);
+        registerTorch(BlockList.goldTorch, ItemList.goldRod);
     }
 
     private void registerRandomRecipes() {
