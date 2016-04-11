@@ -20,7 +20,7 @@ import net.minecraftforge.fml.common.registry.GameRegistry;
 public class BuildiblocksMod
 {
     public static final String MOD_ID = "buildiblocks";
-    static final String VERSION = "0.2.4";
+    static final String VERSION = "0.2.5";
     static final String MOD_NAME = "Buildiblocks";
 
     // World
