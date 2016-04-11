@@ -48,9 +48,13 @@ public class RecipeHandler {
     }
 
     private void registerSmelt(Block inputBlock, Block outputBlock) {
-        Item inputItem = inputBlock.getItem(null, null);
-        Item outputItem = outputBlock.getItem(null, null);
-        this.registerSmelt(inputItem, outputItem);
+        this.registerSmelt(inputBlock, outputBlock, 0.1F);
+    }
+
+    private void registerSmelt(Block inputBlock, Block outputBlock, float xp) {
+        ItemStack inputStack = new ItemStack(inputBlock, 1);
+        ItemStack outputStack = new ItemStack(outputBlock, 1);
+        GameRegistry.addSmelting(inputStack, outputStack, xp);
     }
 
     private void registerSmelt(Item inputItem, Item outputItem) {

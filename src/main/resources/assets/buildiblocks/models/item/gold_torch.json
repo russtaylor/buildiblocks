@@ -1,7 +1,7 @@
 {
   "parent": "builtin/generated",
   "textures": {
-    "layer0": "buildiblocks:blocks/iron_torch"
+    "layer0": "buildiblocks:blocks/gold_torch"
   },
   "display": {
     "thirdperson": {
