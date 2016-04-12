@@ -3,6 +3,7 @@ package net.minecraft.buildiblocks.block;
 import net.minecraft.block.BlockColored;
 import net.minecraft.buildiblocks.block.block.*;
 import net.minecraft.buildiblocks.block.fence.EmeraldFence;
+import net.minecraft.buildiblocks.block.misc.PaperWall;
 import net.minecraft.buildiblocks.block.pillar.*;
 import net.minecraft.buildiblocks.block.stairs.*;
 import net.minecraft.buildiblocks.block.torch.GoldTorch;
@@ -57,6 +58,7 @@ public class BlockHandler {
         BlockList.chiseledDioriteBrick = new ChiseledDioriteBrick(Blocks.stone).register();
         BlockList.chiseledAndesiteBrick = new ChiseledAndesiteBrick(BlockList.andesiteBrick).register();
         //blockadder
+        BlockList.paperWall = new PaperWall().register();
     }
 
     private void registerModTorches() {

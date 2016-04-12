@@ -3,6 +3,7 @@ package net.minecraft.buildiblocks.block;
 import java.util.List;
 
 import com.google.common.collect.Lists;
+import net.minecraft.buildiblocks.block.misc.PaperWall;
 
 /**
  * The entirety of the list of blocks added by this mod.
@@ -35,6 +36,8 @@ public class BlockList {
     public static ModBlock chiseledDioriteBrick;
     public static ModBlock chiseledAndesiteBrick;
     //blockadder
+
+    public static PaperWall paperWall;
 
     // Torches
     public static ModBlockTorch ironTorch;

@@ -76,8 +76,7 @@ public class ModBlockPillar extends BlockRotatedPillar implements IModBlock {
     public boolean rotateBlock(net.minecraft.world.World world, net.minecraft.util.BlockPos pos, EnumFacing axis) {
         net.minecraft.block.state.IBlockState state = world.getBlockState(pos);
         for (net.minecraft.block.properties.IProperty<?> prop : state.getProperties().keySet()) {
-            if (prop.getName().equals("axis"))
-            {
+            if (prop.getName().equals("axis")) {
                 world.setBlockState(pos, state.cycleProperty(prop));
                 return true;
             }

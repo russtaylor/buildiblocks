@@ -76,6 +76,10 @@ public class RecipeHandler {
         ItemStack packedIceStack = new ItemStack(Blocks.packed_ice, 2);
         ItemStack iceStack = new ItemStack(Blocks.ice, 1);
         GameRegistry.addRecipe(packedIceStack, "xx", "xx", 'x', iceStack);
+
+        ItemStack paperWallStack = new ItemStack(BlockList.paperWall, 2);
+        ItemStack paperStack = new ItemStack(Items.paper, 1);
+        GameRegistry.addRecipe(paperWallStack, "xx", "xx", 'x', paperStack);
     }
 
     private void registerRod(Item inputItem, Item outputItem) {

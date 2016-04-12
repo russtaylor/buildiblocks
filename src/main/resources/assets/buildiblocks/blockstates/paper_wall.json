@@ -1,0 +1,22 @@
+{
+  "forge_marker": 1,
+  "defaults": {
+    "textures": {
+      "edge": "buildiblocks:blocks/paper_wall_edge",
+      "pane": "buildiblocks:blocks/paper_wall"
+    },
+    "model": "glass_pane_ns"
+  },
+  "variants": {
+    "direction": {
+      "north": {
+        "y": 90
+      },
+      "east": {},
+      "south": {
+        "y": 90
+      },
+      "west": {}
+    }
+  }
+}

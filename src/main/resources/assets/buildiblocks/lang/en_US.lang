@@ -197,6 +197,7 @@ tile.granite_brick_wall.name=Granite Brick Wall
 tile.granite_brick_slab.name=Granite Brick Slab
 tile.iron_torch.name=Iron Torch
 tile.gold_torch.name=Gold Torch
+tile.paper_wall.name=Paper Wall
 tile.chiseled_granite_brick.name=Chiseled Granite Brick
 tile.chiseled_granite_brick_stairs.name=Chiseled Granite Brick Stairs
 tile.chiseled_granite_brick_wall.name=Chiseled Granite Brick Wall
