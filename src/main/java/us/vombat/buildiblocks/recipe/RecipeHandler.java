@@ -1,8 +1,5 @@
 package us.vombat.buildiblocks.recipe;
 
-import java.util.Iterator;
-import java.util.List;
-
 import net.minecraft.block.*;
 import net.minecraft.init.Blocks;
 import net.minecraft.init.Items;
@@ -11,9 +8,12 @@ import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.crafting.CraftingManager;
 import net.minecraft.item.crafting.IRecipe;
+import net.minecraftforge.fml.common.registry.GameRegistry;
 import us.vombat.buildiblocks.block.BlockList;
 import us.vombat.buildiblocks.item.ItemList;
-import net.minecraftforge.fml.common.registry.GameRegistry;
+
+import java.util.Iterator;
+import java.util.List;
 
 /**
  * Handles creating the recipes needed by the mod.
@@ -37,14 +37,14 @@ public class RecipeHandler {
     }
 
     private void registerRodRecipes() {
-        registerRod(Items.iron_ingot, ItemList.ironRod);
-        registerRod(Items.diamond, ItemList.diamondRod);
-        registerRod(Items.gold_ingot, ItemList.goldRod);
-        registerRod(Items.emerald, ItemList.emeraldRod);
+        registerRod(Items.IRON_INGOT, ItemList.ironRod);
+        registerRod(Items.DIAMOND, ItemList.diamondRod);
+        registerRod(Items.GOLD_INGOT, ItemList.goldRod);
+        registerRod(Items.EMERALD, ItemList.emeraldRod);
     }
 
     private void registerSmeltingRecipes() {
-        registerSmelt(Blocks.dirt, Blocks.hardened_clay);
+        registerSmelt(Blocks.DIRT, Blocks.HARDENED_CLAY);
     }
 
     private void registerSmelt(Block inputBlock, Block outputBlock) {
@@ -73,12 +73,12 @@ public class RecipeHandler {
     }
 
     private void registerRandomRecipes() {
-        ItemStack packedIceStack = new ItemStack(Blocks.packed_ice, 2);
-        ItemStack iceStack = new ItemStack(Blocks.ice, 1);
+        ItemStack packedIceStack = new ItemStack(Blocks.PACKED_ICE, 2);
+        ItemStack iceStack = new ItemStack(Blocks.ICE, 1);
         GameRegistry.addRecipe(packedIceStack, "xx", "xx", 'x', iceStack);
 
         ItemStack paperWallStack = new ItemStack(BlockList.paperWall, 2);
-        ItemStack paperStack = new ItemStack(Items.paper, 1);
+        ItemStack paperStack = new ItemStack(Items.PAPER, 1);
         GameRegistry.addRecipe(paperWallStack, "xx", "xx", 'x', paperStack);
     }
 
@@ -96,77 +96,77 @@ public class RecipeHandler {
     }
 
     private void registerTileRecipes() {
-        registerTile(BlockList.clayTile, Blocks.hardened_clay);
-        registerTile(BlockList.orangeClayTile, Blocks.stained_hardened_clay, EnumDyeColor.ORANGE.getMetadata());
-        registerTile(BlockList.magentaClayTile, Blocks.stained_hardened_clay, EnumDyeColor.MAGENTA.getMetadata());
-        registerTile(BlockList.lightBlueClayTile, Blocks.stained_hardened_clay, EnumDyeColor.LIGHT_BLUE.getMetadata());
-        registerTile(BlockList.yellowClayTile, Blocks.stained_hardened_clay, EnumDyeColor.YELLOW.getMetadata());
-        registerTile(BlockList.limeClayTile, Blocks.stained_hardened_clay, EnumDyeColor.LIME.getMetadata());
-        registerTile(BlockList.pinkClayTile, Blocks.stained_hardened_clay, EnumDyeColor.PINK.getMetadata());
-        registerTile(BlockList.grayClayTile, Blocks.stained_hardened_clay, EnumDyeColor.GRAY.getMetadata());
-        registerTile(BlockList.silverClayTile, Blocks.stained_hardened_clay, EnumDyeColor.SILVER.getMetadata());
-        registerTile(BlockList.cyanClayTile, Blocks.stained_hardened_clay, EnumDyeColor.CYAN.getMetadata());
-        registerTile(BlockList.purpleClayTile, Blocks.stained_hardened_clay, EnumDyeColor.PURPLE.getMetadata());
-        registerTile(BlockList.blueClayTile, Blocks.stained_hardened_clay, EnumDyeColor.BLUE.getMetadata());
-        registerTile(BlockList.brownClayTile, Blocks.stained_hardened_clay, EnumDyeColor.BROWN.getMetadata());
-        registerTile(BlockList.greenClayTile, Blocks.stained_hardened_clay, EnumDyeColor.GREEN.getMetadata());
-        registerTile(BlockList.redClayTile, Blocks.stained_hardened_clay, EnumDyeColor.RED.getMetadata());
-        registerTile(BlockList.blackClayTile, Blocks.stained_hardened_clay, EnumDyeColor.BLACK.getMetadata());
+        registerTile(BlockList.clayTile, Blocks.HARDENED_CLAY);
+        registerTile(BlockList.orangeClayTile, Blocks.STAINED_HARDENED_CLAY, EnumDyeColor.ORANGE.getMetadata());
+        registerTile(BlockList.magentaClayTile, Blocks.STAINED_HARDENED_CLAY, EnumDyeColor.MAGENTA.getMetadata());
+        registerTile(BlockList.lightBlueClayTile, Blocks.STAINED_HARDENED_CLAY, EnumDyeColor.LIGHT_BLUE.getMetadata());
+        registerTile(BlockList.yellowClayTile, Blocks.STAINED_HARDENED_CLAY, EnumDyeColor.YELLOW.getMetadata());
+        registerTile(BlockList.limeClayTile, Blocks.STAINED_HARDENED_CLAY, EnumDyeColor.LIME.getMetadata());
+        registerTile(BlockList.pinkClayTile, Blocks.STAINED_HARDENED_CLAY, EnumDyeColor.PINK.getMetadata());
+        registerTile(BlockList.grayClayTile, Blocks.STAINED_HARDENED_CLAY, EnumDyeColor.GRAY.getMetadata());
+        registerTile(BlockList.silverClayTile, Blocks.STAINED_HARDENED_CLAY, EnumDyeColor.SILVER.getMetadata());
+        registerTile(BlockList.cyanClayTile, Blocks.STAINED_HARDENED_CLAY, EnumDyeColor.CYAN.getMetadata());
+        registerTile(BlockList.purpleClayTile, Blocks.STAINED_HARDENED_CLAY, EnumDyeColor.PURPLE.getMetadata());
+        registerTile(BlockList.blueClayTile, Blocks.STAINED_HARDENED_CLAY, EnumDyeColor.BLUE.getMetadata());
+        registerTile(BlockList.brownClayTile, Blocks.STAINED_HARDENED_CLAY, EnumDyeColor.BROWN.getMetadata());
+        registerTile(BlockList.greenClayTile, Blocks.STAINED_HARDENED_CLAY, EnumDyeColor.GREEN.getMetadata());
+        registerTile(BlockList.redClayTile, Blocks.STAINED_HARDENED_CLAY, EnumDyeColor.RED.getMetadata());
+        registerTile(BlockList.blackClayTile, Blocks.STAINED_HARDENED_CLAY, EnumDyeColor.BLACK.getMetadata());
         //tileadder
     }
 
     private void registerBrickRecipes() {
-        registerBrick(BlockList.andesiteBrick, Blocks.stone, BlockStone.EnumType.ANDESITE.getMetadata());
-        registerBrick(BlockList.dioriteBrick, Blocks.stone, BlockStone.EnumType.DIORITE.getMetadata());
-        registerBrick(BlockList.graniteBrick, Blocks.stone, BlockStone.EnumType.GRANITE.getMetadata());
+        registerBrick(BlockList.andesiteBrick, Blocks.STONE, BlockStone.EnumType.ANDESITE.getMetadata());
+        registerBrick(BlockList.dioriteBrick, Blocks.STONE, BlockStone.EnumType.DIORITE.getMetadata());
+        registerBrick(BlockList.graniteBrick, Blocks.STONE, BlockStone.EnumType.GRANITE.getMetadata());
         //brickadder
     }
 
     private void registerPillarRecipes() {
-        registerPillar(BlockList.stonePillar, Blocks.stone);
+        registerPillar(BlockList.stonePillar, Blocks.STONE);
         registerPillar(BlockList.andesitePillar, BlockList.andesiteBrick);
         registerPillar(BlockList.dioritePillar, BlockList.dioriteBrick);
         registerPillar(BlockList.granitePillar, BlockList.graniteBrick);
-        registerPillar(BlockList.carvedBirchWood, Blocks.wooden_slab, BlockPlanks.EnumType.BIRCH.getMetadata(), 1);
-        registerPillar(BlockList.carvedBirchLog, Blocks.log, BlockPlanks.EnumType.BIRCH.getMetadata());
-        registerPillar(BlockList.carvedOakWood, Blocks.wooden_slab, BlockPlanks.EnumType.OAK.getMetadata(), 1);
-        registerPillar(BlockList.carvedOakLog, Blocks.log, BlockPlanks.EnumType.OAK.getMetadata());
-        registerPillar(BlockList.carvedDarkOakWood, Blocks.wooden_slab, BlockPlanks.EnumType.DARK_OAK.getMetadata(), 1);
-        registerPillar(BlockList.carvedDarkOakLog, Blocks.log2, BlockPlanks.EnumType.DARK_OAK.getMetadata() - 4); // DIE, MOJANG!
-        registerPillar(BlockList.carvedJungleWood, Blocks.wooden_slab, BlockPlanks.EnumType.JUNGLE.getMetadata(), 1);
-        registerPillar(BlockList.carvedJungleLog, Blocks.log, BlockPlanks.EnumType.JUNGLE.getMetadata());
-        registerPillar(BlockList.carvedAcaciaWood, Blocks.wooden_slab, BlockPlanks.EnumType.ACACIA.getMetadata(), 1);
-        registerPillar(BlockList.carvedAcaciaLog, Blocks.log2, BlockPlanks.EnumType.ACACIA.getMetadata() - 4); // DIE, MOJANG!
-        registerPillar(BlockList.carvedSpruceWood, Blocks.wooden_slab, BlockPlanks.EnumType.SPRUCE.getMetadata(), 1);
-        registerPillar(BlockList.carvedSpruceLog, Blocks.log, BlockPlanks.EnumType.SPRUCE.getMetadata());
+        registerPillar(BlockList.carvedBirchWood, Blocks.WOODEN_SLAB, BlockPlanks.EnumType.BIRCH.getMetadata(), 1);
+        registerPillar(BlockList.carvedBirchLog, Blocks.LOG, BlockPlanks.EnumType.BIRCH.getMetadata());
+        registerPillar(BlockList.carvedOakWood, Blocks.WOODEN_SLAB, BlockPlanks.EnumType.OAK.getMetadata(), 1);
+        registerPillar(BlockList.carvedOakLog, Blocks.LOG, BlockPlanks.EnumType.OAK.getMetadata());
+        registerPillar(BlockList.carvedDarkOakWood, Blocks.WOODEN_SLAB, BlockPlanks.EnumType.DARK_OAK.getMetadata(), 1);
+        registerPillar(BlockList.carvedDarkOakLog, Blocks.LOG2, BlockPlanks.EnumType.DARK_OAK.getMetadata() - 4); // DIE, MOJANG!
+        registerPillar(BlockList.carvedJungleWood, Blocks.WOODEN_SLAB, BlockPlanks.EnumType.JUNGLE.getMetadata(), 1);
+        registerPillar(BlockList.carvedJungleLog, Blocks.LOG, BlockPlanks.EnumType.JUNGLE.getMetadata());
+        registerPillar(BlockList.carvedAcaciaWood, Blocks.WOODEN_SLAB, BlockPlanks.EnumType.ACACIA.getMetadata(), 1);
+        registerPillar(BlockList.carvedAcaciaLog, Blocks.LOG2, BlockPlanks.EnumType.ACACIA.getMetadata() - 4); // DIE, MOJANG!
+        registerPillar(BlockList.carvedSpruceWood, Blocks.WOODEN_SLAB, BlockPlanks.EnumType.SPRUCE.getMetadata(), 1);
+        registerPillar(BlockList.carvedSpruceLog, Blocks.LOG, BlockPlanks.EnumType.SPRUCE.getMetadata());
         //pillaradder
     }
 
     private void registerFenceRecipes() {
-        registerFence(BlockList.ironFence, Items.iron_ingot, ItemList.ironRod);
-        registerFence(BlockList.goldFence, Items.gold_ingot, ItemList.goldRod);
-        registerFence(BlockList.diamondFence, Items.diamond, ItemList.diamondRod);
-        registerFence(BlockList.emeraldFence, Items.emerald, ItemList.emeraldRod);
+        registerFence(BlockList.ironFence, Items.IRON_INGOT, ItemList.ironRod);
+        registerFence(BlockList.goldFence, Items.GOLD_INGOT, ItemList.goldRod);
+        registerFence(BlockList.diamondFence, Items.DIAMOND, ItemList.diamondRod);
+        registerFence(BlockList.emeraldFence, Items.EMERALD, ItemList.emeraldRod);
         //fenceadder
     }
 
     private void registerWallRecipes() {
-        registerWall(BlockList.netherQuartzWall, Blocks.quartz_block);
-        registerWall(BlockList.netherBrickWall, Blocks.nether_brick);
-        registerWall(BlockList.stoneWall, Blocks.stone);
-        registerWall(BlockList.stoneBrickWall, Blocks.stonebrick);
-        registerWall(BlockList.sandstoneWall, Blocks.sandstone);
-        registerWall(BlockList.sandstoneBrickWall, Blocks.sandstone, BlockSandStone.EnumType.SMOOTH.getMetadata());
-        registerWall(BlockList.brickWall, Blocks.brick_block);
-        registerWall(BlockList.lapisLazuliWall, Blocks.lapis_block);
-        registerWall(BlockList.polishedAndesiteWall, Blocks.stone, BlockStone.EnumType.ANDESITE_SMOOTH.getMetadata());
-        registerWall(BlockList.polishedDioriteWall, Blocks.stone, BlockStone.EnumType.DIORITE_SMOOTH.getMetadata());
-        registerWall(BlockList.polishedGraniteWall, Blocks.stone, BlockStone.EnumType.GRANITE_SMOOTH.getMetadata());
-        registerWall(BlockList.crackedStoneBrickWall, Blocks.stonebrick, BlockStoneBrick.EnumType.CRACKED.getMetadata());
-        registerWall(BlockList.mossyStoneBrickWall, Blocks.stonebrick, BlockStoneBrick.EnumType.MOSSY.getMetadata());
-        registerWall(BlockList.obsidianWall, Blocks.obsidian);
-        registerWall(BlockList.emeraldWall, Blocks.emerald_block);
-        registerWall(BlockList.mossyCobblestoneWall, Blocks.mossy_cobblestone);
+        registerWall(BlockList.netherQuartzWall, Blocks.QUARTZ_BLOCK);
+        registerWall(BlockList.netherBrickWall, Blocks.NETHER_BRICK);
+        registerWall(BlockList.stoneWall, Blocks.STONE);
+        registerWall(BlockList.stoneBrickWall, Blocks.STONEBRICK);
+        registerWall(BlockList.sandstoneWall, Blocks.SANDSTONE);
+        registerWall(BlockList.sandstoneBrickWall, Blocks.SANDSTONE, BlockSandStone.EnumType.SMOOTH.getMetadata());
+        registerWall(BlockList.brickWall, Blocks.BRICK_BLOCK);
+        registerWall(BlockList.lapisLazuliWall, Blocks.LAPIS_BLOCK);
+        registerWall(BlockList.polishedAndesiteWall, Blocks.STONE, BlockStone.EnumType.ANDESITE_SMOOTH.getMetadata());
+        registerWall(BlockList.polishedDioriteWall, Blocks.STONE, BlockStone.EnumType.DIORITE_SMOOTH.getMetadata());
+        registerWall(BlockList.polishedGraniteWall, Blocks.STONE, BlockStone.EnumType.GRANITE_SMOOTH.getMetadata());
+        registerWall(BlockList.crackedStoneBrickWall, Blocks.STONEBRICK, BlockStoneBrick.EnumType.CRACKED.getMetadata());
+        registerWall(BlockList.mossyStoneBrickWall, Blocks.STONEBRICK, BlockStoneBrick.EnumType.MOSSY.getMetadata());
+        registerWall(BlockList.obsidianWall, Blocks.OBSIDIAN);
+        registerWall(BlockList.emeraldWall, Blocks.EMERALD_BLOCK);
+        registerWall(BlockList.mossyCobblestoneWall, Blocks.MOSSY_COBBLESTONE);
         registerWall(BlockList.andesiteBrickWall, BlockList.andesiteBrick);
         registerWall(BlockList.dioriteBrickWall, BlockList.dioriteBrick);
         registerWall(BlockList.graniteBrickWall, BlockList.graniteBrick);
@@ -174,55 +174,55 @@ public class RecipeHandler {
     }
 
     private void registerStairRecipes() {
-        registerStairs(BlockList.diamondStairs, Blocks.diamond_block);
-        registerStairs(BlockList.ironStairs, Blocks.iron_block);
-        registerStairs(BlockList.goldStairs, Blocks.gold_block);
-        registerStairs(BlockList.polishedAndesiteStairs, Blocks.stone, BlockStone.EnumType.ANDESITE_SMOOTH.getMetadata());
-        registerStairs(BlockList.polishedDioriteStairs, Blocks.stone, BlockStone.EnumType.DIORITE_SMOOTH.getMetadata());
-        registerStairs(BlockList.polishedGraniteStairs, Blocks.stone, BlockStone.EnumType.GRANITE_SMOOTH.getMetadata());
-        registerStairs(BlockList.lapisLazuliStairs, Blocks.lapis_block);
-        registerStairs(BlockList.smoothSandstoneStairs, Blocks.sandstone, BlockSandStone.EnumType.SMOOTH.getMetadata());
-        registerStairs(BlockList.crackedStoneBrickStairs, Blocks.stonebrick, BlockStoneBrick.EnumType.CRACKED.getMetadata());
-        registerStairs(BlockList.mossyStoneBrickStairs, Blocks.stonebrick, BlockStoneBrick.EnumType.MOSSY.getMetadata());
-        registerStairs(BlockList.obsidianStairs, Blocks.obsidian);
-        registerStairs(BlockList.emeraldStairs, Blocks.emerald_block);
-        registerStairs(BlockList.hayStairs, Blocks.hay_block);
-        registerStairs(BlockList.hardenedClayStairs, Blocks.hardened_clay);
-        registerStairs(BlockList.orangeWoolStairs, Blocks.wool, EnumDyeColor.ORANGE.getMetadata());
-        registerStairs(BlockList.whiteWoolStairs, Blocks.wool, EnumDyeColor.WHITE.getMetadata());
-        registerStairs(BlockList.magentaWoolStairs, Blocks.wool, EnumDyeColor.MAGENTA.getMetadata());
-        registerStairs(BlockList.lightBlueWoolStairs, Blocks.wool, EnumDyeColor.LIGHT_BLUE.getMetadata());
-        registerStairs(BlockList.yellowWoolStairs, Blocks.wool, EnumDyeColor.YELLOW.getMetadata());
-        registerStairs(BlockList.limeWoolStairs, Blocks.wool, EnumDyeColor.LIME.getMetadata());
-        registerStairs(BlockList.pinkWoolStairs, Blocks.wool, EnumDyeColor.PINK.getMetadata());
-        registerStairs(BlockList.grayWoolStairs, Blocks.wool, EnumDyeColor.GRAY.getMetadata());
-        registerStairs(BlockList.silverWoolStairs, Blocks.wool, EnumDyeColor.SILVER.getMetadata());
-        registerStairs(BlockList.cyanWoolStairs, Blocks.wool, EnumDyeColor.CYAN.getMetadata());
-        registerStairs(BlockList.purpleWoolStairs, Blocks.wool, EnumDyeColor.PURPLE.getMetadata());
-        registerStairs(BlockList.blueWoolStairs, Blocks.wool, EnumDyeColor.BLUE.getMetadata());
-        registerStairs(BlockList.brownWoolStairs, Blocks.wool, EnumDyeColor.BROWN.getMetadata());
-        registerStairs(BlockList.greenWoolStairs, Blocks.wool, EnumDyeColor.GREEN.getMetadata());
-        registerStairs(BlockList.redWoolStairs, Blocks.wool, EnumDyeColor.RED.getMetadata());
-        registerStairs(BlockList.blackWoolStairs, Blocks.wool, EnumDyeColor.BLACK.getMetadata());
-        registerStairs(BlockList.whiteHardenedClayStairs, Blocks.stained_hardened_clay, EnumDyeColor.WHITE.getMetadata());
-        registerStairs(BlockList.orangeHardenedClayStairs, Blocks.stained_hardened_clay, EnumDyeColor.ORANGE.getMetadata());
-        registerStairs(BlockList.magentaHardenedClayStairs, Blocks.stained_hardened_clay, EnumDyeColor.MAGENTA.getMetadata());
-        registerStairs(BlockList.light_blueHardenedClayStairs, Blocks.stained_hardened_clay, EnumDyeColor.LIGHT_BLUE.getMetadata());
-        registerStairs(BlockList.yellowHardenedClayStairs, Blocks.stained_hardened_clay, EnumDyeColor.YELLOW.getMetadata());
-        registerStairs(BlockList.limeHardenedClayStairs, Blocks.stained_hardened_clay, EnumDyeColor.LIME.getMetadata());
-        registerStairs(BlockList.pinkHardenedClayStairs, Blocks.stained_hardened_clay, EnumDyeColor.PINK.getMetadata());
-        registerStairs(BlockList.grayHardenedClayStairs, Blocks.stained_hardened_clay, EnumDyeColor.GRAY.getMetadata());
-        registerStairs(BlockList.silverHardenedClayStairs, Blocks.stained_hardened_clay, EnumDyeColor.SILVER.getMetadata());
-        registerStairs(BlockList.cyanHardenedClayStairs, Blocks.stained_hardened_clay, EnumDyeColor.CYAN.getMetadata());
-        registerStairs(BlockList.purpleHardenedClayStairs, Blocks.stained_hardened_clay, EnumDyeColor.PURPLE.getMetadata());
-        registerStairs(BlockList.blueHardenedClayStairs, Blocks.stained_hardened_clay, EnumDyeColor.BLUE.getMetadata());
-        registerStairs(BlockList.brownHardenedClayStairs, Blocks.stained_hardened_clay, EnumDyeColor.BROWN.getMetadata());
-        registerStairs(BlockList.greenHardenedClayStairs, Blocks.stained_hardened_clay, EnumDyeColor.GREEN.getMetadata());
-        registerStairs(BlockList.redHardenedClayStairs, Blocks.stained_hardened_clay, EnumDyeColor.RED.getMetadata());
-        registerStairs(BlockList.blackHardenedClayStairs, Blocks.stained_hardened_clay, EnumDyeColor.BLACK.getMetadata());
-        registerStairs(BlockList.mossyCobblestoneStairs, Blocks.mossy_cobblestone);
-        registerStairs(BlockList.prismarineBrickStairs, Blocks.prismarine, BlockPrismarine.BRICKS_META);
-        registerStairs(BlockList.darkPrismarineStairs, Blocks.prismarine, BlockPrismarine.DARK_META);
+        registerStairs(BlockList.diamondStairs, Blocks.DIAMOND_BLOCK);
+        registerStairs(BlockList.ironStairs, Blocks.IRON_BLOCK);
+        registerStairs(BlockList.goldStairs, Blocks.GOLD_BLOCK);
+        registerStairs(BlockList.polishedAndesiteStairs, Blocks.STONE, BlockStone.EnumType.ANDESITE_SMOOTH.getMetadata());
+        registerStairs(BlockList.polishedDioriteStairs, Blocks.STONE, BlockStone.EnumType.DIORITE_SMOOTH.getMetadata());
+        registerStairs(BlockList.polishedGraniteStairs, Blocks.STONE, BlockStone.EnumType.GRANITE_SMOOTH.getMetadata());
+        registerStairs(BlockList.lapisLazuliStairs, Blocks.LAPIS_BLOCK);
+        registerStairs(BlockList.smoothSandstoneStairs, Blocks.SANDSTONE, BlockSandStone.EnumType.SMOOTH.getMetadata());
+        registerStairs(BlockList.crackedStoneBrickStairs, Blocks.STONEBRICK, BlockStoneBrick.EnumType.CRACKED.getMetadata());
+        registerStairs(BlockList.mossyStoneBrickStairs, Blocks.STONEBRICK, BlockStoneBrick.EnumType.MOSSY.getMetadata());
+        registerStairs(BlockList.obsidianStairs, Blocks.OBSIDIAN);
+        registerStairs(BlockList.emeraldStairs, Blocks.EMERALD_BLOCK);
+        registerStairs(BlockList.hayStairs, Blocks.HAY_BLOCK);
+        registerStairs(BlockList.hardenedClayStairs, Blocks.HARDENED_CLAY);
+        registerStairs(BlockList.orangeWoolStairs, Blocks.WOOL, EnumDyeColor.ORANGE.getMetadata());
+        registerStairs(BlockList.whiteWoolStairs, Blocks.WOOL, EnumDyeColor.WHITE.getMetadata());
+        registerStairs(BlockList.magentaWoolStairs, Blocks.WOOL, EnumDyeColor.MAGENTA.getMetadata());
+        registerStairs(BlockList.lightBlueWoolStairs, Blocks.WOOL, EnumDyeColor.LIGHT_BLUE.getMetadata());
+        registerStairs(BlockList.yellowWoolStairs, Blocks.WOOL, EnumDyeColor.YELLOW.getMetadata());
+        registerStairs(BlockList.limeWoolStairs, Blocks.WOOL, EnumDyeColor.LIME.getMetadata());
+        registerStairs(BlockList.pinkWoolStairs, Blocks.WOOL, EnumDyeColor.PINK.getMetadata());
+        registerStairs(BlockList.grayWoolStairs, Blocks.WOOL, EnumDyeColor.GRAY.getMetadata());
+        registerStairs(BlockList.silverWoolStairs, Blocks.WOOL, EnumDyeColor.SILVER.getMetadata());
+        registerStairs(BlockList.cyanWoolStairs, Blocks.WOOL, EnumDyeColor.CYAN.getMetadata());
+        registerStairs(BlockList.purpleWoolStairs, Blocks.WOOL, EnumDyeColor.PURPLE.getMetadata());
+        registerStairs(BlockList.blueWoolStairs, Blocks.WOOL, EnumDyeColor.BLUE.getMetadata());
+        registerStairs(BlockList.brownWoolStairs, Blocks.WOOL, EnumDyeColor.BROWN.getMetadata());
+        registerStairs(BlockList.greenWoolStairs, Blocks.WOOL, EnumDyeColor.GREEN.getMetadata());
+        registerStairs(BlockList.redWoolStairs, Blocks.WOOL, EnumDyeColor.RED.getMetadata());
+        registerStairs(BlockList.blackWoolStairs, Blocks.WOOL, EnumDyeColor.BLACK.getMetadata());
+        registerStairs(BlockList.whiteHardenedClayStairs, Blocks.STAINED_HARDENED_CLAY, EnumDyeColor.WHITE.getMetadata());
+        registerStairs(BlockList.orangeHardenedClayStairs, Blocks.STAINED_HARDENED_CLAY, EnumDyeColor.ORANGE.getMetadata());
+        registerStairs(BlockList.magentaHardenedClayStairs, Blocks.STAINED_HARDENED_CLAY, EnumDyeColor.MAGENTA.getMetadata());
+        registerStairs(BlockList.light_blueHardenedClayStairs, Blocks.STAINED_HARDENED_CLAY, EnumDyeColor.LIGHT_BLUE.getMetadata());
+        registerStairs(BlockList.yellowHardenedClayStairs, Blocks.STAINED_HARDENED_CLAY, EnumDyeColor.YELLOW.getMetadata());
+        registerStairs(BlockList.limeHardenedClayStairs, Blocks.STAINED_HARDENED_CLAY, EnumDyeColor.LIME.getMetadata());
+        registerStairs(BlockList.pinkHardenedClayStairs, Blocks.STAINED_HARDENED_CLAY, EnumDyeColor.PINK.getMetadata());
+        registerStairs(BlockList.grayHardenedClayStairs, Blocks.STAINED_HARDENED_CLAY, EnumDyeColor.GRAY.getMetadata());
+        registerStairs(BlockList.silverHardenedClayStairs, Blocks.STAINED_HARDENED_CLAY, EnumDyeColor.SILVER.getMetadata());
+        registerStairs(BlockList.cyanHardenedClayStairs, Blocks.STAINED_HARDENED_CLAY, EnumDyeColor.CYAN.getMetadata());
+        registerStairs(BlockList.purpleHardenedClayStairs, Blocks.STAINED_HARDENED_CLAY, EnumDyeColor.PURPLE.getMetadata());
+        registerStairs(BlockList.blueHardenedClayStairs, Blocks.STAINED_HARDENED_CLAY, EnumDyeColor.BLUE.getMetadata());
+        registerStairs(BlockList.brownHardenedClayStairs, Blocks.STAINED_HARDENED_CLAY, EnumDyeColor.BROWN.getMetadata());
+        registerStairs(BlockList.greenHardenedClayStairs, Blocks.STAINED_HARDENED_CLAY, EnumDyeColor.GREEN.getMetadata());
+        registerStairs(BlockList.redHardenedClayStairs, Blocks.STAINED_HARDENED_CLAY, EnumDyeColor.RED.getMetadata());
+        registerStairs(BlockList.blackHardenedClayStairs, Blocks.STAINED_HARDENED_CLAY, EnumDyeColor.BLACK.getMetadata());
+        registerStairs(BlockList.mossyCobblestoneStairs, Blocks.MOSSY_COBBLESTONE);
+        registerStairs(BlockList.prismarineBrickStairs, Blocks.PRISMARINE, BlockPrismarine.BRICKS_META);
+        registerStairs(BlockList.darkPrismarineStairs, Blocks.PRISMARINE, BlockPrismarine.DARK_META);
         registerStairs(BlockList.clayTileStairs, BlockList.clayTile);
         registerStairs(BlockList.orangeClayTileStairs, BlockList.orangeClayTile);
         registerStairs(BlockList.orangeClayTileStairs, BlockList.orangeClayTile);
@@ -247,55 +247,55 @@ public class RecipeHandler {
     }
 
     private void registerSlabRecipes() {
-        registerSlab(BlockList.diamondSlab.getSingleSlab(), Blocks.diamond_block);
-        registerSlab(BlockList.ironSlab.getSingleSlab(), Blocks.iron_block);
-        registerSlab(BlockList.goldSlab.getSingleSlab(), Blocks.gold_block);
-        registerSlab(BlockList.polishedAndesiteSlab.getSingleSlab(), 0, Blocks.stone, BlockStone.EnumType.ANDESITE_SMOOTH.getMetadata());
-        registerSlab(BlockList.polishedDioriteSlab.getSingleSlab(), 0, Blocks.stone, BlockStone.EnumType.DIORITE_SMOOTH.getMetadata());
-        registerSlab(BlockList.polishedGraniteSlab.getSingleSlab(), 0, Blocks.stone, BlockStone.EnumType.GRANITE_SMOOTH.getMetadata());
-        registerSlab(BlockList.lapisLazuliSlab.getSingleSlab(), Blocks.lapis_block);
-        registerSlab(BlockList.smoothSandstoneSlab.getSingleSlab(), 0, Blocks.sandstone, BlockSandStone.EnumType.SMOOTH.getMetadata());
-        registerSlab(BlockList.crackedStoneBrickSlab.getSingleSlab(), 0, Blocks.stonebrick, BlockStoneBrick.EnumType.CRACKED.getMetadata());
-        registerSlab(BlockList.mossyStoneBrickSlab.getSingleSlab(), 0, Blocks.stonebrick, BlockStoneBrick.EnumType.MOSSY.getMetadata());
-        registerSlab(BlockList.obsidianSlab.getSingleSlab(), Blocks.obsidian);
-        registerSlab(BlockList.emeraldSlab.getSingleSlab(), Blocks.emerald_block);
-        registerSlab(BlockList.haySlab.getSingleSlab(), Blocks.hay_block);
-        registerSlab(BlockList.orangeWoolSlab.getSingleSlab(), 0, Blocks.wool, EnumDyeColor.ORANGE.getMetadata());
-        registerSlab(BlockList.whiteWoolSlab.getSingleSlab(), 0, Blocks.wool, EnumDyeColor.WHITE.getMetadata());
-        registerSlab(BlockList.magentaWoolSlab.getSingleSlab(), 0, Blocks.wool, EnumDyeColor.MAGENTA.getMetadata());
-        registerSlab(BlockList.lightBlueWoolSlab.getSingleSlab(), 0, Blocks.wool, EnumDyeColor.LIGHT_BLUE.getMetadata());
-        registerSlab(BlockList.yellowWoolSlab.getSingleSlab(), 0, Blocks.wool, EnumDyeColor.YELLOW.getMetadata());
-        registerSlab(BlockList.limeWoolSlab.getSingleSlab(), 0, Blocks.wool, EnumDyeColor.LIME.getMetadata());
-        registerSlab(BlockList.pinkWoolSlab.getSingleSlab(), 0, Blocks.wool, EnumDyeColor.PINK.getMetadata());
-        registerSlab(BlockList.grayWoolSlab.getSingleSlab(), 0, Blocks.wool, EnumDyeColor.GRAY.getMetadata());
-        registerSlab(BlockList.silverWoolSlab.getSingleSlab(), 0, Blocks.wool, EnumDyeColor.SILVER.getMetadata());
-        registerSlab(BlockList.cyanWoolSlab.getSingleSlab(), 0, Blocks.wool, EnumDyeColor.CYAN.getMetadata());
-        registerSlab(BlockList.purpleWoolSlab.getSingleSlab(), 0, Blocks.wool, EnumDyeColor.PURPLE.getMetadata());
-        registerSlab(BlockList.blueWoolSlab.getSingleSlab(), 0, Blocks.wool, EnumDyeColor.BLUE.getMetadata());
-        registerSlab(BlockList.brownWoolSlab.getSingleSlab(), 0, Blocks.wool, EnumDyeColor.BROWN.getMetadata());
-        registerSlab(BlockList.greenWoolSlab.getSingleSlab(), 0, Blocks.wool, EnumDyeColor.GREEN.getMetadata());
-        registerSlab(BlockList.redWoolSlab.getSingleSlab(), 0, Blocks.wool, EnumDyeColor.RED.getMetadata());
-        registerSlab(BlockList.blackWoolSlab.getSingleSlab(), 0, Blocks.wool, EnumDyeColor.BLACK.getMetadata());
-        registerSlab(BlockList.whiteHardenedClaySlab.getSingleSlab(), 0, Blocks.stained_hardened_clay, EnumDyeColor.WHITE.getMetadata());
-        registerSlab(BlockList.orangeHardenedClaySlab.getSingleSlab(), 0, Blocks.stained_hardened_clay, EnumDyeColor.ORANGE.getMetadata());
-        registerSlab(BlockList.magentaHardenedClaySlab.getSingleSlab(), 0, Blocks.stained_hardened_clay, EnumDyeColor.MAGENTA.getMetadata());
-        registerSlab(BlockList.light_blueHardenedClaySlab.getSingleSlab(), 0, Blocks.stained_hardened_clay, EnumDyeColor.LIGHT_BLUE.getMetadata());
-        registerSlab(BlockList.yellowHardenedClaySlab.getSingleSlab(), 0, Blocks.stained_hardened_clay, EnumDyeColor.YELLOW.getMetadata());
-        registerSlab(BlockList.limeHardenedClaySlab.getSingleSlab(), 0, Blocks.stained_hardened_clay, EnumDyeColor.LIME.getMetadata());
-        registerSlab(BlockList.pinkHardenedClaySlab.getSingleSlab(), 0, Blocks.stained_hardened_clay, EnumDyeColor.PINK.getMetadata());
-        registerSlab(BlockList.grayHardenedClaySlab.getSingleSlab(), 0, Blocks.stained_hardened_clay, EnumDyeColor.GRAY.getMetadata());
-        registerSlab(BlockList.silverHardenedClaySlab.getSingleSlab(), 0, Blocks.stained_hardened_clay, EnumDyeColor.SILVER.getMetadata());
-        registerSlab(BlockList.cyanHardenedClaySlab.getSingleSlab(), 0, Blocks.stained_hardened_clay, EnumDyeColor.CYAN.getMetadata());
-        registerSlab(BlockList.purpleHardenedClaySlab.getSingleSlab(), 0, Blocks.stained_hardened_clay, EnumDyeColor.PURPLE.getMetadata());
-        registerSlab(BlockList.blueHardenedClaySlab.getSingleSlab(), 0, Blocks.stained_hardened_clay, EnumDyeColor.BLUE.getMetadata());
-        registerSlab(BlockList.brownHardenedClaySlab.getSingleSlab(), 0, Blocks.stained_hardened_clay, EnumDyeColor.BROWN.getMetadata());
-        registerSlab(BlockList.greenHardenedClaySlab.getSingleSlab(), 0, Blocks.stained_hardened_clay, EnumDyeColor.GREEN.getMetadata());
-        registerSlab(BlockList.redHardenedClaySlab.getSingleSlab(), 0, Blocks.stained_hardened_clay, EnumDyeColor.RED.getMetadata());
-        registerSlab(BlockList.blackHardenedClaySlab.getSingleSlab(), 0, Blocks.stained_hardened_clay, EnumDyeColor.BLACK.getMetadata());
-        registerSlab(BlockList.mossyCobblestoneSlab.getSingleSlab(), Blocks.mossy_cobblestone);
-        registerSlab(BlockList.prismarineBrickSlab.getSingleSlab(), 0, Blocks.prismarine, BlockPrismarine.BRICKS_META);
-        registerSlab(BlockList.darkPrismarineSlab.getSingleSlab(), 0, Blocks.prismarine, BlockPrismarine.DARK_META);
-        registerSlab(BlockList.hardenedClaySlab.getSingleSlab(), Blocks.hardened_clay);
+        registerSlab(BlockList.diamondSlab.getSingleSlab(), Blocks.DIAMOND_BLOCK);
+        registerSlab(BlockList.ironSlab.getSingleSlab(), Blocks.IRON_BLOCK);
+        registerSlab(BlockList.goldSlab.getSingleSlab(), Blocks.GOLD_BLOCK);
+        registerSlab(BlockList.polishedAndesiteSlab.getSingleSlab(), 0, Blocks.STONE, BlockStone.EnumType.ANDESITE_SMOOTH.getMetadata());
+        registerSlab(BlockList.polishedDioriteSlab.getSingleSlab(), 0, Blocks.STONE, BlockStone.EnumType.DIORITE_SMOOTH.getMetadata());
+        registerSlab(BlockList.polishedGraniteSlab.getSingleSlab(), 0, Blocks.STONE, BlockStone.EnumType.GRANITE_SMOOTH.getMetadata());
+        registerSlab(BlockList.lapisLazuliSlab.getSingleSlab(), Blocks.LAPIS_BLOCK);
+        registerSlab(BlockList.smoothSandstoneSlab.getSingleSlab(), 0, Blocks.SANDSTONE, BlockSandStone.EnumType.SMOOTH.getMetadata());
+        registerSlab(BlockList.crackedStoneBrickSlab.getSingleSlab(), 0, Blocks.STONEBRICK, BlockStoneBrick.EnumType.CRACKED.getMetadata());
+        registerSlab(BlockList.mossyStoneBrickSlab.getSingleSlab(), 0, Blocks.STONEBRICK, BlockStoneBrick.EnumType.MOSSY.getMetadata());
+        registerSlab(BlockList.obsidianSlab.getSingleSlab(), Blocks.OBSIDIAN);
+        registerSlab(BlockList.emeraldSlab.getSingleSlab(), Blocks.EMERALD_BLOCK);
+        registerSlab(BlockList.haySlab.getSingleSlab(), Blocks.HAY_BLOCK);
+        registerSlab(BlockList.orangeWoolSlab.getSingleSlab(), 0, Blocks.WOOL, EnumDyeColor.ORANGE.getMetadata());
+        registerSlab(BlockList.whiteWoolSlab.getSingleSlab(), 0, Blocks.WOOL, EnumDyeColor.WHITE.getMetadata());
+        registerSlab(BlockList.magentaWoolSlab.getSingleSlab(), 0, Blocks.WOOL, EnumDyeColor.MAGENTA.getMetadata());
+        registerSlab(BlockList.lightBlueWoolSlab.getSingleSlab(), 0, Blocks.WOOL, EnumDyeColor.LIGHT_BLUE.getMetadata());
+        registerSlab(BlockList.yellowWoolSlab.getSingleSlab(), 0, Blocks.WOOL, EnumDyeColor.YELLOW.getMetadata());
+        registerSlab(BlockList.limeWoolSlab.getSingleSlab(), 0, Blocks.WOOL, EnumDyeColor.LIME.getMetadata());
+        registerSlab(BlockList.pinkWoolSlab.getSingleSlab(), 0, Blocks.WOOL, EnumDyeColor.PINK.getMetadata());
+        registerSlab(BlockList.grayWoolSlab.getSingleSlab(), 0, Blocks.WOOL, EnumDyeColor.GRAY.getMetadata());
+        registerSlab(BlockList.silverWoolSlab.getSingleSlab(), 0, Blocks.WOOL, EnumDyeColor.SILVER.getMetadata());
+        registerSlab(BlockList.cyanWoolSlab.getSingleSlab(), 0, Blocks.WOOL, EnumDyeColor.CYAN.getMetadata());
+        registerSlab(BlockList.purpleWoolSlab.getSingleSlab(), 0, Blocks.WOOL, EnumDyeColor.PURPLE.getMetadata());
+        registerSlab(BlockList.blueWoolSlab.getSingleSlab(), 0, Blocks.WOOL, EnumDyeColor.BLUE.getMetadata());
+        registerSlab(BlockList.brownWoolSlab.getSingleSlab(), 0, Blocks.WOOL, EnumDyeColor.BROWN.getMetadata());
+        registerSlab(BlockList.greenWoolSlab.getSingleSlab(), 0, Blocks.WOOL, EnumDyeColor.GREEN.getMetadata());
+        registerSlab(BlockList.redWoolSlab.getSingleSlab(), 0, Blocks.WOOL, EnumDyeColor.RED.getMetadata());
+        registerSlab(BlockList.blackWoolSlab.getSingleSlab(), 0, Blocks.WOOL, EnumDyeColor.BLACK.getMetadata());
+        registerSlab(BlockList.whiteHardenedClaySlab.getSingleSlab(), 0, Blocks.STAINED_HARDENED_CLAY, EnumDyeColor.WHITE.getMetadata());
+        registerSlab(BlockList.orangeHardenedClaySlab.getSingleSlab(), 0, Blocks.STAINED_HARDENED_CLAY, EnumDyeColor.ORANGE.getMetadata());
+        registerSlab(BlockList.magentaHardenedClaySlab.getSingleSlab(), 0, Blocks.STAINED_HARDENED_CLAY, EnumDyeColor.MAGENTA.getMetadata());
+        registerSlab(BlockList.light_blueHardenedClaySlab.getSingleSlab(), 0, Blocks.STAINED_HARDENED_CLAY, EnumDyeColor.LIGHT_BLUE.getMetadata());
+        registerSlab(BlockList.yellowHardenedClaySlab.getSingleSlab(), 0, Blocks.STAINED_HARDENED_CLAY, EnumDyeColor.YELLOW.getMetadata());
+        registerSlab(BlockList.limeHardenedClaySlab.getSingleSlab(), 0, Blocks.STAINED_HARDENED_CLAY, EnumDyeColor.LIME.getMetadata());
+        registerSlab(BlockList.pinkHardenedClaySlab.getSingleSlab(), 0, Blocks.STAINED_HARDENED_CLAY, EnumDyeColor.PINK.getMetadata());
+        registerSlab(BlockList.grayHardenedClaySlab.getSingleSlab(), 0, Blocks.STAINED_HARDENED_CLAY, EnumDyeColor.GRAY.getMetadata());
+        registerSlab(BlockList.silverHardenedClaySlab.getSingleSlab(), 0, Blocks.STAINED_HARDENED_CLAY, EnumDyeColor.SILVER.getMetadata());
+        registerSlab(BlockList.cyanHardenedClaySlab.getSingleSlab(), 0, Blocks.STAINED_HARDENED_CLAY, EnumDyeColor.CYAN.getMetadata());
+        registerSlab(BlockList.purpleHardenedClaySlab.getSingleSlab(), 0, Blocks.STAINED_HARDENED_CLAY, EnumDyeColor.PURPLE.getMetadata());
+        registerSlab(BlockList.blueHardenedClaySlab.getSingleSlab(), 0, Blocks.STAINED_HARDENED_CLAY, EnumDyeColor.BLUE.getMetadata());
+        registerSlab(BlockList.brownHardenedClaySlab.getSingleSlab(), 0, Blocks.STAINED_HARDENED_CLAY, EnumDyeColor.BROWN.getMetadata());
+        registerSlab(BlockList.greenHardenedClaySlab.getSingleSlab(), 0, Blocks.STAINED_HARDENED_CLAY, EnumDyeColor.GREEN.getMetadata());
+        registerSlab(BlockList.redHardenedClaySlab.getSingleSlab(), 0, Blocks.STAINED_HARDENED_CLAY, EnumDyeColor.RED.getMetadata());
+        registerSlab(BlockList.blackHardenedClaySlab.getSingleSlab(), 0, Blocks.STAINED_HARDENED_CLAY, EnumDyeColor.BLACK.getMetadata());
+        registerSlab(BlockList.mossyCobblestoneSlab.getSingleSlab(), Blocks.MOSSY_COBBLESTONE);
+        registerSlab(BlockList.prismarineBrickSlab.getSingleSlab(), 0, Blocks.PRISMARINE, BlockPrismarine.BRICKS_META);
+        registerSlab(BlockList.darkPrismarineSlab.getSingleSlab(), 0, Blocks.PRISMARINE, BlockPrismarine.DARK_META);
+        registerSlab(BlockList.hardenedClaySlab.getSingleSlab(), Blocks.HARDENED_CLAY);
         registerSlab(BlockList.clayTileSlab.getSingleSlab(), BlockList.clayTile);
         registerSlab(BlockList.orangeClayTileSlab.getSingleSlab(), BlockList.orangeClayTile);
         registerSlab(BlockList.magentaClayTileSlab.getSingleSlab(), BlockList.magentaClayTile);
@@ -319,60 +319,60 @@ public class RecipeHandler {
     }
 
     private void removeVanillaRecipes() {
-        removeBlockRecipe(Blocks.stone_slab);
+        removeBlockRecipe(Blocks.STONE_SLAB);
 
         // Remove polished andesite/diorite/granite recipes
-        removeBlockRecipe(Blocks.stone, BlockStone.EnumType.ANDESITE_SMOOTH.getMetadata());
-        removeBlockRecipe(Blocks.stone, BlockStone.EnumType.DIORITE_SMOOTH.getMetadata());
-        removeBlockRecipe(Blocks.stone, BlockStone.EnumType.GRANITE_SMOOTH.getMetadata());
+        removeBlockRecipe(Blocks.STONE, BlockStone.EnumType.ANDESITE_SMOOTH.getMetadata());
+        removeBlockRecipe(Blocks.STONE, BlockStone.EnumType.DIORITE_SMOOTH.getMetadata());
+        removeBlockRecipe(Blocks.STONE, BlockStone.EnumType.GRANITE_SMOOTH.getMetadata());
 
         // Remove Stair recipes
-        removeBlockRecipe(Blocks.sandstone_stairs);
-        removeBlockRecipe(Blocks.stone_stairs);
-        removeBlockRecipe(Blocks.spruce_stairs);
-        removeBlockRecipe(Blocks.acacia_stairs);
-        removeBlockRecipe(Blocks.birch_stairs);
-        removeBlockRecipe(Blocks.dark_oak_stairs);
-        removeBlockRecipe(Blocks.jungle_stairs);
-        removeBlockRecipe(Blocks.oak_stairs);
-        removeBlockRecipe(Blocks.quartz_stairs);
-        removeBlockRecipe(Blocks.red_sandstone_stairs);
-        removeBlockRecipe(Blocks.nether_brick_stairs);
-        removeBlockRecipe(Blocks.brick_stairs);
-        removeBlockRecipe(Blocks.stone_brick_stairs);
+        removeBlockRecipe(Blocks.SANDSTONE_STAIRS);
+        removeBlockRecipe(Blocks.STONE_STAIRS);
+        removeBlockRecipe(Blocks.SPRUCE_STAIRS);
+        removeBlockRecipe(Blocks.ACACIA_STAIRS);
+        removeBlockRecipe(Blocks.BIRCH_STAIRS);
+        removeBlockRecipe(Blocks.DARK_OAK_STAIRS);
+        removeBlockRecipe(Blocks.JUNGLE_STAIRS);
+        removeBlockRecipe(Blocks.OAK_STAIRS);
+        removeBlockRecipe(Blocks.QUARTZ_STAIRS);
+        removeBlockRecipe(Blocks.RED_SANDSTONE_STAIRS);
+        removeBlockRecipe(Blocks.NETHER_BRICK_STAIRS);
+        removeBlockRecipe(Blocks.BRICK_STAIRS);
+        removeBlockRecipe(Blocks.STONE_BRICK_STAIRS);
     }
 
     private void reregisterVanillaRecipes() {
         // Re-register polished andesite/diorite/granite
-        registerBlock(Blocks.stone, BlockStone.EnumType.ANDESITE_SMOOTH.getMetadata(),
-                Blocks.stone, BlockStone.EnumType.ANDESITE.getMetadata());
-        registerBlock(Blocks.stone, BlockStone.EnumType.DIORITE_SMOOTH.getMetadata(),
-                Blocks.stone, BlockStone.EnumType.DIORITE.getMetadata());
-        registerBlock(Blocks.stone, BlockStone.EnumType.GRANITE_SMOOTH.getMetadata(),
-                Blocks.stone, BlockStone.EnumType.GRANITE.getMetadata());
+        registerBlock(Blocks.STONE, BlockStone.EnumType.ANDESITE_SMOOTH.getMetadata(),
+                Blocks.STONE, BlockStone.EnumType.ANDESITE.getMetadata());
+        registerBlock(Blocks.STONE, BlockStone.EnumType.DIORITE_SMOOTH.getMetadata(),
+                Blocks.STONE, BlockStone.EnumType.DIORITE.getMetadata());
+        registerBlock(Blocks.STONE, BlockStone.EnumType.GRANITE_SMOOTH.getMetadata(),
+                Blocks.STONE, BlockStone.EnumType.GRANITE.getMetadata());
 
         // Re-register default stairs.
-        registerStairs(Blocks.stone_stairs, Blocks.cobblestone);
-        registerStairs(Blocks.spruce_stairs, Blocks.planks, BlockPlanks.EnumType.SPRUCE.getMetadata());
-        registerStairs(Blocks.acacia_stairs, Blocks.planks, BlockPlanks.EnumType.ACACIA.getMetadata());
-        registerStairs(Blocks.birch_stairs, Blocks.planks, BlockPlanks.EnumType.BIRCH.getMetadata());
-        registerStairs(Blocks.dark_oak_stairs, Blocks.planks, BlockPlanks.EnumType.DARK_OAK.getMetadata());
-        registerStairs(Blocks.jungle_stairs, Blocks.planks, BlockPlanks.EnumType.JUNGLE.getMetadata());
-        registerStairs(Blocks.oak_stairs, Blocks.planks, BlockPlanks.EnumType.OAK.getMetadata());
-        registerStairs(Blocks.quartz_stairs, Blocks.quartz_block);
-        registerStairs(Blocks.red_sandstone_stairs, Blocks.red_sandstone);
-        registerStairs(Blocks.nether_brick_stairs, Blocks.nether_brick);
-        registerStairs(Blocks.sandstone_stairs, Blocks.sandstone, BlockSandStone.EnumType.DEFAULT.getMetadata());
-        registerStairs(Blocks.stone_brick_stairs, Blocks.stonebrick, BlockStoneBrick.EnumType.DEFAULT.getMetadata());
+        registerStairs(Blocks.STONE_STAIRS, Blocks.COBBLESTONE);
+        registerStairs(Blocks.SPRUCE_STAIRS, Blocks.PLANKS, BlockPlanks.EnumType.SPRUCE.getMetadata());
+        registerStairs(Blocks.ACACIA_STAIRS, Blocks.PLANKS, BlockPlanks.EnumType.ACACIA.getMetadata());
+        registerStairs(Blocks.BIRCH_STAIRS, Blocks.PLANKS, BlockPlanks.EnumType.BIRCH.getMetadata());
+        registerStairs(Blocks.DARK_OAK_STAIRS, Blocks.PLANKS, BlockPlanks.EnumType.DARK_OAK.getMetadata());
+        registerStairs(Blocks.JUNGLE_STAIRS, Blocks.PLANKS, BlockPlanks.EnumType.JUNGLE.getMetadata());
+        registerStairs(Blocks.OAK_STAIRS, Blocks.PLANKS, BlockPlanks.EnumType.OAK.getMetadata());
+        registerStairs(Blocks.QUARTZ_STAIRS, Blocks.QUARTZ_BLOCK);
+        registerStairs(Blocks.RED_SANDSTONE_STAIRS, Blocks.RED_SANDSTONE);
+        registerStairs(Blocks.NETHER_BRICK_STAIRS, Blocks.NETHER_BRICK);
+        registerStairs(Blocks.SANDSTONE_STAIRS, Blocks.SANDSTONE, BlockSandStone.EnumType.DEFAULT.getMetadata());
+        registerStairs(Blocks.STONE_BRICK_STAIRS, Blocks.STONEBRICK, BlockStoneBrick.EnumType.DEFAULT.getMetadata());
 
         // Re-register normal slabs.
-        registerSlab(Blocks.stone_slab, BlockStoneSlab.EnumType.COBBLESTONE.getMetadata(), Blocks.cobblestone, 0);
-        registerSlab(Blocks.stone_slab, BlockStoneSlab.EnumType.QUARTZ.getMetadata(), Blocks.quartz_block, 0);
-        registerSlab(Blocks.stone_slab, BlockStoneSlab.EnumType.BRICK.getMetadata(), Blocks.brick_block, 0);
-        registerSlab(Blocks.stone_slab, BlockStoneSlab.EnumType.SAND.getMetadata(), Blocks.sandstone, 0);
-        registerSlab(Blocks.stone_slab, BlockStoneSlab.EnumType.STONE.getMetadata(), Blocks.stone, 0);
-        registerSlab(Blocks.stone_slab, BlockStoneSlab.EnumType.SMOOTHBRICK.getMetadata(), Blocks.stonebrick, 0);
-        registerSlab(Blocks.stone_slab, BlockStoneSlab.EnumType.NETHERBRICK.getMetadata(), Blocks.nether_brick, 0);
+        registerSlab(Blocks.STONE_SLAB, BlockStoneSlab.EnumType.COBBLESTONE.getMetadata(), Blocks.COBBLESTONE, 0);
+        registerSlab(Blocks.STONE_SLAB, BlockStoneSlab.EnumType.QUARTZ.getMetadata(), Blocks.QUARTZ_BLOCK, 0);
+        registerSlab(Blocks.STONE_SLAB, BlockStoneSlab.EnumType.BRICK.getMetadata(), Blocks.BRICK_BLOCK, 0);
+        registerSlab(Blocks.STONE_SLAB, BlockStoneSlab.EnumType.SAND.getMetadata(), Blocks.SANDSTONE, 0);
+        registerSlab(Blocks.STONE_SLAB, BlockStoneSlab.EnumType.STONE.getMetadata(), Blocks.STONE, 0);
+        registerSlab(Blocks.STONE_SLAB, BlockStoneSlab.EnumType.SMOOTHBRICK.getMetadata(), Blocks.STONEBRICK, 0);
+        registerSlab(Blocks.STONE_SLAB, BlockStoneSlab.EnumType.NETHERBRICK.getMetadata(), Blocks.NETHER_BRICK, 0);
     }
 
     private void removeBlockRecipe(Block block) {
@@ -419,8 +419,8 @@ public class RecipeHandler {
     private void registerTorch(Block torchBlock, Item stickItem) {
         ItemStack torchStack = new ItemStack(torchBlock, 4);
         ItemStack stickStack = new ItemStack(stickItem, 1);
-        ItemStack coalStack = new ItemStack(Items.coal, 1);
-        ItemStack charcoalStack = new ItemStack(Items.coal, 1, 1);
+        ItemStack coalStack = new ItemStack(Items.COAL, 1);
+        ItemStack charcoalStack = new ItemStack(Items.COAL, 1, 1);
         GameRegistry.addRecipe(torchStack, "x", "y", 'x', coalStack, 'y', stickStack);
         GameRegistry.addRecipe(torchStack, "x", "y", 'x', charcoalStack, 'y', stickStack);
     }

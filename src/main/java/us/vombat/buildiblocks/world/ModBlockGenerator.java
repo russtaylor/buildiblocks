@@ -1,23 +1,22 @@
 package us.vombat.buildiblocks.world;
 
-import java.util.Random;
-
 import net.minecraft.block.state.IBlockState;
-import net.minecraft.util.BlockPos;
+import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
+import net.minecraft.world.chunk.IChunkGenerator;
 import net.minecraft.world.chunk.IChunkProvider;
 import net.minecraft.world.gen.feature.WorldGenMinable;
 import net.minecraftforge.fml.common.IWorldGenerator;
 
+import java.util.Random;
+
 /**
  * Adds the custom blocks we've created to world generation.
- *
- * Created by russt on 11/24/14.
  */
 public class ModBlockGenerator implements IWorldGenerator {
     @Override
-    public void generate(Random random, int x, int z, World world, IChunkProvider iChunkProvider, IChunkProvider iChunkProvider1) {
-        if(world.provider.getDimensionId() == 0) { // Only spawn in the normal world.
+    public void generate(Random random, int chunkX, int chunkZ, World world, IChunkGenerator chunkGenerator, IChunkProvider iChunkProvider1) {
+        if(world.provider.getDimension() == 0) { // Only spawn in the normal world.
             //Overworld spawning should occur here.
         }
     }

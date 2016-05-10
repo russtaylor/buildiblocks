@@ -18,7 +18,7 @@ import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
 public class BuildiblocksMod
 {
     public static final String MOD_ID = "buildiblocks";
-    static final String VERSION = "0.3.1";
+    static final String VERSION = "0.3.2";
     static final String MOD_NAME = "Buildiblocks";
 
     // World

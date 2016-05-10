@@ -25,7 +25,7 @@ public class PaperWall extends ModBlock {
     private static final PropertyDirection DIRECTION = PropertyDirection.create("direction", EnumFacing.Plane.HORIZONTAL);
 
     public PaperWall() {
-        super(Blocks.wool, BLOCK_NAME);
+        super(Blocks.WOOL, BLOCK_NAME);
     }
 
     public boolean isOpaqueCube() {

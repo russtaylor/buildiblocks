@@ -11,6 +11,7 @@ import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.util.BlockPos;
 import net.minecraft.util.EnumFacing;
 import net.minecraft.util.EnumWorldBlockLayer;
+import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
 import net.minecraftforge.fml.common.registry.GameRegistry;
 import net.minecraftforge.fml.relauncher.Side;
@@ -26,12 +27,12 @@ public class ModBlockPillar extends BlockRotatedPillar implements IModBlock {
     private static final PropertyEnum<EnumFacing.Axis> AXIS = PropertyEnum.create("axis", EnumFacing.Axis.class);
 
     public ModBlockPillar(Block block, String blockName) {
-        super(block.getMaterial());
+        super(block.getMaterial(null));
         this.blockName = blockName;
-        this.setHardness(block.getBlockHardness(null, null));
+        this.setHardness(block.getBlockHardness(null, null, null));
         this.setResistance(block.getExplosionResistance(null));
-        this.setCreativeTab(CreativeTabs.tabBlock);
-        this.setStepSound(block.stepSound);
+        this.setCreativeTab(CreativeTabs.BUILDING_BLOCKS);
+        this.setSoundType(block.getSoundType());
         this.setUnlocalizedName(blockName);
         this.setRegistryName(blockName);
     }
@@ -73,7 +74,7 @@ public class ModBlockPillar extends BlockRotatedPillar implements IModBlock {
         return i;
     }
 
-    public boolean rotateBlock(net.minecraft.world.World world, net.minecraft.util.BlockPos pos, EnumFacing axis) {
+    public boolean rotateBlock(net.minecraft.world.World world, BlockPos pos, EnumFacing axis) {
         net.minecraft.block.state.IBlockState state = world.getBlockState(pos);
         for (net.minecraft.block.properties.IProperty<?> prop : state.getProperties().keySet()) {
             if (prop.getName().equals("axis")) {

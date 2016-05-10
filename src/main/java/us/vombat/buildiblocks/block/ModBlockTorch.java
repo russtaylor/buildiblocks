@@ -1,20 +1,24 @@
 package us.vombat.buildiblocks.block;
 
+import com.google.common.base.Predicate;
 import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
 import net.minecraft.block.properties.IProperty;
 import net.minecraft.block.properties.PropertyDirection;
-import net.minecraft.block.state.BlockState;
+import net.minecraft.block.state.BlockStateContainer;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.entity.EntityLivingBase;
-import net.minecraft.util.*;
+import net.minecraft.util.BlockRenderLayer;
+import net.minecraft.util.EnumFacing;
+import net.minecraft.util.EnumParticleTypes;
+import net.minecraft.util.math.AxisAlignedBB;
+import net.minecraft.util.math.BlockPos;
+import net.minecraft.util.math.RayTraceResult;
 import net.minecraft.world.World;
 import net.minecraftforge.fml.common.registry.GameRegistry;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
-
-import com.google.common.base.Predicate;
 
 import java.util.Random;
 
@@ -32,10 +36,10 @@ public class ModBlockTorch extends Block implements IModBlock {
     });
 
     public ModBlockTorch(String blockName) {
-        super(Material.circuits);
+        super(Material.CIRCUITS);
         this.blockName = blockName;
         this.setLightLevel(1F);
-        this.setCreativeTab(CreativeTabs.tabBlock);
+        this.setCreativeTab(CreativeTabs.BUILDING_BLOCKS);
         this.setUnlocalizedName(blockName);
         this.setRegistryName(blockName);
     }
@@ -53,11 +57,12 @@ public class ModBlockTorch extends Block implements IModBlock {
     }
 
     private boolean canPlaceOn(World worldIn, BlockPos position) {
-        if (World.doesBlockHaveSolidTopSurface(worldIn, position)) {
+        if (worldIn.isSideSolid(position, EnumFacing.UP)) {
             return true;
         } else {
-            Block block = worldIn.getBlockState(position).getBlock();
-            return block.canPlaceTorchOnTop(worldIn, position);
+            IBlockState blockState = worldIn.getBlockState(position);
+            Block block = blockState.getBlock();
+            return block.canPlaceTorchOnTop(blockState, worldIn, position);
         }
     }
 
@@ -71,8 +76,9 @@ public class ModBlockTorch extends Block implements IModBlock {
     }
 
     private boolean canPlaceUnder(World worldIn, BlockPos position) {
-        Block block = worldIn.getBlockState(position).getBlock();
-        return block.isSideSolid(worldIn, position, EnumFacing.DOWN) || block.canPlaceTorchOnTop(worldIn, position);
+        IBlockState blockState = worldIn.getBlockState(position);
+        Block block = blockState.getBlock();
+        return worldIn.isSideSolid(position, EnumFacing.DOWN) || block.canPlaceTorchOnTop(blockState, worldIn, position);
     }
 
     private boolean canPlaceAt(World worldIn, BlockPos position, EnumFacing facing) {
@@ -157,7 +163,7 @@ public class ModBlockTorch extends Block implements IModBlock {
     /**
      * Ray traces through the blocks collision from start vector to end vector returning a ray trace hit.
      */
-    public MovingObjectPosition collisionRayTrace(World worldIn, BlockPos pos, Vec3 start, Vec3 end) {
+    public RayTraceResult collisionRayTrace(World worldIn, BlockPos pos, Vec3 start, Vec3 end) {
         EnumFacing enumfacing = worldIn.getBlockState(pos).getValue(FACING);
         float f = 0.15F;
 
@@ -257,14 +263,14 @@ public class ModBlockTorch extends Block implements IModBlock {
         return i;
     }
 
-    protected BlockState createBlockState() {
+    protected BlockStateContainer createBlockState() {
         IProperty[] properties = new IProperty[] {FACING};
-        return new BlockState(this, properties);
+        return new BlockStateContainer(this, properties);
     }
 
     @SideOnly(Side.CLIENT)
-    public EnumWorldBlockLayer getBlockLayer() {
-        return EnumWorldBlockLayer.CUTOUT;
+    public BlockRenderLayer getBlockLayer() {
+        return BlockRenderLayer.CUTOUT;
     }
 
     public String getBlockName() {
