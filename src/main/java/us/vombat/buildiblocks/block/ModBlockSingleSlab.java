@@ -3,7 +3,7 @@ package us.vombat.buildiblocks.block;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockSlab;
 import net.minecraft.block.properties.IProperty;
-import net.minecraft.block.state.BlockState;
+import net.minecraft.block.state.BlockStateContainer;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.item.ItemStack;
@@ -16,13 +16,13 @@ public class ModBlockSingleSlab extends BlockSlab implements IModBlock {
     private String blockName;
 
     public ModBlockSingleSlab(Block parentBlock, String blockName, float blockHardness, float blockResistance) {
-        super(parentBlock.getMaterial());
+        super(parentBlock.getMaterial(null));
         IBlockState iblockstate = this.blockState.getBaseState();
         this.blockName = blockName;
-        setStepSound(parentBlock.stepSound);
+        setSoundType(parentBlock.getSoundType());
         setHardness(blockHardness);
         setResistance(blockResistance);
-        setCreativeTab(CreativeTabs.tabBlock);
+        setCreativeTab(CreativeTabs.BUILDING_BLOCKS);
         setUnlocalizedName(blockName);
         setRegistryName(blockName);
         this.useNeighborBrightness = true;
@@ -54,7 +54,7 @@ public class ModBlockSingleSlab extends BlockSlab implements IModBlock {
     }
 
     @Override
-    public Object getVariant(ItemStack p_176553_1_) {
+    public Comparable<?> getTypeForItem(ItemStack stack) {
         return null;
     }
 
@@ -79,8 +79,8 @@ public class ModBlockSingleSlab extends BlockSlab implements IModBlock {
     }
 
     @Override
-    protected BlockState createBlockState() {
-        return this.isDouble() ? new BlockState(this): new BlockState(this, HALF);
+    protected BlockStateContainer createBlockState() {
+        return this.isDouble() ? new BlockStateContainer(this): new BlockStateContainer(this, HALF);
     }
 
     @Override

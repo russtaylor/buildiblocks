@@ -3,7 +3,7 @@ package us.vombat.buildiblocks.block;
 import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
 import net.minecraft.init.Blocks;
-import net.minecraft.util.BlockPos;
+import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.IBlockAccess;
 
 /**
@@ -22,9 +22,9 @@ class BlockHelper {
         Block block = blockAccess.getBlockState(blockPos).getBlock();
         if (block != instance) {
             if (block != Blocks.barrier) {
-                if (block.getMaterial().isOpaque()) {
-                    if (block.isFullCube()) {
-                        return Material.gourd != block.getMaterial();
+                if (block.getMaterial(null).isOpaque()) {
+                    if (block.isFullCube(null)) {
+                        return Material.GOURD != block.getMaterial(null);
                     }
                 }
             }

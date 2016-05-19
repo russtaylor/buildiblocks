@@ -3,18 +3,18 @@ package us.vombat.buildiblocks.block;
 import net.minecraft.block.Block;
 import net.minecraft.block.properties.IProperty;
 import net.minecraft.block.properties.PropertyBool;
-import net.minecraft.block.state.BlockState;
+import net.minecraft.block.state.BlockStateContainer;
 import net.minecraft.block.state.IBlockState;
-import us.vombat.buildiblocks.BuildiblocksMod;
 import net.minecraft.creativetab.CreativeTabs;
-import net.minecraft.util.AxisAlignedBB;
-import net.minecraft.util.BlockPos;
 import net.minecraft.util.EnumFacing;
+import net.minecraft.util.math.AxisAlignedBB;
+import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.IBlockAccess;
 import net.minecraft.world.World;
 import net.minecraftforge.fml.common.registry.GameRegistry;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
+import us.vombat.buildiblocks.BuildiblocksMod;
 
 /**
  * Parent class for all walls.
@@ -30,7 +30,7 @@ public class ModBlockWall extends Block implements IModBlock {
     private String blockName;
 
     public ModBlockWall(Block block, String blockName) {
-        super(block.getMaterial());
+        super(block.getMaterial(null));
         this.blockName = blockName;
         this.setDefaultState(this.blockState.getBaseState()
                 .withProperty(UP, false)
@@ -38,12 +38,12 @@ public class ModBlockWall extends Block implements IModBlock {
                 .withProperty(EAST, false)
                 .withProperty(SOUTH, false)
                 .withProperty(WEST, false));
-        this.setHardness(block.getBlockHardness(null, null));
+        this.setHardness(block.getBlockHardness(null, null, null));
         this.setResistance(block.getExplosionResistance(null));
-        this.setStepSound(block.stepSound);
+        this.setSoundType(block.getSoundType());
         setUnlocalizedName(blockName);
         setRegistryName(BuildiblocksMod.MOD_ID + ":" + blockName);
-        setCreativeTab(CreativeTabs.tabBlock);
+        setCreativeTab(CreativeTabs.BUILDING_BLOCKS);
         useNeighborBrightness = true;
     }
 
@@ -64,57 +64,13 @@ public class ModBlockWall extends Block implements IModBlock {
         return false;
     }
 
-    @Override
     public boolean canPlaceTorchOnTop(IBlockAccess access, BlockPos pos) {
         return true;
     }
 
-    public void setBlockBoundsBasedOnState(IBlockAccess access, BlockPos pos) {
-        boolean northFlag = BlockHelper.calculateWallDirection(access, pos.north(), this);
-        boolean flag1 = BlockHelper.calculateWallDirection(access, pos.south(), this);
-        boolean flag2 = BlockHelper.calculateWallDirection(access, pos.west(), this);
-        boolean flag3 = BlockHelper.calculateWallDirection(access, pos.east(), this);
-        float f = 0.25F;
-        float f1 = 0.75F;
-        float f2 = 0.25F;
-        float f3 = 0.75F;
-        float f4 = 1.0F;
-
-        if (northFlag) {
-            f2 = 0.0F;
-        }
-
-        if (flag1) {
-            f3 = 1.0F;
-        }
-
-        if (flag2) {
-            f = 0.0F;
-        }
-
-        if (flag3) {
-            f1 = 1.0F;
-        }
-
-        if (northFlag && flag1 && !flag2 && !flag3) {
-            f4 = 0.8125F;
-            f = 0.3125F;
-            f1 = 0.6875F;
-        }
-
-        else if (!northFlag && !flag1 && flag2 && flag3) {
-            f4 = 0.8125F;
-            f2 = 0.3125F;
-            f3 = 0.6875F;
-        }
-
-        this.setBlockBounds(f, 0.0F, f2, f1, f4, f3);
-    }
 
     public AxisAlignedBB getCollisionBoundingBox(World worldIn, BlockPos pos, IBlockState state) {
-        this.setBlockBoundsBasedOnState(worldIn, pos);
-        this.maxY = 1.5D;
-        return super.getCollisionBoundingBox(worldIn, pos, state);
+        return super.getCollisionBoundingBox(state, worldIn, pos);
     }
 
     public IBlockState getActualState(IBlockState state, IBlockAccess worldIn, BlockPos pos) {
@@ -130,13 +86,13 @@ public class ModBlockWall extends Block implements IModBlock {
     }
 
     @SideOnly(Side.CLIENT)
-    public boolean shouldSideBeRendered(IBlockAccess worldIn, BlockPos pos, EnumFacing side) {
-        return side == EnumFacing.DOWN || super.shouldSideBeRendered(worldIn, pos, side);
+    public boolean shouldSideBeRendered(IBlockState blockState, IBlockAccess worldIn, BlockPos pos, EnumFacing side) {
+        return side == EnumFacing.DOWN || super.shouldSideBeRendered(blockState, worldIn, pos, side);
     }
 
-    protected BlockState createBlockState() {
+    protected BlockStateContainer createBlockState() {
         IProperty[] properties = new IProperty[] {UP, NORTH, EAST, SOUTH, WEST};
-        return new BlockState(this, properties);
+        return new BlockStateContainer(this, properties);
     }
 
     public int getMetaFromState(IBlockState state) {

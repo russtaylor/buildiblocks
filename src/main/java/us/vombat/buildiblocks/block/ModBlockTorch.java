@@ -14,7 +14,6 @@ import net.minecraft.util.EnumFacing;
 import net.minecraft.util.EnumParticleTypes;
 import net.minecraft.util.math.AxisAlignedBB;
 import net.minecraft.util.math.BlockPos;
-import net.minecraft.util.math.RayTraceResult;
 import net.minecraft.world.World;
 import net.minecraftforge.fml.common.registry.GameRegistry;
 import net.minecraftforge.fml.relauncher.Side;
@@ -158,29 +157,6 @@ public class ModBlockTorch extends Block implements IModBlock {
 
             return false;
         }
-    }
-
-    /**
-     * Ray traces through the blocks collision from start vector to end vector returning a ray trace hit.
-     */
-    public RayTraceResult collisionRayTrace(World worldIn, BlockPos pos, Vec3 start, Vec3 end) {
-        EnumFacing enumfacing = worldIn.getBlockState(pos).getValue(FACING);
-        float f = 0.15F;
-
-        if (enumfacing == EnumFacing.EAST) {
-            this.setBlockBounds(0.0F, 0.2F, 0.5F - f, f * 2.0F, 0.8F, 0.5F + f);
-        } else if (enumfacing == EnumFacing.WEST) {
-            this.setBlockBounds(1.0F - f * 2.0F, 0.2F, 0.5F - f, 1.0F, 0.8F, 0.5F + f);
-        } else if (enumfacing == EnumFacing.SOUTH) {
-            this.setBlockBounds(0.5F - f, 0.2F, 0.0F, 0.5F + f, 0.8F, f * 2.0F);
-        } else if (enumfacing == EnumFacing.NORTH) {
-            this.setBlockBounds(0.5F - f, 0.2F, 1.0F - f * 2.0F, 0.5F + f, 0.8F, 1.0F);
-        } else {
-            f = 0.1F;
-            this.setBlockBounds(0.5F - f, 0.0F, 0.5F - f, 0.5F + f, 0.6F, 0.5F + f);
-        }
-
-        return super.collisionRayTrace(worldIn, pos, start, end);
     }
 
     /**

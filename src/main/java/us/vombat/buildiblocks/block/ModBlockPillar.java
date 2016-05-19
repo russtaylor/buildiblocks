@@ -4,13 +4,12 @@ import net.minecraft.block.Block;
 import net.minecraft.block.BlockRotatedPillar;
 import net.minecraft.block.properties.IProperty;
 import net.minecraft.block.properties.PropertyEnum;
-import net.minecraft.block.state.BlockState;
+import net.minecraft.block.state.BlockStateContainer;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.entity.EntityLivingBase;
-import net.minecraft.util.BlockPos;
+import net.minecraft.util.BlockRenderLayer;
 import net.minecraft.util.EnumFacing;
-import net.minecraft.util.EnumWorldBlockLayer;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
 import net.minecraftforge.fml.common.registry.GameRegistry;
@@ -38,8 +37,8 @@ public class ModBlockPillar extends BlockRotatedPillar implements IModBlock {
     }
 
     @SideOnly(Side.CLIENT)
-    public EnumWorldBlockLayer getBlockLayer() {
-        return EnumWorldBlockLayer.SOLID;
+    public BlockRenderLayer getBlockLayer() {
+        return BlockRenderLayer.SOLID;
     }
 
     public String getBlockName() {
@@ -52,9 +51,9 @@ public class ModBlockPillar extends BlockRotatedPillar implements IModBlock {
         return this;
     }
 
-    protected BlockState createBlockState() {
+    protected BlockStateContainer createBlockState() {
         IProperty[] properties = new IProperty[] {AXIS};
-        return new BlockState(this, properties);
+        return new BlockStateContainer(this, properties);
     }
 
     /**

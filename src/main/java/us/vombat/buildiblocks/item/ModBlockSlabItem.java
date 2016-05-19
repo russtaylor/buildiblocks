@@ -6,6 +6,7 @@ import net.minecraft.block.state.IBlockState;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.ItemBlock;
 import net.minecraft.item.ItemStack;
+import net.minecraft.util.math.BlockPos;
 import us.vombat.buildiblocks.block.ModBlockDoubleSlab;
 import us.vombat.buildiblocks.block.ModBlockSingleSlab;
 import net.minecraft.util.BlockPos;
@@ -38,7 +39,6 @@ public class ModBlockSlabItem extends ItemBlock {
         return this.singleSlab.getUnlocalizedName(stack.getMetadata());
     }
 
-    @Override
     public boolean onItemUse(ItemStack stack, EntityPlayer playerIn, World worldIn, BlockPos pos, EnumFacing side, float hitX, float hitY, float hitZ)
     {
         if (stack.stackSize == 0 || !playerIn.canPlayerEdit(pos.offset(side), side, stack)) {
@@ -53,8 +53,8 @@ public class ModBlockSlabItem extends ItemBlock {
                 if ((side == EnumFacing.UP && enumBlockHalf == BlockSlab.EnumBlockHalf.BOTTOM || side == EnumFacing.DOWN && enumBlockHalf == BlockSlab.EnumBlockHalf.TOP)) {
                     IBlockState iblockstate1 = this.doubleSlab.getDefaultState();
 
-                    if (worldIn.checkNoEntityCollision(this.doubleSlab.getCollisionBoundingBox(worldIn, pos, iblockstate1)) && worldIn.setBlockState(pos, iblockstate1, 3)) {
-                        worldIn.playSoundEffect((double) ((float) pos.getX() + 0.5F), (double) ((float) pos.getY() + 0.5F), (double) ((float) pos.getZ() + 0.5F), this.doubleSlab.stepSound.getPlaceSound(), (this.doubleSlab.stepSound.getVolume() + 1.0F) / 2.0F, this.doubleSlab.stepSound.getFrequency() * 0.8F);
+                    if (worldIn.checkNoEntityCollision(this.doubleSlab.getCollisionBoundingBox(iblockstate1, worldIn, pos)) && worldIn.setBlockState(pos, iblockstate1, 3)) {
+                        worldIn.playSound((double) ((float) pos.getX() + 0.5F), (double) ((float) pos.getY() + 0.5F), (double) ((float) pos.getZ() + 0.5F), this.doubleSlab.getSoundType().getPlaceSound(), (this.doubleSlab.getSoundType().getVolume() + 1.0F) / 2.0F, this.doubleSlab.getSoundType().getPitch() * 0.8F);
                         --stack.stackSize;
                     }
 

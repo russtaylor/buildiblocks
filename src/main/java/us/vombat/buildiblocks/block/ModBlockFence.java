@@ -1,51 +1,58 @@
 package us.vombat.buildiblocks.block;
 
-import java.util.List;
-
 import net.minecraft.block.Block;
+import net.minecraft.block.BlockFence;
+import net.minecraft.block.BlockFenceGate;
 import net.minecraft.block.material.Material;
-import net.minecraft.block.properties.IProperty;
 import net.minecraft.block.properties.PropertyBool;
-import net.minecraft.block.state.BlockState;
+import net.minecraft.block.state.BlockStateContainer;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.entity.Entity;
 import net.minecraft.init.Blocks;
-import net.minecraft.util.AxisAlignedBB;
-import net.minecraft.util.BlockPos;
 import net.minecraft.util.EnumFacing;
+import net.minecraft.util.math.AxisAlignedBB;
+import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.IBlockAccess;
 import net.minecraft.world.World;
 import net.minecraftforge.fml.common.registry.GameRegistry;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 
+import java.util.List;
+
 /**
  * Parent class for all fences.
  */
 public class ModBlockFence extends Block implements IModBlock {
 
-    public static final PropertyBool NORTH = PropertyBool.create("north");
-    public static final PropertyBool EAST = PropertyBool.create("east");
-    public static final PropertyBool SOUTH = PropertyBool.create("south");
-    public static final PropertyBool WEST = PropertyBool.create("west");
+    private static final PropertyBool NORTH = PropertyBool.create("north");
+    private static final PropertyBool EAST = PropertyBool.create("east");
+    private static final PropertyBool SOUTH = PropertyBool.create("south");
+    private static final PropertyBool WEST = PropertyBool.create("west");
+    private static final AxisAlignedBB[] BOUNDING_BOXES = new AxisAlignedBB[] {new AxisAlignedBB(0.375D, 0.0D, 0.375D, 0.625D, 1.0D, 0.625D), new AxisAlignedBB(0.375D, 0.0D, 0.375D, 0.625D, 1.0D, 1.0D), new AxisAlignedBB(0.0D, 0.0D, 0.375D, 0.625D, 1.0D, 0.625D), new AxisAlignedBB(0.0D, 0.0D, 0.375D, 0.625D, 1.0D, 1.0D), new AxisAlignedBB(0.375D, 0.0D, 0.0D, 0.625D, 1.0D, 0.625D), new AxisAlignedBB(0.375D, 0.0D, 0.0D, 0.625D, 1.0D, 1.0D), new AxisAlignedBB(0.0D, 0.0D, 0.0D, 0.625D, 1.0D, 0.625D), new AxisAlignedBB(0.0D, 0.0D, 0.0D, 0.625D, 1.0D, 1.0D), new AxisAlignedBB(0.375D, 0.0D, 0.375D, 1.0D, 1.0D, 0.625D), new AxisAlignedBB(0.375D, 0.0D, 0.375D, 1.0D, 1.0D, 1.0D), new AxisAlignedBB(0.0D, 0.0D, 0.375D, 1.0D, 1.0D, 0.625D), new AxisAlignedBB(0.0D, 0.0D, 0.375D, 1.0D, 1.0D, 1.0D), new AxisAlignedBB(0.375D, 0.0D, 0.0D, 1.0D, 1.0D, 0.625D), new AxisAlignedBB(0.375D, 0.0D, 0.0D, 1.0D, 1.0D, 1.0D), new AxisAlignedBB(0.0D, 0.0D, 0.0D, 1.0D, 1.0D, 0.625D), new AxisAlignedBB(0.0D, 0.0D, 0.0D, 1.0D, 1.0D, 1.0D)};
+    private static final AxisAlignedBB PILLAR_AABB = new AxisAlignedBB(0.375D, 0.0D, 0.375D, 0.625D, 1.5D, 0.625D);
+    private static final AxisAlignedBB SOUTH_AABB = new AxisAlignedBB(0.375D, 0.0D, 0.625D, 0.625D, 1.5D, 1.0D);
+    private static final AxisAlignedBB WEST_AABB = new AxisAlignedBB(0.0D, 0.0D, 0.375D, 0.375D, 1.5D, 0.625D);
+    private static final AxisAlignedBB NORTH_AABB = new AxisAlignedBB(0.375D, 0.0D, 0.0D, 0.625D, 1.5D, 0.375D);
+    private static final AxisAlignedBB EAST_AABB = new AxisAlignedBB(0.625D, 0.0D, 0.375D, 1.0D, 1.5D, 0.625D);
 
     private String blockName;
 
     public ModBlockFence(Block block, String blockName) {
-        super(block.getMaterial());
+        super(block.getMaterial(null));
         this.blockName = blockName;
         this.setDefaultState(this.blockState.getBaseState()
                 .withProperty(NORTH, false)
                 .withProperty(EAST, false)
                 .withProperty(SOUTH, false)
                 .withProperty(WEST, false));
-        this.setHardness(block.getBlockHardness(null, null));
+        this.setHardness(block.getBlockHardness(null, null, null));
         this.setResistance(block.getExplosionResistance(null));
-        this.setStepSound(block.stepSound);
+        this.setSoundType(block.getSoundType());
         setUnlocalizedName(blockName);
         setRegistryName(blockName);
-        setCreativeTab(CreativeTabs.tabBlock);
+        setCreativeTab(CreativeTabs.BUILDING_BLOCKS);
         useNeighborBrightness = true;
     }
 
@@ -66,9 +73,10 @@ public class ModBlockFence extends Block implements IModBlock {
         return false;
     }
 
-    @Override
-    public boolean canPlaceTorchOnTop(IBlockAccess access, BlockPos pos) {
-        return true;
+    public boolean canConnectTo(IBlockAccess worldIn, BlockPos pos) {
+        IBlockState iblockstate = worldIn.getBlockState(pos);
+        Block block = iblockstate.getBlock();
+        return block != Blocks.BARRIER && (!((!(block instanceof BlockFence) || (block.getMaterial(null) != this.blockMaterial)) && !(block instanceof BlockFenceGate)) || ((block.getMaterial(null).isOpaque() && iblockstate.isFullCube()) && block.getMaterial(null) != Material.GOURD));
     }
 
     /**
@@ -79,105 +87,71 @@ public class ModBlockFence extends Block implements IModBlock {
      * @param blockPos the specified position
      * @return Whether or not the fence should point toward the specified block.
      */
-    public boolean calculateFenceDirection(IBlockAccess blockAccess, BlockPos blockPos) {
+    private boolean calculateFenceDirection(IBlockAccess blockAccess, BlockPos blockPos) {
         Block block = blockAccess.getBlockState(blockPos).getBlock();
         if (block != this) {
-            if (block != Blocks.barrier) {
-                if (block.getMaterial().isOpaque()) {
-                    if (block.isFullCube()) {
-                        return Material.gourd != block.getMaterial();
+            if (block != Blocks.BARRIER) {
+                if (block.getMaterial(block.getDefaultState()).isOpaque()) {
+                    if (block.isFullCube(block.getDefaultState())) {
+                        return Material.GOURD != block.getMaterial(block.getDefaultState());
                     }
                 }
             }
             return false;
         } else {
-            return block != Blocks.barrier;
+            return block != Blocks.BARRIER;
         }
     }
 
-    public void addCollisionBoxesToList(World worldIn, BlockPos pos, IBlockState state, AxisAlignedBB mask, List<AxisAlignedBB> list, Entity collidingEntity) {
-        boolean northFlag = this.calculateFenceDirection(worldIn, pos.north());
-        boolean southFlag = this.calculateFenceDirection(worldIn, pos.south());
-        boolean westFlag = this.calculateFenceDirection(worldIn, pos.west());
-        boolean eastFlag = this.calculateFenceDirection(worldIn, pos.east());
-        float f = 0.375F;
-        float f1 = 0.625F;
-        float f2 = 0.375F;
-        float f3 = 0.625F;
+    public void addCollisionBoxToList(IBlockState state, World worldIn, BlockPos pos, AxisAlignedBB entityBox, List<AxisAlignedBB> collidingBoxes, Entity entityIn) {
+        state = state.getActualState(worldIn, pos);
+        addCollisionBoxToList(pos, entityBox, collidingBoxes, PILLAR_AABB);
 
-        if (northFlag) {
-            f2 = 0.0F;
+        if (state.getValue(NORTH)) {
+            addCollisionBoxToList(pos, entityBox, collidingBoxes, NORTH_AABB);
         }
 
-        if (southFlag) {
-            f3 = 1.0F;
+        if (state.getValue(EAST)) {
+            addCollisionBoxToList(pos, entityBox, collidingBoxes, EAST_AABB);
         }
 
-        if (northFlag || southFlag) {
-            this.setBlockBounds(f, 0.0F, f2, f1, 1.5F, f3);
-            super.addCollisionBoxesToList(worldIn, pos, state, mask, list, collidingEntity);
+        if (state.getValue(SOUTH)) {
+            addCollisionBoxToList(pos, entityBox, collidingBoxes, SOUTH_AABB);
         }
 
-        f2 = 0.375F;
-        f3 = 0.625F;
-
-        if (westFlag) {
-            f = 0.0F;
+        if (state.getValue(WEST)) {
+            addCollisionBoxToList(pos, entityBox, collidingBoxes, WEST_AABB);
         }
-
-        if (eastFlag) {
-            f1 = 1.0F;
-        }
-
-        if (westFlag || eastFlag || !northFlag && !southFlag) {
-            this.setBlockBounds(f, 0.0F, f2, f1, 1.5F, f3);
-            super.addCollisionBoxesToList(worldIn, pos, state, mask, list, collidingEntity);
-        }
-
-        if (northFlag) {
-            f2 = 0.0F;
-        }
-
-        if (southFlag) {
-            f3 = 1.0F;
-        }
-
-        this.setBlockBounds(f, 0.0F, f2, f1, 1.0F, f3);
     }
 
-    public void setBlockBoundsBasedOnState(IBlockAccess access, BlockPos pos) {
-        boolean northFlag = this.calculateFenceDirection(access, pos.north());
-        boolean southFlag = this.calculateFenceDirection(access, pos.south());
-        boolean westFlag = this.calculateFenceDirection(access, pos.west());
-        boolean eastFlag = this.calculateFenceDirection(access, pos.east());
-        float f = 0.375F;
-        float f1 = 0.625F;
-        float f2 = 0.375F;
-        float f3 = 0.625F;
-
-        if (northFlag) {
-            f2 = 0.0F;
-        }
-
-        if (southFlag) {
-            f3 = 1.0F;
-        }
-
-        if (westFlag) {
-            f = 0.0F;
-        }
-
-        if (eastFlag) {
-            f1 = 1.0F;
-        }
-
-        this.setBlockBounds(f, 0.0F, f2, f1, 1.0F, f3);
+    public AxisAlignedBB getBoundingBox(IBlockState state, IBlockAccess source, BlockPos pos) {
+        state = this.getActualState(state, source, pos);
+        return BOUNDING_BOXES[getBoundingBoxIdx(state)];
     }
 
-    public AxisAlignedBB getCollisionBoundingBox(World worldIn, BlockPos pos, IBlockState state) {
-        this.setBlockBoundsBasedOnState(worldIn, pos);
-        this.maxY = 1.5D;
-        return super.getCollisionBoundingBox(worldIn, pos, state);
+    /**
+     * Returns the correct index into boundingBoxes, based on what the fence is connected to.
+     */
+    private static int getBoundingBoxIdx(IBlockState state) {
+        int i = 0;
+
+        if (state.getValue(NORTH)) {
+            i |= 1 << EnumFacing.NORTH.getHorizontalIndex();
+        }
+
+        if (state.getValue(EAST)) {
+            i |= 1 << EnumFacing.EAST.getHorizontalIndex();
+        }
+
+        if (state.getValue(SOUTH)) {
+            i |= 1 << EnumFacing.SOUTH.getHorizontalIndex();
+        }
+
+        if (state.getValue(WEST)) {
+            i |= 1 << EnumFacing.WEST.getHorizontalIndex();
+        }
+
+        return i;
     }
 
     public IBlockState getActualState(IBlockState state, IBlockAccess worldIn, BlockPos pos) {
@@ -192,13 +166,12 @@ public class ModBlockFence extends Block implements IModBlock {
     }
 
     @SideOnly(Side.CLIENT)
-    public boolean shouldSideBeRendered(IBlockAccess worldIn, BlockPos pos, EnumFacing side) {
-        return side == EnumFacing.DOWN || super.shouldSideBeRendered(worldIn, pos, side);
+    public boolean shouldSideBeRendered(IBlockState blockState, IBlockAccess blockAccess, BlockPos pos, EnumFacing side) {
+        return true;
     }
 
-    protected BlockState createBlockState() {
-        IProperty[] properties = new IProperty[] {NORTH, EAST, SOUTH, WEST};
-        return new BlockState(this, properties);
+    protected BlockStateContainer createBlockState() {
+        return new BlockStateContainer(this, NORTH, EAST, WEST, SOUTH);
     }
 
     public int getMetaFromState(IBlockState state) {
