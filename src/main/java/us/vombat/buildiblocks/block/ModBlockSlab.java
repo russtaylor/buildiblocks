@@ -1,17 +1,17 @@
 package us.vombat.buildiblocks.block;
 
 import net.minecraft.block.Block;
-import us.vombat.buildiblocks.item.ModBlockSlabItem;
-import net.minecraftforge.fml.common.registry.GameRegistry;
+import net.minecraft.block.BlockSlab;
 
 /**
  * Class to act as a container for singleSlabs and doubleSlabs
  */
-public class ModBlockSlab {
+public abstract class ModBlockSlab extends BlockSlab {
     private final ModBlockSingleSlab singleSlab;
     private final ModBlockDoubleSlab doubleSlab;
 
     public ModBlockSlab(String singleSlabName, Block parentBlock, float blockHardness, float blockResistance) {
+        super(parentBlock.getMaterial(null));
         this.singleSlab = new ModBlockSingleSlab(parentBlock, singleSlabName, blockHardness, blockResistance);
         this.doubleSlab = new ModBlockDoubleSlab(singleSlab, singleSlabName, blockHardness, blockResistance);
     }
@@ -25,8 +25,6 @@ public class ModBlockSlab {
     }
 
     public ModBlockSlab register() {
-        GameRegistry.registerBlock(doubleSlab, null, doubleSlab.getBlockName(), singleSlab, doubleSlab);
-        GameRegistry.registerBlock(singleSlab, ModBlockSlabItem.class, singleSlab.getBlockName(), singleSlab, doubleSlab);
         BlockList.blockList.add(singleSlab);
         return this;
     }

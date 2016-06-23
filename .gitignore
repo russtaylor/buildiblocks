@@ -19,6 +19,9 @@
 /repo/
 /buildSrc
 
+#java
+*.hprof
+
 #Patch rejects
 *.rej
 /patches-/
