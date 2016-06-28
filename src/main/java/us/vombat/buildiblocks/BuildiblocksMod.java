@@ -15,8 +15,7 @@ import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
 
 @SuppressWarnings("unused")
 @Mod(modid = BuildiblocksMod.MOD_ID, name = BuildiblocksMod.MOD_NAME, version = BuildiblocksMod.VERSION)
-public class BuildiblocksMod
-{
+public class BuildiblocksMod {
     public static final String MOD_ID = "buildiblocks";
     static final String VERSION = "0.3.2";
     static final String MOD_NAME = "Buildiblocks";
@@ -41,9 +40,8 @@ public class BuildiblocksMod
     @Mod.Instance
     public static BuildiblocksMod instance;
 
-    @SidedProxy(clientSide = "ClientProxy",
-            serverSide = "CommonProxy")
-    public static CommonProxy proxy;
+    @SidedProxy(clientSide = "ClientProxy", serverSide = "CommonProxy")
+    private static CommonProxy proxy;
 
     @EventHandler
     public void preInit(FMLPreInitializationEvent event) {

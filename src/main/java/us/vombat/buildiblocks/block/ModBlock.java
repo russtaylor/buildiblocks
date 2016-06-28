@@ -2,10 +2,7 @@ package us.vombat.buildiblocks.block;
 
 import net.minecraft.block.Block;
 import net.minecraft.creativetab.CreativeTabs;
-import net.minecraft.util.EnumWorldBlockLayer;
 import net.minecraftforge.fml.common.registry.GameRegistry;
-import net.minecraftforge.fml.relauncher.Side;
-import net.minecraftforge.fml.relauncher.SideOnly;
 
 /**
  * The parent class for all normal Blocks in this mod.
@@ -15,19 +12,13 @@ public class ModBlock extends Block implements IModBlock {
     private String blockName;
 
     public ModBlock(Block block, String blockName) {
-        super(block.getMaterial());
+        super(block.getMaterial(null));
         this.blockName = blockName;
-        this.setHardness(block.getBlockHardness(null, null));
         this.setResistance(block.getExplosionResistance(null));
-        this.setCreativeTab(CreativeTabs.tabBlock);
-        this.setStepSound(block.stepSound);
+        this.setCreativeTab(CreativeTabs.BUILDING_BLOCKS);
+        this.setSoundType(block.getSoundType());
         this.setUnlocalizedName(blockName);
         this.setRegistryName(blockName);
-    }
-
-    @SideOnly(Side.CLIENT)
-    public EnumWorldBlockLayer getBlockLayer() {
-        return EnumWorldBlockLayer.SOLID;
     }
 
     public String getBlockName() {
