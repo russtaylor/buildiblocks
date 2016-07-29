@@ -18,7 +18,7 @@ public class ModBlockStairs extends BlockStairs implements IModBlock {
         this.blockName = blockName;
         setUnlocalizedName(blockName);
         setRegistryName(blockName);
-        setCreativeTab(CreativeTabs.tabBlock);
+        setCreativeTab(CreativeTabs.BUILDING_BLOCKS);
         useNeighborBrightness = true;
     }
 

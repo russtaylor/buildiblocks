@@ -2,7 +2,6 @@ package us.vombat.buildiblocks.block;
 
 import net.minecraft.block.Block;
 import net.minecraft.creativetab.CreativeTabs;
-import net.minecraftforge.fml.common.registry.GameRegistry;
 
 /**
  * The parent class for all normal Blocks in this mod.
@@ -12,7 +11,7 @@ public class ModBlock extends Block implements IModBlock {
     private String blockName;
 
     public ModBlock(Block block, String blockName) {
-        super(block.getMaterial(null));
+        super(block.getDefaultState().getMaterial());
         this.blockName = blockName;
         this.setResistance(block.getExplosionResistance(null));
         this.setCreativeTab(CreativeTabs.BUILDING_BLOCKS);
@@ -26,7 +25,7 @@ public class ModBlock extends Block implements IModBlock {
     }
 
     public ModBlock register() {
-        GameRegistry.registerBlock(this);
+        setRegistryName(getBlockName());
         BlockList.blockList.add(this);
         return this;
     }

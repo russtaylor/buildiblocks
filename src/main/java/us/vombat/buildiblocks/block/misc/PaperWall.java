@@ -2,18 +2,17 @@ package us.vombat.buildiblocks.block.misc;
 
 import net.minecraft.block.properties.IProperty;
 import net.minecraft.block.properties.PropertyDirection;
-import net.minecraft.block.state.BlockState;
+import net.minecraft.block.state.BlockStateContainer;
 import net.minecraft.block.state.IBlockState;
-import us.vombat.buildiblocks.block.BlockList;
-import us.vombat.buildiblocks.block.ModBlock;
-import net.minecraft.entity.EntityLivingBase;
+import net.minecraft.entity.Entity;
 import net.minecraft.init.Blocks;
-import net.minecraft.util.AxisAlignedBB;
-import net.minecraft.util.BlockPos;
 import net.minecraft.util.EnumFacing;
-import net.minecraft.world.IBlockAccess;
-import net.minecraft.world.World;
-import net.minecraftforge.fml.common.registry.GameRegistry;
+import net.minecraft.util.math.AxisAlignedBB;
+import net.minecraft.util.math.BlockPos;
+import us.vombat.buildiblocks.block.ModBlock;
+
+import javax.annotation.Nullable;
+import java.util.List;
 
 /**
  * Paper Walls
@@ -23,6 +22,11 @@ public class PaperWall extends ModBlock {
     public static final String BLOCK_NAME = "paper_wall";
 
     private static final PropertyDirection DIRECTION = PropertyDirection.create("direction", EnumFacing.Plane.HORIZONTAL);
+
+    private static final AxisAlignedBB[] AABB_BY_INDEX = new AxisAlignedBB[]{
+            new AxisAlignedBB(0F, 0F, 0.4375F, 1F, 1F, 0.5624F),
+            new AxisAlignedBB(0.4375F, 0F, 0F, 0.5624F, 1F, 1F)
+    };
 
     public PaperWall() {
         super(Blocks.WOOL, BLOCK_NAME);
@@ -36,15 +40,9 @@ public class PaperWall extends ModBlock {
         return false;
     }
 
-    public PaperWall register() {
-        GameRegistry.registerBlock(this);
-        BlockList.blockList.add(this);
-        return this;
-    }
-
-    protected BlockState createBlockState() {
-        IProperty[] properties = new IProperty[] {DIRECTION};
-        return new BlockState(this, properties);
+    protected BlockStateContainer createBlockState() {
+        IProperty[] properties = new IProperty[]{DIRECTION};
+        return new BlockStateContainer(this, properties);
     }
 
     /**
@@ -55,7 +53,7 @@ public class PaperWall extends ModBlock {
         return direction.getHorizontalIndex();
     }
 
-    public boolean rotateBlock(net.minecraft.world.World world, net.minecraft.util.BlockPos pos, EnumFacing axis) {
+    public boolean rotateBlock(net.minecraft.world.World world, BlockPos pos, EnumFacing axis) {
         net.minecraft.block.state.IBlockState state = world.getBlockState(pos);
         for (net.minecraft.block.properties.IProperty<?> prop : state.getProperties().keySet()) {
             if (prop.getName().equals("direction")) {
@@ -66,27 +64,17 @@ public class PaperWall extends ModBlock {
         return false;
     }
 
-    public IBlockState onBlockPlaced(World worldIn, BlockPos pos, EnumFacing facing, float hitX, float hitY, float hitZ, int meta, EntityLivingBase placer) {
-        EnumFacing enumFacing = (placer == null) ? EnumFacing.NORTH : EnumFacing.fromAngle(placer.rotationYaw);
-        return this.getDefaultState().withProperty(DIRECTION, enumFacing);
-    }
-
-    public AxisAlignedBB getCollisionBoundingBox(World worldIn, BlockPos position, IBlockState state) {
-        this.updateBlockBounds(state);
-        return super.getCollisionBoundingBox(worldIn, position, state);
-    }
-
-    public void setBlockBoundsBasedOnState(IBlockAccess worldIn, BlockPos position) {
-        IBlockState blockState = worldIn.getBlockState(position);
-        this.updateBlockBounds(blockState);
-    }
-
-    private void updateBlockBounds(IBlockState blockState) {
-        EnumFacing direction = blockState.getValue(DIRECTION);
+    public void addCollisionBoxToList(
+            IBlockState state,
+            BlockPos position,
+            AxisAlignedBB entityBox,
+            List<AxisAlignedBB> collidingBoxes,
+            @Nullable Entity entityIn) {
+        EnumFacing direction = state.getValue(DIRECTION);
         if (direction == EnumFacing.NORTH || direction == EnumFacing.SOUTH) {
-            this.setBlockBounds(0F, 0F, 0.4375F, 1F, 1F, 0.5624F);
+            addCollisionBoxToList(position, entityBox, collidingBoxes, AABB_BY_INDEX[0]);
         } else {
-            this.setBlockBounds(0.4375F, 0F, 0F, 0.5624F, 1F, 1F);
+            addCollisionBoxToList(position, entityBox, collidingBoxes, AABB_BY_INDEX[1]);
         }
     }
 }

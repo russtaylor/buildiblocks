@@ -5,8 +5,6 @@ import us.vombat.buildiblocks.block.ModBlockSlab;
 
 /**
  * Polished andesite slabs.
- *
- * Created by russt on 12/18/14.
  */
 public class PolishedAndesiteSlab extends ModBlockSlab {
 

@@ -10,6 +10,8 @@ public abstract class ModBlockSlab extends BlockSlab {
     private final ModBlockSingleSlab singleSlab;
     private final ModBlockDoubleSlab doubleSlab;
 
+    private final String BLOCK_NAME = "unnamed_block";
+
     public ModBlockSlab(String singleSlabName, Block parentBlock, float blockHardness, float blockResistance) {
         super(parentBlock.getMaterial(null));
         this.singleSlab = new ModBlockSingleSlab(parentBlock, singleSlabName, blockHardness, blockResistance);
@@ -22,6 +24,10 @@ public abstract class ModBlockSlab extends BlockSlab {
 
     public ModBlockDoubleSlab getDoubleSlab() {
         return doubleSlab;
+    }
+
+    public String getUnlocalizedName(int meta) {
+        return BLOCK_NAME;
     }
 
     public ModBlockSlab register() {
