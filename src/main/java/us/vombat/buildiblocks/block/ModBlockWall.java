@@ -11,7 +11,6 @@ import net.minecraft.util.math.AxisAlignedBB;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.IBlockAccess;
 import net.minecraft.world.World;
-import net.minecraftforge.fml.common.registry.GameRegistry;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 import us.vombat.buildiblocks.BuildiblocksMod;
@@ -91,7 +90,7 @@ public class ModBlockWall extends Block implements IModBlock {
     }
 
     protected BlockStateContainer createBlockState() {
-        IProperty[] properties = new IProperty[] {UP, NORTH, EAST, SOUTH, WEST};
+        IProperty[] properties = new IProperty[]{UP, NORTH, EAST, SOUTH, WEST};
         return new BlockStateContainer(this, properties);
     }
 
@@ -100,7 +99,6 @@ public class ModBlockWall extends Block implements IModBlock {
     }
 
     public ModBlockWall register() {
-        GameRegistry.registerBlock(this);
         BlockList.blockList.add(this);
         return this;
     }

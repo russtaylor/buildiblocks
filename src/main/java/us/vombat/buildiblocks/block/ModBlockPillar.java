@@ -12,7 +12,6 @@ import net.minecraft.util.BlockRenderLayer;
 import net.minecraft.util.EnumFacing;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
-import net.minecraftforge.fml.common.registry.GameRegistry;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 
@@ -46,13 +45,12 @@ public class ModBlockPillar extends BlockRotatedPillar implements IModBlock {
     }
 
     public ModBlockPillar register() {
-        GameRegistry.registerBlock(this);
         BlockList.blockList.add(this);
         return this;
     }
 
     protected BlockStateContainer createBlockState() {
-        IProperty[] properties = new IProperty[] {AXIS};
+        IProperty[] properties = new IProperty[]{AXIS};
         return new BlockStateContainer(this, properties);
     }
 
@@ -60,13 +58,12 @@ public class ModBlockPillar extends BlockRotatedPillar implements IModBlock {
      * Convert the BlockState into the correct metadata value
      */
     public int getMetaFromState(IBlockState state) {
-         int i = 0;
+        int i = 0;
         EnumFacing.Axis enumFacingAxis = state.getValue(AXIS);
 
         if (enumFacingAxis == EnumFacing.Axis.X) {
             i |= 4;
-        }
-        else if (enumFacingAxis == EnumFacing.Axis.Z) {
+        } else if (enumFacingAxis == EnumFacing.Axis.Z) {
             i |= 8;
         }
 

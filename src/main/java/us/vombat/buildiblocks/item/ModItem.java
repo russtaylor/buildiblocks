@@ -2,7 +2,6 @@ package us.vombat.buildiblocks.item;
 
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.item.Item;
-import net.minecraftforge.fml.common.registry.GameRegistry;
 
 /**
  * A parent class for all normal Items in the mod.
@@ -26,7 +25,6 @@ public class ModItem extends Item implements IModItem {
 
     public ModItem register(String itemName) {
         ItemList.itemList.add(this);
-        GameRegistry.registerItem(this, itemName);
         return this;
     }
 }

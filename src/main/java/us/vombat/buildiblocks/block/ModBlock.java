@@ -25,7 +25,6 @@ public class ModBlock extends Block implements IModBlock {
     }
 
     public ModBlock register() {
-        setRegistryName(getBlockName());
         BlockList.blockList.add(this);
         return this;
     }

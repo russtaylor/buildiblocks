@@ -15,7 +15,6 @@ import net.minecraft.util.EnumParticleTypes;
 import net.minecraft.util.math.AxisAlignedBB;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
-import net.minecraftforge.fml.common.registry.GameRegistry;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 
@@ -29,7 +28,7 @@ public class ModBlockTorch extends Block implements IModBlock {
     private String blockName;
 
     private static final PropertyDirection FACING = PropertyDirection.create("facing", new Predicate<EnumFacing>() {
-        public boolean apply (EnumFacing facing) {
+        public boolean apply(EnumFacing facing) {
             return true;
         }
     });
@@ -66,7 +65,7 @@ public class ModBlockTorch extends Block implements IModBlock {
     }
 
     public boolean canPlaceBlockAt(World worldIn, BlockPos position) {
-        for (EnumFacing enumFacing: FACING.getAllowedValues()) {
+        for (EnumFacing enumFacing : FACING.getAllowedValues()) {
             if (this.canPlaceAt(worldIn, position, enumFacing)) {
                 return true;
             }
@@ -131,7 +130,7 @@ public class ModBlockTorch extends Block implements IModBlock {
                 flag = true;
             } else if (enumFacingAxis.isVertical() &&
                     (!this.canPlaceOn(worldIn, pos.offset(enumFacingOpposite)) ||
-                    !this.canPlaceUnder(worldIn, pos.offset(enumFacingOpposite)))) {
+                            !this.canPlaceUnder(worldIn, pos.offset(enumFacingOpposite)))) {
                 System.out.println("Is vertical, and can't place on or under the block...");
                 flag = true;
             }
@@ -194,16 +193,16 @@ public class ModBlockTorch extends Block implements IModBlock {
     @SideOnly(Side.CLIENT)
     public void randomDisplayTick(World worldIn, BlockPos pos, IBlockState state, Random rand) {
         EnumFacing enumFacing = state.getValue(FACING);
-        double d0 = (double)pos.getX() + 0.5D;
-        double d1 = (double)pos.getY() + 0.7D;
-        double d2 = (double)pos.getZ() + 0.5D;
+        double d0 = (double) pos.getX() + 0.5D;
+        double d1 = (double) pos.getY() + 0.7D;
+        double d2 = (double) pos.getZ() + 0.5D;
         double d3 = 0.22D;
         double d4 = 0.27D;
 
         if (enumFacing.getAxis().isHorizontal()) {
             EnumFacing enumFacingOpposite = enumFacing.getOpposite();
-            worldIn.spawnParticle(EnumParticleTypes.SMOKE_NORMAL, d0 + d4 * (double)enumFacingOpposite.getFrontOffsetX(), d1 + d3, d2 + d4 * (double)enumFacingOpposite.getFrontOffsetZ(), 0.0D, 0.0D, 0.0D, new int[0]);
-            worldIn.spawnParticle(EnumParticleTypes.FLAME, d0 + d4 * (double)enumFacingOpposite.getFrontOffsetX(), d1 + d3, d2 + d4 * (double)enumFacingOpposite.getFrontOffsetZ(), 0.0D, 0.0D, 0.0D, new int[0]);
+            worldIn.spawnParticle(EnumParticleTypes.SMOKE_NORMAL, d0 + d4 * (double) enumFacingOpposite.getFrontOffsetX(), d1 + d3, d2 + d4 * (double) enumFacingOpposite.getFrontOffsetZ(), 0.0D, 0.0D, 0.0D, new int[0]);
+            worldIn.spawnParticle(EnumParticleTypes.FLAME, d0 + d4 * (double) enumFacingOpposite.getFrontOffsetX(), d1 + d3, d2 + d4 * (double) enumFacingOpposite.getFrontOffsetZ(), 0.0D, 0.0D, 0.0D, new int[0]);
         } else {
             worldIn.spawnParticle(EnumParticleTypes.SMOKE_NORMAL, d0, d1, d2, 0.0D, 0.0D, 0.0D);
             worldIn.spawnParticle(EnumParticleTypes.FLAME, d0, d1, d2, 0.0D, 0.0D, 0.0D);
@@ -240,7 +239,7 @@ public class ModBlockTorch extends Block implements IModBlock {
     }
 
     protected BlockStateContainer createBlockState() {
-        IProperty[] properties = new IProperty[] {FACING};
+        IProperty[] properties = new IProperty[]{FACING};
         return new BlockStateContainer(this, properties);
     }
 
@@ -254,7 +253,6 @@ public class ModBlockTorch extends Block implements IModBlock {
     }
 
     public ModBlockTorch register() {
-        GameRegistry.registerBlock(this);
         BlockList.blockList.add(this);
         return this;
     }
