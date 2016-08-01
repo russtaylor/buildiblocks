@@ -14,11 +14,21 @@ import us.vombat.buildiblocks.world.ModBlockGenerator;
 import us.vombat.buildiblocks.world.ModWorldGenerator;
 
 @SuppressWarnings("unused")
-@Mod(modid = BuildiblocksMod.MOD_ID, name = BuildiblocksMod.MOD_NAME, version = BuildiblocksMod.VERSION)
+
+@Mod(
+        modid = BuildiblocksMod.MOD_ID,
+        name = BuildiblocksMod.MOD_NAME,
+        version = BuildiblocksMod.VERSION,
+        acceptedMinecraftVersions = BuildiblocksMod.MINECRAFT_VERSIONS)
+
 public class BuildiblocksMod {
     public static final String MOD_ID = "buildiblocks";
     static final String VERSION = "0.3.2";
     static final String MOD_NAME = "Buildiblocks";
+    static final String MINECRAFT_VERSIONS = "[1.10]";
+
+    private static final String CLIENT_PROXY = "us.vombat.buildiblocks.client.ClientProxy";
+    private static final String SERVER_PROXY = "us.vombat.buildiblocks.CommonProxy";
 
     // World
     public static World world;
@@ -40,7 +50,7 @@ public class BuildiblocksMod {
     @Mod.Instance
     public static BuildiblocksMod instance;
 
-    @SidedProxy(clientSide = "us.vombat.buildiblocks.client.ClientProxy", serverSide = "CommonProxy")
+    @SidedProxy(clientSide = BuildiblocksMod.CLIENT_PROXY, serverSide = BuildiblocksMod.SERVER_PROXY)
     private static CommonProxy proxy;
 
     @EventHandler
