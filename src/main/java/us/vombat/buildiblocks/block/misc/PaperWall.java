@@ -9,6 +9,7 @@ import net.minecraft.init.Blocks;
 import net.minecraft.util.EnumFacing;
 import net.minecraft.util.math.AxisAlignedBB;
 import net.minecraft.util.math.BlockPos;
+import us.vombat.buildiblocks.block.BlockList;
 import us.vombat.buildiblocks.block.ModBlock;
 
 import javax.annotation.Nullable;
@@ -76,5 +77,10 @@ public class PaperWall extends ModBlock {
         } else {
             addCollisionBoxToList(position, entityBox, collidingBoxes, AABB_BY_INDEX[1]);
         }
+    }
+
+    public PaperWall register() {
+        BlockList.blockList.add(this);
+        return this;
     }
 }

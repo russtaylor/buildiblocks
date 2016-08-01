@@ -15,13 +15,13 @@ class BlockHelper {
      * adjacent block location.
      *
      * @param blockAccess block access
-     * @param blockPos the specified position
+     * @param blockPos    the specified position
      * @return Whether or not the wall should point toward the specified block.
      */
     static boolean calculateWallDirection(IBlockAccess blockAccess, BlockPos blockPos, Block instance) {
         Block block = blockAccess.getBlockState(blockPos).getBlock();
         if (block != instance) {
-            if (block != Blocks.barrier) {
+            if (block != Blocks.BARRIER) {
                 if (block.getMaterial(null).isOpaque()) {
                     if (block.isFullCube(null)) {
                         return Material.GOURD != block.getMaterial(null);
@@ -30,7 +30,7 @@ class BlockHelper {
             }
             return false;
         } else {
-            return block != Blocks.barrier;
+            return block != Blocks.BARRIER;
         }
     }
 }

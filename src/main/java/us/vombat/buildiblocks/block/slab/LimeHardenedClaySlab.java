@@ -11,7 +11,7 @@ public class LimeHardenedClaySlab extends ModBlockSlab {
     public static final String BLOCK_NAME = "lime_hardened_clay_slab";
 
     public LimeHardenedClaySlab(Block block) {
-        super(BLOCK_NAME, block, block.getBlockHardness(null, null), block.getExplosionResistance(null));
+        super(BLOCK_NAME, block, block.getBlockHardness(null, null, null), block.getExplosionResistance(null));
     }
 
 }

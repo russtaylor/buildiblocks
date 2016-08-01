@@ -1,10 +1,5 @@
 package us.vombat.buildiblocks;
 
-import us.vombat.buildiblocks.block.BlockHandler;
-import us.vombat.buildiblocks.item.ItemHandler;
-import us.vombat.buildiblocks.recipe.RecipeHandler;
-import us.vombat.buildiblocks.world.ModBlockGenerator;
-import us.vombat.buildiblocks.world.ModWorldGenerator;
 import net.minecraft.world.World;
 import net.minecraftforge.event.world.WorldEvent;
 import net.minecraftforge.fml.common.Mod;
@@ -12,6 +7,11 @@ import net.minecraftforge.fml.common.Mod.EventHandler;
 import net.minecraftforge.fml.common.SidedProxy;
 import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
+import us.vombat.buildiblocks.block.BlockHandler;
+import us.vombat.buildiblocks.item.ItemHandler;
+import us.vombat.buildiblocks.recipe.RecipeHandler;
+import us.vombat.buildiblocks.world.ModBlockGenerator;
+import us.vombat.buildiblocks.world.ModWorldGenerator;
 
 @SuppressWarnings("unused")
 @Mod(modid = BuildiblocksMod.MOD_ID, name = BuildiblocksMod.MOD_NAME, version = BuildiblocksMod.VERSION)
@@ -40,7 +40,7 @@ public class BuildiblocksMod {
     @Mod.Instance
     public static BuildiblocksMod instance;
 
-    @SidedProxy(clientSide = "ClientProxy", serverSide = "CommonProxy")
+    @SidedProxy(clientSide = "us.vombat.buildiblocks.client.ClientProxy", serverSide = "CommonProxy")
     private static CommonProxy proxy;
 
     @EventHandler

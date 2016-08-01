@@ -6,7 +6,7 @@ import net.minecraft.world.gen.layer.*;
 
 /**
  * Handles generation of the 'stone' layer.
- *
+ * <p>
  * Created by russt on 2016-03-08.
  */
 public abstract class GenLayerStone extends GenLayer {
@@ -41,7 +41,7 @@ public abstract class GenLayerStone extends GenLayer {
         int k = j;
 
         if (worldType == WorldType.CUSTOMIZED && config.length() > 0) {
-            chunkProviderSettings = ChunkProviderSettings.Factory.jsonToFactory(config).func_177864_b();
+            chunkProviderSettings = ChunkProviderSettings.Factory.jsonToFactory(config).build();
             j = chunkProviderSettings.biomeSize;
             k = chunkProviderSettings.biomeSize;
         }
@@ -64,22 +64,22 @@ public abstract class GenLayerStone extends GenLayer {
         Object object = new GenLayerRareBiome(1001L, genLayerHills);
 
         for (int l = 0; l < j; ++l) {
-            object = new GenLayerZoom((long)(1000 + l), (GenLayer)object);
+            object = new GenLayerZoom((long) (1000 + l), (GenLayer) object);
 
             if (l == 0) {
-                object = new GenLayerAddIsland(3L, (GenLayer)object);
+                object = new GenLayerAddIsland(3L, (GenLayer) object);
             }
 
             if (l == 1 || j == 1) {
-                object = new GenLayerShore(1000L, (GenLayer)object);
+                object = new GenLayerShore(1000L, (GenLayer) object);
             }
         }
 
-        GenLayerSmooth genLayerSmooth1 = new GenLayerSmooth(1000L, (GenLayer)object);
+        GenLayerSmooth genLayerSmooth1 = new GenLayerSmooth(1000L, (GenLayer) object);
         GenLayerRiverMix genLayerRiverMix = new GenLayerRiverMix(100L, genLayerSmooth1, genLayerSmooth);
         GenLayerVoronoiZoom genLayerVoronoiZoom = new GenLayerVoronoiZoom(10L, genLayerRiverMix);
         genLayerRiverMix.initWorldGenSeed(seed);
         genLayerVoronoiZoom.initWorldGenSeed(seed);
-        return new GenLayer[] {genLayerRiverMix, genLayerVoronoiZoom, genLayerRiverMix};
+        return new GenLayer[]{genLayerRiverMix, genLayerVoronoiZoom, genLayerRiverMix};
     }
 }

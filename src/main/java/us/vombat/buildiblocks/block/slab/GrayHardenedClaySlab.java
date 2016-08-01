@@ -11,7 +11,7 @@ public class GrayHardenedClaySlab extends ModBlockSlab {
     public static final String BLOCK_NAME = "gray_hardened_clay_slab";
 
     public GrayHardenedClaySlab(Block block) {
-        super(BLOCK_NAME, block, block.getBlockHardness(null, null), block.getExplosionResistance(null));
+        super(BLOCK_NAME, block, block.getBlockHardness(null, null, null), block.getExplosionResistance(null));
     }
 
 }

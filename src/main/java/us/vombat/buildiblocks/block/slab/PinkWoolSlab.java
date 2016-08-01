@@ -11,7 +11,7 @@ public class PinkWoolSlab extends ModBlockSlab {
     public static final String BLOCK_NAME = "pink_wool_slab";
 
     public PinkWoolSlab(Block block) {
-        super(BLOCK_NAME, block, block.getBlockHardness(null, null), block.getExplosionResistance(null));
+        super(BLOCK_NAME, block, block.getBlockHardness(null, null, null), block.getExplosionResistance(null));
     }
 
 }

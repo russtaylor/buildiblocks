@@ -16,9 +16,8 @@ public class HardenedClayStairs extends ModBlockStairs {
         super(parent, parent.getDefaultState(), BLOCK_NAME);
     }
 
-    public MapColor getMapColor(IBlockState state)
-    {
-        return MapColor.adobeColor;
+    public MapColor getMapColor(IBlockState state) {
+        return MapColor.ADOBE;
     }
 
     public ModBlockStairs register() {
