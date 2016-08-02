@@ -5,6 +5,7 @@ import net.minecraftforge.event.world.WorldEvent;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.Mod.EventHandler;
 import net.minecraftforge.fml.common.SidedProxy;
+import net.minecraftforge.fml.common.event.FMLInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
 import us.vombat.buildiblocks.block.BlockHandler;
@@ -59,6 +60,11 @@ public class BuildiblocksMod {
         itemHandler.registerItems();
         recipeHandler.registerRecipes();
         proxy.preInit();
+    }
+
+    @EventHandler
+    public void init(FMLInitializationEvent event) {
+        proxy.init();
     }
 
     @SubscribeEvent

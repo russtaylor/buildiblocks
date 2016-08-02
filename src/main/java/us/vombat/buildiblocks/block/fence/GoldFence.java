@@ -5,7 +5,7 @@ import us.vombat.buildiblocks.block.ModBlockFence;
 
 /**
  * Gold fences.
- *
+ * <p>
  * Created by russt on 12/2/14.
  */
 public class GoldFence extends ModBlockFence {
@@ -13,9 +13,5 @@ public class GoldFence extends ModBlockFence {
 
     public GoldFence(Block block) {
         super(block, BLOCK_NAME);
-    }
-
-    public ModBlockFence register() {
-        return register(BLOCK_NAME);
     }
 }

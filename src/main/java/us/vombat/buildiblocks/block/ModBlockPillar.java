@@ -45,8 +45,7 @@ public class ModBlockPillar extends BlockRotatedPillar implements IModBlock {
     }
 
     public ModBlockPillar register() {
-        BlockList.blockList.add(this);
-        return this;
+        return (ModBlockPillar) BlockHelper.registerBlockAndItem(this, this);
     }
 
     protected BlockStateContainer createBlockState() {

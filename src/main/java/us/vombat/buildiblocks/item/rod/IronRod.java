@@ -4,7 +4,7 @@ import us.vombat.buildiblocks.item.ModItem;
 
 /**
  * Iron rods.
- *
+ * <p>
  * Created by russt on 12/22/14.
  */
 public class IronRod extends ModItem {
@@ -15,7 +15,4 @@ public class IronRod extends ModItem {
         super(ITEM_NAME);
     }
 
-    public ModItem register() {
-        return register(ITEM_NAME);
-    }
 }

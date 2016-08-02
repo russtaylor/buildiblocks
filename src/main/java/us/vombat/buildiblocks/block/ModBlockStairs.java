@@ -26,8 +26,7 @@ public class ModBlockStairs extends BlockStairs implements IModBlock {
         return blockName;
     }
 
-    public ModBlockStairs register(String blockName) {
-        BlockList.blockList.add(this);
-        return this;
+    public ModBlockStairs register() {
+        return (ModBlockStairs) BlockHelper.registerBlockAndItem(this, this);
     }
 }

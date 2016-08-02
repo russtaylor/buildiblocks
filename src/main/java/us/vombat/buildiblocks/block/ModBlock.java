@@ -25,7 +25,6 @@ public class ModBlock extends Block implements IModBlock {
     }
 
     public ModBlock register() {
-        BlockList.blockList.add(this);
-        return this;
+        return (ModBlock) BlockHelper.registerBlockAndItem(this, this);
     }
 }

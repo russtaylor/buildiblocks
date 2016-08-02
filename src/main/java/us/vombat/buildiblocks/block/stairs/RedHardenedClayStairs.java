@@ -14,7 +14,4 @@ public class RedHardenedClayStairs extends ModBlockStairs {
         super(parent, parent.getDefaultState(), BLOCK_NAME);
     }
 
-    public ModBlockStairs register() {
-        return register(BLOCK_NAME);
-    }
 }

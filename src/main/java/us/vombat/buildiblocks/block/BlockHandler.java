@@ -1,18 +1,18 @@
 package us.vombat.buildiblocks.block;
 
 import net.minecraft.block.BlockColored;
-import us.vombat.buildiblocks.block.fence.EmeraldFence;
-import us.vombat.buildiblocks.block.misc.PaperWall;
-import us.vombat.buildiblocks.block.torch.GoldTorch;
-import us.vombat.buildiblocks.block.torch.IronTorch;
 import net.minecraft.init.Blocks;
+import us.vombat.buildiblocks.block.block.*;
 import us.vombat.buildiblocks.block.fence.DiamondFence;
+import us.vombat.buildiblocks.block.fence.EmeraldFence;
 import us.vombat.buildiblocks.block.fence.GoldFence;
 import us.vombat.buildiblocks.block.fence.IronFence;
-import us.vombat.buildiblocks.block.block.*;
+import us.vombat.buildiblocks.block.misc.PaperWall;
 import us.vombat.buildiblocks.block.pillar.*;
 import us.vombat.buildiblocks.block.slab.*;
 import us.vombat.buildiblocks.block.stairs.*;
+import us.vombat.buildiblocks.block.torch.GoldTorch;
+import us.vombat.buildiblocks.block.torch.IronTorch;
 import us.vombat.buildiblocks.block.wall.*;
 
 /**
@@ -25,13 +25,13 @@ public class BlockHandler {
     }
 
     private void registerVanillaBlockExtensions() {
-        registerModBlocks();
-        registerModTorches();
+        //registerModBlocks();
+        //registerModTorches();
         registerModWalls();
         registerModFences();
-        registerModStairs();
-        registerModSlabs();
-        registerModPillars();
+        //registerModStairs();
+        //registerModSlabs();
+        //registerModPillars();
     }
 
     private void registerModBlocks() {

@@ -20,7 +20,4 @@ public class HardenedClayStairs extends ModBlockStairs {
         return MapColor.ADOBE;
     }
 
-    public ModBlockStairs register() {
-        return register(BLOCK_NAME);
-    }
 }

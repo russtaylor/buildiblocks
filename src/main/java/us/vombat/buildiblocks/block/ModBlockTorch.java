@@ -253,7 +253,6 @@ public class ModBlockTorch extends Block implements IModBlock {
     }
 
     public ModBlockTorch register() {
-        BlockList.blockList.add(this);
-        return this;
+        return (ModBlockTorch) BlockHelper.registerBlockAndItem(this, this);
     }
 }

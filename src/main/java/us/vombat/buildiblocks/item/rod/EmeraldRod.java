@@ -12,8 +12,4 @@ public class EmeraldRod extends ModItem {
     public EmeraldRod() {
         super(ITEM_NAME);
     }
-
-    public ModItem register() {
-        return register(ITEM_NAME);
-    }
 }

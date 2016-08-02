@@ -4,7 +4,7 @@ import us.vombat.buildiblocks.item.ModItem;
 
 /**
  * Gold rods.
- *
+ * <p>
  * Created by russt on 12/22/14.
  */
 public class GoldRod extends ModItem {
@@ -13,9 +13,5 @@ public class GoldRod extends ModItem {
 
     public GoldRod() {
         super(ITEM_NAME);
-    }
-
-    public ModItem register() {
-        return register(ITEM_NAME);
     }
 }

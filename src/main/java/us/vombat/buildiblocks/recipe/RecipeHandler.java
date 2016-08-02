@@ -20,20 +20,20 @@ import java.util.List;
  */
 public class RecipeHandler {
     public void registerRecipes() {
-        removeVanillaRecipes();
-        registerSmeltingRecipes();
-        registerPillarRecipes();
-        registerBrickRecipes();
-        registerTorchRecipes();
-        registerChiseledRecipes();
+        //removeVanillaRecipes();
+        //registerSmeltingRecipes();
+        //registerPillarRecipes();
+        //registerBrickRecipes();
+        //registerTorchRecipes();
+        //registerChiseledRecipes();
         registerWallRecipes();
-        registerStairRecipes();
-        registerSlabRecipes();
-        registerRodRecipes();
+        //registerStairRecipes();
+        //registerSlabRecipes();
+        //registerRodRecipes();
         registerFenceRecipes();
-        registerTileRecipes();
-        reregisterVanillaRecipes();
-        registerRandomRecipes();
+        //registerTileRecipes();
+        //reregisterVanillaRecipes();
+        //registerRandomRecipes();
     }
 
     private void registerRodRecipes() {
@@ -388,12 +388,12 @@ public class RecipeHandler {
         List recipeList = CraftingManager.getInstance().getRecipeList();
 
         Iterator remover = recipeList.iterator();
-        while(remover.hasNext()) {
+        while (remover.hasNext()) {
             Object recipeObject = remover.next();
-            if(recipeObject instanceof IRecipe) {
+            if (recipeObject instanceof IRecipe) {
                 IRecipe recipe = (IRecipe) recipeObject;
                 ItemStack itemStack = recipe.getRecipeOutput();
-                if(itemStack != null && itemStack.getItem() == item) {
+                if (itemStack != null && itemStack.getItem() == item) {
                     remover.remove();
                 }
             }

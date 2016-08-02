@@ -29,7 +29,7 @@ public abstract class ModBlockSlab {
     }
 
     public ModBlockSlab register() {
-        BlockList.blockList.add(singleSlab);
+        BlockHelper.registerBlockAndItem(getSingleSlab(), getSingleSlab());
         return this;
     }
 }

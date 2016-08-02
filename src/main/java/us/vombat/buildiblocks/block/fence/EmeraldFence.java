@@ -12,8 +12,4 @@ public class EmeraldFence extends ModBlockFence {
     public EmeraldFence(Block block) {
         super(block, BLOCK_NAME);
     }
-
-    public ModBlockFence register() {
-        return register(BLOCK_NAME);
-    }
 }
