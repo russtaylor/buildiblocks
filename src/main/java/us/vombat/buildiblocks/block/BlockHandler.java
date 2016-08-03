@@ -25,13 +25,13 @@ public class BlockHandler {
     }
 
     private void registerVanillaBlockExtensions() {
-        //registerModBlocks();
-        //registerModTorches();
+        registerModBlocks();
+        registerModTorches();
         registerModWalls();
         registerModFences();
-        //registerModStairs();
-        //registerModSlabs();
-        //registerModPillars();
+        registerModStairs();
+        registerModSlabs();
+        registerModPillars();
     }
 
     private void registerModBlocks() {

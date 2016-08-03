@@ -14,6 +14,7 @@ import net.minecraft.util.EnumFacing;
 import net.minecraft.util.EnumParticleTypes;
 import net.minecraft.util.math.AxisAlignedBB;
 import net.minecraft.util.math.BlockPos;
+import net.minecraft.world.IBlockAccess;
 import net.minecraft.world.World;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
@@ -27,6 +28,13 @@ public class ModBlockTorch extends Block implements IModBlock {
 
     private String blockName;
 
+    private static final AxisAlignedBB STANDING_AABB = new AxisAlignedBB(0.4000000059604645D, 0.0D, 0.4000000059604645D, 0.6000000238418579D, 0.6000000238418579D, 0.6000000238418579D);
+    private static final AxisAlignedBB TORCH_NORTH_AABB = new AxisAlignedBB(0.3499999940395355D, 0.20000000298023224D, 0.699999988079071D, 0.6499999761581421D, 0.800000011920929D, 1.0D);
+    private static final AxisAlignedBB TORCH_SOUTH_AABB = new AxisAlignedBB(0.3499999940395355D, 0.20000000298023224D, 0.0D, 0.6499999761581421D, 0.800000011920929D, 0.30000001192092896D);
+    private static final AxisAlignedBB TORCH_WEST_AABB = new AxisAlignedBB(0.699999988079071D, 0.20000000298023224D, 0.3499999940395355D, 1.0D, 0.800000011920929D, 0.6499999761581421D);
+    private static final AxisAlignedBB TORCH_EAST_AABB = new AxisAlignedBB(0.0D, 0.20000000298023224D, 0.3499999940395355D, 0.30000001192092896D, 0.800000011920929D, 0.6499999761581421D);
+    private static final AxisAlignedBB HANGING_AABB = new AxisAlignedBB(0.4000000059604645D, 0.4000000059604645D, 0.4000000059604645D, 0.6000000238418579D, 1.0D, 0.6000000238418579D);
+
     private static final PropertyDirection FACING = PropertyDirection.create("facing", new Predicate<EnumFacing>() {
         public boolean apply(EnumFacing facing) {
             return true;
@@ -36,21 +44,39 @@ public class ModBlockTorch extends Block implements IModBlock {
     public ModBlockTorch(String blockName) {
         super(Material.CIRCUITS);
         this.blockName = blockName;
-        this.setLightLevel(1F);
-        this.setCreativeTab(CreativeTabs.BUILDING_BLOCKS);
-        this.setUnlocalizedName(blockName);
-        this.setRegistryName(blockName);
+        setLightLevel(1F);
+        setCreativeTab(CreativeTabs.BUILDING_BLOCKS);
+        setUnlocalizedName(blockName);
+        setRegistryName(blockName);
     }
 
-    public AxisAlignedBB getCollisionBoundingBox(World worldIn, BlockPos pos, IBlockState state) {
-        return null;
+    @Override
+    public AxisAlignedBB getBoundingBox(IBlockState state, IBlockAccess source, BlockPos pos) {
+        switch (state.getValue(FACING)) {
+            case EAST:
+                return TORCH_EAST_AABB;
+            case WEST:
+                return TORCH_WEST_AABB;
+            case SOUTH:
+                return TORCH_SOUTH_AABB;
+            case NORTH:
+                return TORCH_NORTH_AABB;
+            case DOWN:
+                return HANGING_AABB;
+            default:
+                return STANDING_AABB;
+        }
     }
 
-    public boolean isOpaqueCube() {
+    public AxisAlignedBB getCollisionBoundingBox(IBlockState blockState, World worldIn, BlockPos pos) {
+        return NULL_AABB;
+    }
+
+    public boolean isOpaqueCube(IBlockState state) {
         return false;
     }
 
-    public boolean isFullCube() {
+    public boolean isFullCube(IBlockState state) {
         return false;
     }
 
@@ -82,9 +108,9 @@ public class ModBlockTorch extends Block implements IModBlock {
     private boolean canPlaceAt(World worldIn, BlockPos position, EnumFacing facing) {
         BlockPos blockPos = position.offset(facing.getOpposite());
         boolean flag = facing.getAxis().isHorizontal();
-        return flag && worldIn.isSideSolid(blockPos, facing, true)
-                || facing.equals(EnumFacing.UP) && this.canPlaceOn(worldIn, blockPos)
-                || facing.equals(EnumFacing.DOWN) && this.canPlaceUnder(worldIn, blockPos);
+        return (flag && worldIn.isSideSolid(blockPos, facing, true))
+                || (facing.equals(EnumFacing.UP) && canPlaceOn(worldIn, blockPos))
+                || (facing.equals(EnumFacing.DOWN) && canPlaceUnder(worldIn, blockPos));
     }
 
     /**
@@ -109,14 +135,7 @@ public class ModBlockTorch extends Block implements IModBlock {
         this.checkForDrop(worldIn, pos, state);
     }
 
-    /**
-     * Called when a neighboring block changes.
-     */
-    public void onNeighborBlockChange(World worldIn, BlockPos pos, IBlockState state, Block neighborBlock) {
-        this.onNeighborChangeInternal(worldIn, pos, state);
-    }
-
-    private boolean onNeighborChangeInternal(World worldIn, BlockPos pos, IBlockState state) {
+    protected boolean onNeighborChangeInternal(World worldIn, BlockPos pos, IBlockState state) {
         if (!this.checkForDrop(worldIn, pos, state)) {
             return true;
         } else {
@@ -145,7 +164,7 @@ public class ModBlockTorch extends Block implements IModBlock {
         }
     }
 
-    private boolean checkForDrop(World worldIn, BlockPos pos, IBlockState state) {
+    protected boolean checkForDrop(World worldIn, BlockPos pos, IBlockState state) {
         if (state.getBlock() == this && this.canPlaceAt(worldIn, pos, state.getValue(FACING))) {
             return true;
         } else {
@@ -238,6 +257,7 @@ public class ModBlockTorch extends Block implements IModBlock {
         return i;
     }
 
+    @Override
     protected BlockStateContainer createBlockState() {
         IProperty[] properties = new IProperty[]{FACING};
         return new BlockStateContainer(this, properties);

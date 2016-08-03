@@ -20,20 +20,20 @@ import java.util.List;
  */
 public class RecipeHandler {
     public void registerRecipes() {
-        //removeVanillaRecipes();
-        //registerSmeltingRecipes();
-        //registerPillarRecipes();
-        //registerBrickRecipes();
-        //registerTorchRecipes();
-        //registerChiseledRecipes();
+        removeVanillaRecipes();
+        registerSmeltingRecipes();
+        registerPillarRecipes();
+        registerBrickRecipes();
+        registerTorchRecipes();
+        registerChiseledRecipes();
         registerWallRecipes();
-        //registerStairRecipes();
-        //registerSlabRecipes();
-        //registerRodRecipes();
+        registerStairRecipes();
+        registerSlabRecipes();
+        registerRodRecipes();
         registerFenceRecipes();
-        //registerTileRecipes();
-        //reregisterVanillaRecipes();
-        //registerRandomRecipes();
+        registerTileRecipes();
+        reregisterVanillaRecipes();
+        registerRandomRecipes();
     }
 
     private void registerRodRecipes() {
