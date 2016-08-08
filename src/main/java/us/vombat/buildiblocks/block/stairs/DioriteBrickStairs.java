@@ -11,7 +11,7 @@ public class DioriteBrickStairs extends ModBlockStairs {
     public static String BLOCK_NAME = "diorite_brick_stairs";
 
     public DioriteBrickStairs(Block parent) {
-        super(parent, parent.getDefaultState(), BLOCK_NAME);
+        super(parent.getDefaultState(), BLOCK_NAME);
     }
 
 }

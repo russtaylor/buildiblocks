@@ -11,7 +11,7 @@ public class AndesiteBrickStairs extends ModBlockStairs {
     public static String BLOCK_NAME = "andesite_brick_stairs";
 
     public AndesiteBrickStairs(Block parent) {
-        super(parent, parent.getDefaultState(), BLOCK_NAME);
+        super(parent.getDefaultState(), BLOCK_NAME);
     }
 
 }

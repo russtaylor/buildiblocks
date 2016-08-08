@@ -11,7 +11,7 @@ public class PinkWoolStairs extends ModBlockStairs {
     public static String BLOCK_NAME = "pink_wool_stairs";
 
     public PinkWoolStairs(Block parent) {
-        super(parent, parent.getDefaultState(), BLOCK_NAME);
+        super(parent.getDefaultState(), BLOCK_NAME);
     }
 
 }

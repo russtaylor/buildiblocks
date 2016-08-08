@@ -11,7 +11,7 @@ public class LimeWoolStairs extends ModBlockStairs {
     public static String BLOCK_NAME = "lime_wool_stairs";
 
     public LimeWoolStairs(Block parent) {
-        super(parent, parent.getDefaultState(), BLOCK_NAME);
+        super(parent.getDefaultState(), BLOCK_NAME);
     }
 
 }

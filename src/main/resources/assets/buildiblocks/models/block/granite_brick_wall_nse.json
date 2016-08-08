@@ -1,6 +1,0 @@
-{
-    "parent": "block/wall_nse",
-    "textures": {
-        "wall": "buildiblocks:blocks/granite_brick"
-    }
-}

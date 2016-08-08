@@ -1,6 +1,6 @@
 {
-    "parent": "block/wall_n",
-    "textures": {
-        "wall": "{mod_name}blocks/{texture_name}"
-    }
+  "parent": "block/wall_side",
+  "textures": {
+    "wall": "{mod_name}blocks/{texture_name}"
+  }
 }

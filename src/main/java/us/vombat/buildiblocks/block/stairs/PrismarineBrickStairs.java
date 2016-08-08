@@ -11,7 +11,7 @@ public class PrismarineBrickStairs extends ModBlockStairs {
     public static String BLOCK_NAME = "prismarine_brick_stairs";
 
     public PrismarineBrickStairs(Block parent) {
-        super(parent, parent.getDefaultState(), BLOCK_NAME);
+        super(parent.getDefaultState(), BLOCK_NAME);
     }
 
 }

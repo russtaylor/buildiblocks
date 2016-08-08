@@ -11,7 +11,7 @@ public class CrackedStoneBrickStairs extends ModBlockStairs {
     public static String BLOCK_NAME = "cracked_stone_brick_stairs";
 
     public CrackedStoneBrickStairs(Block parent) {
-        super(parent, parent.getDefaultState(), BLOCK_NAME);
+        super(parent.getDefaultState(), BLOCK_NAME);
     }
 
 }

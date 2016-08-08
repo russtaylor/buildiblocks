@@ -13,7 +13,7 @@ public class DiamondStairs extends ModBlockStairs {
     public static String BLOCK_NAME = "diamond_stairs";
 
     public DiamondStairs(Block parent) {
-        super(parent, parent.getDefaultState(), BLOCK_NAME);
+        super(parent.getDefaultState(), BLOCK_NAME);
     }
 
 }

@@ -1,6 +1,9 @@
 {
   "multipart": [
     {
+      "when": {
+        "up": "true"
+      },
       "apply": {
         "model": "buildiblocks:emerald_wall_post"
       }

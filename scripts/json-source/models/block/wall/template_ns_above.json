@@ -1,5 +1,5 @@
 {
-    "parent": "block/wall_ns_above",
+    "parent": "block/wall_sides_above",
     "textures": {
         "wall": "{mod_name}blocks/{texture_name}"
     }

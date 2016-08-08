@@ -92,7 +92,7 @@ public class BlockHandler {
         BlockList.stoneWall = new StoneWall(Blocks.STONE).register();
         BlockList.stoneBrickWall = new StoneBrickWall(Blocks.STONEBRICK).register();
         BlockList.sandstoneWall = new SandstoneWall(Blocks.SANDSTONE).register();
-        BlockList.sandstoneBrickWall = new SandstoneBrickWall(Blocks.SANDSTONE).register();
+        BlockList.sandstoneBrickWall = new SmoothSandstoneWall(Blocks.SANDSTONE).register();
         BlockList.brickWall = new BrickWall(Blocks.BRICK_BLOCK).register();
         BlockList.lapisLazuliWall = new LapisLazuliWall(Blocks.LAPIS_BLOCK).register();
         BlockList.polishedAndesiteWall = new PolishedAndesiteWall(Blocks.STONE).register();

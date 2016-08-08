@@ -11,7 +11,7 @@ public class EmeraldStairs extends ModBlockStairs {
     public static String BLOCK_NAME = "emerald_stairs";
 
     public EmeraldStairs(Block parent) {
-        super(parent, parent.getDefaultState(), BLOCK_NAME);
+        super(parent.getDefaultState(), BLOCK_NAME);
     }
 
 }

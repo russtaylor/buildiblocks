@@ -13,7 +13,7 @@ public class SmoothSandstoneStairs extends ModBlockStairs {
     public static String BLOCK_NAME = "smooth_sandstone_stairs";
 
     public SmoothSandstoneStairs(Block parent) {
-        super(parent, parent.getDefaultState(), BLOCK_NAME);
+        super(parent.getDefaultState(), BLOCK_NAME);
     }
 
 }

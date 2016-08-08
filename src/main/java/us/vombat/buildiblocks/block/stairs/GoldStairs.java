@@ -13,7 +13,7 @@ public class GoldStairs extends ModBlockStairs {
     public static String BLOCK_NAME = "gold_stairs";
 
     public GoldStairs(Block parent) {
-        super(parent, parent.getDefaultState(), BLOCK_NAME);
+        super(parent.getDefaultState(), BLOCK_NAME);
     }
 
 }

@@ -1,7 +1,0 @@
-{
-    "parent": "buildiblocks:block/wall_inventory",
-    "textures": {
-        "wall": "blocks/sandstone_smooth",
-        "end": "blocks/sandstone_normal"
-    }
-}

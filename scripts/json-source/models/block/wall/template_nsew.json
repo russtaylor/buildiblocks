@@ -1,5 +1,5 @@
 {
-    "parent": "block/wall_nsew",
+    "parent": "block/wall_sidesew",
     "textures": {
         "wall": "{mod_name}blocks/{texture_name}"
     }

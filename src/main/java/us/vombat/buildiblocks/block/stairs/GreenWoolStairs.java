@@ -11,7 +11,7 @@ public class GreenWoolStairs extends ModBlockStairs {
     public static String BLOCK_NAME = "green_wool_stairs";
 
     public GreenWoolStairs(Block parent) {
-        super(parent, parent.getDefaultState(), BLOCK_NAME);
+        super(parent.getDefaultState(), BLOCK_NAME);
     }
 
 }

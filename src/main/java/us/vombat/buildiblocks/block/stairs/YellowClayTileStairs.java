@@ -11,7 +11,7 @@ public class YellowClayTileStairs extends ModBlockStairs {
     public static String BLOCK_NAME = "yellow_clay_tile_stairs";
 
     public YellowClayTileStairs(Block parent) {
-        super(parent, parent.getDefaultState(), BLOCK_NAME);
+        super(parent.getDefaultState(), BLOCK_NAME);
     }
 
 }

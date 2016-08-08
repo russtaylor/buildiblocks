@@ -11,10 +11,10 @@ class BlockGenerator
 
   JSON_GENERATE_COMMAND = "ruby #{Dir.pwd}/generate-json.rb"
   JSON_GENERATORS = {
-    :block => '-t block -n [block] -x [texture]',
-    :stairs => '-t stairs -n [block] -o bottom_texture_name=[texture],top_texture_name=[texture],side_texture_name=[texture]',
-    :wall => '-t wall -n [block] -o texture_name=[texture]',
-    :slab => '-t slab -n [block] -o bottom_texture_name=[texture],top_texture_name=[texture],side_texture_name=[texture],parent_model=[model]'
+      :block => '-t block -n [block] -x [texture]',
+      :stairs => '-t stairs -n [block] -o bottom_texture_name=[texture],top_texture_name=[texture],side_texture_name=[texture]',
+      :wall => '-t wall -n [block] -o texture_name=[texture]',
+      :slab => '-t slab -n [block] -o bottom_texture_name=[texture],top_texture_name=[texture],side_texture_name=[texture],parent_model=[model]'
   }
 
   JAVA_TEMPLATE_PATH = './java-source/[type]/Template.java'
@@ -112,7 +112,7 @@ class BlockGenerator
     @strings = {}
     @strings[:block] = @options['name']
     @strings[:class] = @strings[:block].gsub(/\s/, '')
-    @strings[:variable] = @strings[:class][0,1].downcase + @strings[:class][1..-1]
+    @strings[:variable] = @strings[:class][0, 1].downcase + @strings[:class][1..-1]
     @strings[:snake] = @options['name'].gsub(/\s/, '_').downcase
   end
 

@@ -11,7 +11,7 @@ public class ObsidianStairs extends ModBlockStairs {
     public static String BLOCK_NAME = "obsidian_stairs";
 
     public ObsidianStairs(Block parent) {
-        super(parent, parent.getDefaultState(), BLOCK_NAME);
+        super(parent.getDefaultState(), BLOCK_NAME);
     }
 
 }

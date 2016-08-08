@@ -11,7 +11,7 @@ public class GreenHardenedClayStairs extends ModBlockStairs {
     public static String BLOCK_NAME = "green_hardened_clay_stairs";
 
     public GreenHardenedClayStairs(Block parent) {
-        super(parent, parent.getDefaultState(), BLOCK_NAME);
+        super(parent.getDefaultState(), BLOCK_NAME);
     }
 
 }

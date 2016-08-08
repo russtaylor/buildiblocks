@@ -13,7 +13,7 @@ public class PolishedAndesiteStairs extends ModBlockStairs {
     public static String BLOCK_NAME = "polished_andesite_stairs";
 
     public PolishedAndesiteStairs(Block parent) {
-        super(parent, parent.getDefaultState(), BLOCK_NAME);
+        super(parent.getDefaultState(), BLOCK_NAME);
     }
 
 }

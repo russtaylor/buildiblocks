@@ -11,7 +11,7 @@ public class DarkPrismarineStairs extends ModBlockStairs {
     public static String BLOCK_NAME = "dark_prismarine_stairs";
 
     public DarkPrismarineStairs(Block parent) {
-        super(parent, parent.getDefaultState(), BLOCK_NAME);
+        super(parent.getDefaultState(), BLOCK_NAME);
     }
 
 }

@@ -13,7 +13,7 @@ public class HardenedClayStairs extends ModBlockStairs {
     public static String BLOCK_NAME = "hardened_clay_stairs";
 
     public HardenedClayStairs(BlockColored parent) {
-        super(parent, parent.getDefaultState(), BLOCK_NAME);
+        super(parent.getDefaultState(), BLOCK_NAME);
     }
 
     public MapColor getMapColor(IBlockState state) {

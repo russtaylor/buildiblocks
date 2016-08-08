@@ -5,8 +5,6 @@ import us.vombat.buildiblocks.block.ModBlockWall;
 
 /**
  * Brick walls.
- *
- * Created by russt on 12/2/14.
  */
 public class BrickWall extends ModBlockWall {
     public static final String BLOCK_NAME = "brick_wall";
