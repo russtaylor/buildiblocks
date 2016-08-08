@@ -25,14 +25,18 @@ public class ClientProxy extends CommonProxy {
         for (IModBlock block : BlockList.blockList) {
             ResourceLocation resourceLocation = new ResourceLocation(BuildiblocksMod.MOD_ID, block.getBlockName());
             Item item = Item.REGISTRY.getObject(resourceLocation);
-            registerBlockRenderer(item, BuildiblocksMod.MOD_ID + ":" + block.getBlockName(), renderItem);
+            registerBlockRenderer(item, generateRegistryName(block.getBlockName()), renderItem);
         }
 
         for (IModItem item : ItemList.itemList) {
             ResourceLocation resourceLocation = new ResourceLocation(BuildiblocksMod.MOD_ID, item.getItemName());
             Item gameItem = Item.REGISTRY.getObject(resourceLocation);
-            registerBlockRenderer(gameItem, BuildiblocksMod.MOD_ID + ":" + item.getItemName(), renderItem);
+            registerBlockRenderer(gameItem, generateRegistryName(item.getItemName()), renderItem);
         }
+    }
+
+    private String generateRegistryName(String name) {
+        return BuildiblocksMod.MOD_ID + ":" + name;
     }
 
     private void registerBlockRenderer(Item item, int metadata, String itemName, RenderItem renderItem) {
