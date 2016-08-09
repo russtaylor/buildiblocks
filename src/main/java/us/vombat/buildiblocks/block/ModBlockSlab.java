@@ -1,6 +1,7 @@
 package us.vombat.buildiblocks.block;
 
 import net.minecraft.block.Block;
+import net.minecraft.block.properties.PropertyBool;
 
 /**
  * Class to act as a container for singleSlabs and doubleSlabs
@@ -11,8 +12,11 @@ public abstract class ModBlockSlab {
 
     private final String BLOCK_NAME = "unnamed_block";
 
-    public ModBlockSlab(String singleSlabName, Block parentBlock, float blockHardness, float blockResistance) {
-        this.singleSlab = new ModBlockSingleSlab(parentBlock, singleSlabName, blockHardness, blockResistance);
+    static final PropertyBool VARIANT_PROPERTY = PropertyBool.create("variant");
+    static final int HALF_META_BIT = 8;
+
+    public ModBlockSlab(String singleSlabName, Block block, float blockHardness, float blockResistance) {
+        this.singleSlab = new ModBlockSingleSlab(block, singleSlabName, blockHardness, blockResistance);
         this.doubleSlab = new ModBlockDoubleSlab(singleSlab, singleSlabName, blockHardness, blockResistance);
     }
 

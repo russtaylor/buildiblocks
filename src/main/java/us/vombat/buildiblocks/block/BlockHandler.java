@@ -187,7 +187,7 @@ public class BlockHandler {
         BlockList.graniteBrickStairs = new GraniteBrickStairs(Blocks.STONE).register();
         //stairsadder
     }
-
+    
     private void registerModSlabs() {
         BlockList.diamondSlab = new DiamondSlab(Blocks.DIAMOND_BLOCK).register();
         BlockList.ironSlab = new IronSlab(Blocks.IRON_BLOCK).register();

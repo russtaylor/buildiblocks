@@ -8,6 +8,8 @@ import net.minecraft.block.state.IBlockState;
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.item.ItemStack;
 
+import static us.vombat.buildiblocks.block.ModBlockSlab.HALF_META_BIT;
+
 /**
  * Parent class for all the slabs in the mod.
  */
@@ -15,11 +17,11 @@ public class ModBlockSingleSlab extends BlockSlab implements IModBlock {
 
     private String blockName;
 
-    public ModBlockSingleSlab(Block parentBlock, String blockName, float blockHardness, float blockResistance) {
-        super(parentBlock.getMaterial(null));
-        IBlockState iblockstate = this.blockState.getBaseState();
+    @SuppressWarnings("deprecation")
+    public ModBlockSingleSlab(Block block, String blockName, float blockHardness, float blockResistance) {
+        super(block.getMaterial(null));
         this.blockName = blockName;
-        setSoundType(parentBlock.getSoundType());
+        setSoundType(block.getSoundType());
         setHardness(blockHardness);
         setResistance(blockResistance);
         setCreativeTab(CreativeTabs.BUILDING_BLOCKS);
@@ -39,18 +41,8 @@ public class ModBlockSingleSlab extends BlockSlab implements IModBlock {
     }
 
     @Override
-    public int damageDropped(IBlockState state) {
-        return 0;
-    }
-
-    /**
-     * This one doesn't do anything yet, it seems?
-     *
-     * @return null. That's it.
-     */
-    @Override
-    public IProperty getVariantProperty() {
-        return null;
+    public IProperty<?> getVariantProperty() {
+        return ModBlockSlab.VARIANT_PROPERTY;
     }
 
     @Override
@@ -59,32 +51,41 @@ public class ModBlockSingleSlab extends BlockSlab implements IModBlock {
     }
 
     @Override
-    public IBlockState getStateFromMeta(int meta) {
-        IBlockState iblockstate = this.getDefaultState();
-        if(!this.isDouble())iblockstate = iblockstate.withProperty(HALF, (meta) == 0 ? BlockSlab.EnumBlockHalf.BOTTOM : BlockSlab.EnumBlockHalf.TOP);
-
-        return iblockstate;
-    }
-
-    @Override
     public int getMetaFromState(IBlockState state) {
-        int i;
-        i = (byte) 0;
-
         if (!this.isDouble() && state.getValue(HALF) == BlockSlab.EnumBlockHalf.TOP) {
-            i |= 8;
+            return HALF_META_BIT;
         }
-
-        return i;
-    }
-
-    @Override
-    protected BlockStateContainer createBlockState() {
-        return this.isDouble() ? new BlockStateContainer(this): new BlockStateContainer(this, HALF);
+        return 0;
     }
 
     @Override
     public String getBlockName() {
         return blockName;
+    }
+
+    @Override
+    public final IBlockState getStateFromMeta(final int meta) {
+        IBlockState blockState = this.getDefaultState();
+        blockState = blockState.withProperty(ModBlockSlab.VARIANT_PROPERTY, false);
+        if (!this.isDouble()) {
+            EnumBlockHalf value = EnumBlockHalf.BOTTOM;
+            if ((meta & HALF_META_BIT) != 0) {
+                value = EnumBlockHalf.TOP;
+            }
+
+            blockState = blockState.withProperty(HALF, value);
+        }
+        return blockState;
+    }
+
+    @Override
+    protected final BlockStateContainer createBlockState() {
+        if (this.isDouble()) {
+            return new BlockStateContainer(this, ModBlockSlab.VARIANT_PROPERTY);
+        } else {
+            return new BlockStateContainer(
+                    this,
+                    ModBlockSlab.VARIANT_PROPERTY, HALF);
+        }
     }
 }
