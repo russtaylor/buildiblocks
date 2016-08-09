@@ -6,8 +6,6 @@ import net.minecraftforge.fml.common.registry.GameRegistry;
 
 /**
  * A parent class for all normal Items in the mod.
- * <p>
- * Created by russt on 12/21/14.
  */
 public class ModItem extends Item implements IModItem {
 

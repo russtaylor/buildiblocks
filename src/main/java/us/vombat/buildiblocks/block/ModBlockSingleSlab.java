@@ -32,7 +32,7 @@ public class ModBlockSingleSlab extends BlockSlab implements IModBlock {
 
     @Override
     public String getUnlocalizedName(int meta) {
-        return super.getUnlocalizedName();
+        return getUnlocalizedName();
     }
 
     @Override
@@ -64,28 +64,11 @@ public class ModBlockSingleSlab extends BlockSlab implements IModBlock {
     }
 
     @Override
-    public final IBlockState getStateFromMeta(final int meta) {
-        IBlockState blockState = this.getDefaultState();
-        blockState = blockState.withProperty(ModBlockSlab.VARIANT_PROPERTY, false);
-        if (!this.isDouble()) {
-            EnumBlockHalf value = EnumBlockHalf.BOTTOM;
-            if ((meta & HALF_META_BIT) != 0) {
-                value = EnumBlockHalf.TOP;
-            }
-
-            blockState = blockState.withProperty(HALF, value);
-        }
-        return blockState;
-    }
-
-    @Override
     protected final BlockStateContainer createBlockState() {
         if (this.isDouble()) {
             return new BlockStateContainer(this, ModBlockSlab.VARIANT_PROPERTY);
         } else {
-            return new BlockStateContainer(
-                    this,
-                    ModBlockSlab.VARIANT_PROPERTY, HALF);
+            return new BlockStateContainer(this, HALF, ModBlockSlab.VARIANT_PROPERTY);
         }
     }
 }

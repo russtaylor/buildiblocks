@@ -1,6 +1,6 @@
 {
-    "parent": "block/wall_side",
-    "textures": {
-        "wall": "buildiblocks:blocks/granite_brick"
-    }
+  "parent": "block/wall_side",
+  "textures": {
+    "wall": "blocks/emerald_block"
+  }
 }

@@ -1,19 +1,19 @@
 package us.vombat.buildiblocks.block;
 
-import java.util.Random;
-
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.item.Item;
 
+import java.util.Random;
+
 /**
-* Handles the double slabs.
-*/
+ * Handles the double slabs.
+ */
 public class ModBlockDoubleSlab extends ModBlockSingleSlab {
 
     private ModBlockSingleSlab singleSlabBlock;
 
     ModBlockDoubleSlab(ModBlockSingleSlab singleSlabBlock, String blockName,
-                              float blockHardness, float blockResistance) {
+                       float blockHardness, float blockResistance) {
         super(singleSlabBlock, blockName + "_double", blockHardness, blockResistance);
         this.singleSlabBlock = singleSlabBlock;
         setCreativeTab(null);
