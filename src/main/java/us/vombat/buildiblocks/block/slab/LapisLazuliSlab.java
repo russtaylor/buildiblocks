@@ -1,21 +1,19 @@
 package us.vombat.buildiblocks.block.slab;
 
 import net.minecraft.block.Block;
-import us.vombat.buildiblocks.block.ModBlockSlab;
+import us.vombat.buildiblocks.block.ModSlabContainer;
 
 /**
  * Lapis Lazuli slabs.
- *
+ * <p>
  * Created by russt on 12/19/14.
  */
-public class LapisLazuliSlab extends ModBlockSlab {
+public class LapisLazuliSlab extends ModSlabContainer {
 
     public static final String BLOCK_NAME = "lapis_lazuli_slab";
-    public static final float BLOCK_HARDNESS = 1.5F;
-    public static final float BLOCK_RESISTANCE = 10.0F;
 
     public LapisLazuliSlab(Block block) {
-        super(BLOCK_NAME, block, BLOCK_HARDNESS, BLOCK_RESISTANCE);
+        super(BLOCK_NAME, block);
     }
 
 }

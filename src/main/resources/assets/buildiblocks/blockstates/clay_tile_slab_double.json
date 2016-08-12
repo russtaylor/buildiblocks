@@ -1,5 +1,7 @@
 {
   "variants": {
-    "normal": { "model": "buildiblocks:clay_tile" }
+    "normal": {
+      "model": "buildiblocks:clay_tile"
+    }
   }
 }

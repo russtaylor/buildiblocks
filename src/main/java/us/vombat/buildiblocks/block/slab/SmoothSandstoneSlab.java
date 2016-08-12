@@ -1,21 +1,17 @@
 package us.vombat.buildiblocks.block.slab;
 
 import net.minecraft.block.Block;
-import us.vombat.buildiblocks.block.ModBlockSlab;
+import us.vombat.buildiblocks.block.ModSlabContainer;
 
 /**
- * Lapis Lazuli slabs.
- *
- * Created by russt on 12/19/14.
+ * Smooth sandstone slabs.
  */
-public class SmoothSandstoneSlab extends ModBlockSlab {
+public class SmoothSandstoneSlab extends ModSlabContainer {
 
     public static final String BLOCK_NAME = "smooth_sandstone_slab";
-    public static final float BLOCK_HARDNESS = 1.5F;
-    public static final float BLOCK_RESISTANCE = 10.0F;
 
     public SmoothSandstoneSlab(Block block) {
-        super(BLOCK_NAME, block, BLOCK_HARDNESS, BLOCK_RESISTANCE);
+        super(BLOCK_NAME, block);
     }
 
 }

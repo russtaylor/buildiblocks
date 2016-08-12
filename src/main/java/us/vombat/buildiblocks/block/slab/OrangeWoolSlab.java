@@ -1,19 +1,17 @@
 package us.vombat.buildiblocks.block.slab;
 
 import net.minecraft.block.Block;
-import us.vombat.buildiblocks.block.ModBlockSlab;
+import us.vombat.buildiblocks.block.ModSlabContainer;
 
 /**
  * Orange Wool Slab
  */
-public class OrangeWoolSlab extends ModBlockSlab {
+public class OrangeWoolSlab extends ModSlabContainer {
 
     public static final String BLOCK_NAME = "orange_wool_slab";
-    public static final float BLOCK_HARDNESS = 0.8F;
-    public static final float BLOCK_RESISTANCE = 4F;
 
     public OrangeWoolSlab(Block block) {
-        super(BLOCK_NAME, block, BLOCK_HARDNESS, BLOCK_RESISTANCE);
+        super(BLOCK_NAME, block);
     }
 
 }

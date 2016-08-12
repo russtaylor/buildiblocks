@@ -5,7 +5,7 @@
       "edge": "buildiblocks:blocks/paper_wall_edge",
       "pane": "buildiblocks:blocks/paper_wall"
     },
-    "model": "glass_pane_ns"
+    "model": "buildiblocks:paper_wall"
   },
   "variants": {
     "direction": {

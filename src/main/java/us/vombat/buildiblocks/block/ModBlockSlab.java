@@ -1,50 +1,88 @@
 package us.vombat.buildiblocks.block;
 
 import net.minecraft.block.Block;
+import net.minecraft.block.BlockSlab;
+import net.minecraft.block.properties.IProperty;
 import net.minecraft.block.properties.PropertyBool;
-import net.minecraftforge.fml.common.registry.GameRegistry;
-import us.vombat.buildiblocks.item.ModItemSlab;
+import net.minecraft.block.state.BlockStateContainer;
+import net.minecraft.block.state.IBlockState;
+import net.minecraft.creativetab.CreativeTabs;
+import net.minecraft.item.ItemStack;
+
+import javax.annotation.Nonnull;
 
 /**
  * Class to act as a container for singleSlabs and doubleSlabs
  */
-public abstract class ModBlockSlab {
-    private final Block parentBlock;
-    private final ModBlockSingleSlab singleSlab;
-    private final ModBlockDoubleSlab doubleSlab;
+public abstract class ModBlockSlab extends BlockSlab {
 
     static final PropertyBool VARIANT_PROPERTY = PropertyBool.create("variant");
     static final int HALF_META_BIT = 8;
 
-    public ModBlockSlab(String singleSlabName, Block block, float blockHardness, float blockResistance) {
-        this.parentBlock = block;
-        this.singleSlab = new ModBlockSingleSlab(block, singleSlabName, blockHardness, blockResistance);
-        this.doubleSlab = new ModBlockDoubleSlab(singleSlab, singleSlabName, blockHardness, blockResistance);
+    @SuppressWarnings("deprecation")
+    public ModBlockSlab(String singleSlabName, Block block) {
+        super(block.getMaterial(null));
+        setSoundType(block.getSoundType());
+        setHardness(block.getBlockHardness(null, null, null));
+        setResistance(block.getExplosionResistance(null));
+        setCreativeTab(CreativeTabs.BUILDING_BLOCKS);
+        setUnlocalizedName(singleSlabName);
+        setRegistryName(singleSlabName);
     }
 
-    private Block getParentBlock() {
-        return parentBlock;
+    @Override
+    @Nonnull
+    public String getUnlocalizedName(int meta) {
+        return getUnlocalizedName();
     }
 
-    public ModBlockSingleSlab getSingleSlab() {
-        return singleSlab;
+    @Override
+    @Nonnull
+    public IProperty<?> getVariantProperty() {
+        return VARIANT_PROPERTY;
     }
 
-    public ModBlockDoubleSlab getDoubleSlab() {
-        return doubleSlab;
+    @Override
+    @Nonnull
+    public Comparable<?> getTypeForItem(@Nonnull ItemStack stack) {
+        return false;
     }
 
-    public ModBlockSlab register() {
-        // Register the single slab
-        BlockList.blockList.add(getSingleSlab());
-        GameRegistry.register(getSingleSlab());
-        // Register the double slab
-        BlockList.blockList.add(getDoubleSlab());
-        GameRegistry.register(getDoubleSlab());
-        // Register the item
-        ModItemSlab itemSlab = new ModItemSlab(getParentBlock(), getSingleSlab(), getDoubleSlab());
-        itemSlab.setRegistryName(getSingleSlab().getRegistryName());
-        GameRegistry.register(itemSlab);
-        return this;
+    @Override
+    @Nonnull
+    protected final BlockStateContainer createBlockState() {
+        if (this.isDouble()) {
+            return new BlockStateContainer(this, VARIANT_PROPERTY);
+        } else {
+            return new BlockStateContainer(this, HALF, VARIANT_PROPERTY);
+        }
+    }
+
+    @Override
+    @SuppressWarnings("deprecation")
+    @Nonnull
+    public final IBlockState getStateFromMeta(final int meta) {
+        IBlockState blockState = getDefaultState();
+        blockState = blockState.withProperty(VARIANT_PROPERTY, false);
+        if (!isDouble()) {
+            EnumBlockHalf value = EnumBlockHalf.BOTTOM;
+            if ((meta & HALF_META_BIT) != 0)
+                value = EnumBlockHalf.TOP;
+
+            blockState = blockState.withProperty(HALF, value);
+        }
+
+        return blockState;
+    }
+
+    @Override
+    public final int getMetaFromState(final IBlockState state) {
+        if (isDouble())
+            return 0;
+
+        if (state.getValue(HALF) == EnumBlockHalf.TOP)
+            return HALF_META_BIT;
+        else
+            return 0;
     }
 }

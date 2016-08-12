@@ -1,6 +1,18 @@
 {
+  "forge_marker": 1,
+  "defaults": {
+    "textures": {
+      "bottom": "buildiblocks:blocks/clay_tile",
+      "top": "buildiblocks:blocks/clay_tile",
+      "side": "buildiblocks:blocks/clay_tile"
+    }
+  },
   "variants": {
-    "half=bottom": { "model": "buildiblocks:clay_tile_slab_bottom" },
-    "half=top": { "model": "buildiblocks:clay_tile_slab_top" }
+    "half=bottom": {
+      "model": "buildiblocks:clay_tile_slab_bottom"
+    },
+    "half=top": {
+      "model": "buildiblocks:clay_tile_slab_top"
+    }
   }
 }

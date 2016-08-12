@@ -58,7 +58,7 @@ public class BlockHandler {
         BlockList.chiseledDioriteBrick = new ChiseledDioriteBrick(Blocks.STONE).register();
         BlockList.chiseledAndesiteBrick = new ChiseledAndesiteBrick(BlockList.andesiteBrick).register();
         //blockadder
-        BlockList.paperWall = new PaperWall().register();
+        BlockList.paperWall = (PaperWall) new PaperWall().register();
     }
 
     private void registerModTorches() {
@@ -187,7 +187,7 @@ public class BlockHandler {
         BlockList.graniteBrickStairs = new GraniteBrickStairs(Blocks.STONE).register();
         //stairsadder
     }
-    
+
     private void registerModSlabs() {
         BlockList.diamondSlab = new DiamondSlab(Blocks.DIAMOND_BLOCK).register();
         BlockList.ironSlab = new IronSlab(Blocks.IRON_BLOCK).register();

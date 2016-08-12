@@ -5,13 +5,16 @@ import net.minecraft.block.properties.PropertyDirection;
 import net.minecraft.block.state.BlockStateContainer;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.entity.Entity;
+import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.init.Blocks;
 import net.minecraft.util.EnumFacing;
 import net.minecraft.util.math.AxisAlignedBB;
 import net.minecraft.util.math.BlockPos;
-import us.vombat.buildiblocks.block.BlockList;
+import net.minecraft.world.IBlockAccess;
+import net.minecraft.world.World;
 import us.vombat.buildiblocks.block.ModBlock;
 
+import javax.annotation.Nonnull;
 import javax.annotation.Nullable;
 import java.util.List;
 
@@ -31,16 +34,22 @@ public class PaperWall extends ModBlock {
 
     public PaperWall() {
         super(Blocks.WOOL, BLOCK_NAME);
+        setLightOpacity(1);
     }
 
-    public boolean isOpaqueCube() {
+    @Override
+    @SuppressWarnings("deprecation")
+    public boolean isFullyOpaque(IBlockState state) {
         return false;
     }
 
-    public boolean isFullCube() {
+    @Override
+    @SuppressWarnings("deprecation")
+    public boolean isOpaqueCube(IBlockState state) {
         return false;
     }
 
+    @Nonnull
     protected BlockStateContainer createBlockState() {
         IProperty[] properties = new IProperty[]{DIRECTION};
         return new BlockStateContainer(this, properties);
@@ -65,22 +74,46 @@ public class PaperWall extends ModBlock {
         return false;
     }
 
-    public void addCollisionBoxToList(
-            IBlockState state,
-            BlockPos position,
-            AxisAlignedBB entityBox,
-            List<AxisAlignedBB> collidingBoxes,
-            @Nullable Entity entityIn) {
-        EnumFacing direction = state.getValue(DIRECTION);
-        if (direction == EnumFacing.NORTH || direction == EnumFacing.SOUTH) {
-            addCollisionBoxToList(position, entityBox, collidingBoxes, AABB_BY_INDEX[0]);
-        } else {
-            addCollisionBoxToList(position, entityBox, collidingBoxes, AABB_BY_INDEX[1]);
-        }
+    @SuppressWarnings("deprecation")
+    public void addCollisionBoxToList(IBlockState state,
+                                      @Nonnull World worldIn,
+                                      @Nonnull BlockPos pos,
+                                      @Nonnull AxisAlignedBB entityBox,
+                                      @Nonnull List<AxisAlignedBB> collidingBoxes,
+                                      @Nullable Entity entityIn) {
+        addCollisionBoxToList(
+                pos,
+                entityBox,
+                collidingBoxes,
+                AABB_BY_INDEX[getBoundingBoxIndex(state)]);
     }
 
-    public PaperWall register() {
-        BlockList.blockList.add(this);
-        return this;
+    @Nonnull
+    public IBlockState onBlockPlaced(World worldIn,
+                                     BlockPos pos,
+                                     EnumFacing facing,
+                                     float hitX,
+                                     float hitY,
+                                     float hitZ,
+                                     int meta,
+                                     EntityLivingBase placer) {
+        EnumFacing enumFacing = (placer == null) ? EnumFacing.NORTH : EnumFacing.fromAngle(placer.rotationYaw);
+        return this.getDefaultState().withProperty(DIRECTION, enumFacing);
+    }
+
+    @SuppressWarnings("deprecation")
+    @Nonnull
+    public AxisAlignedBB getBoundingBox(IBlockState state, IBlockAccess source, BlockPos pos) {
+        state = this.getActualState(state, source, pos);
+        return AABB_BY_INDEX[getBoundingBoxIndex(state)];
+    }
+
+    private static int getBoundingBoxIndex(IBlockState state) {
+        EnumFacing direction = state.getValue(DIRECTION);
+        if (direction == EnumFacing.SOUTH || direction == EnumFacing.NORTH) {
+            return 0;
+        } else {
+            return 1;
+        }
     }
 }
