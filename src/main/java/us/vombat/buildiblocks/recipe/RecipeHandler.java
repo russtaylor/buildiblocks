@@ -32,6 +32,7 @@ public class RecipeHandler {
         registerRodRecipes();
         registerFenceRecipes();
         registerTileRecipes();
+        registerLatticeRecipes();
         reregisterVanillaRecipes();
         registerRandomRecipes();
     }
@@ -318,6 +319,15 @@ public class RecipeHandler {
         //slabadder
     }
 
+    private void registerLatticeRecipes() {
+        registerLattice(BlockList.acaciaLattice, Blocks.PLANKS, BlockPlanks.EnumType.ACACIA.getMetadata());
+        registerLattice(BlockList.bigOakLattice, Blocks.PLANKS, BlockPlanks.EnumType.DARK_OAK.getMetadata());
+        registerLattice(BlockList.birchLattice, Blocks.PLANKS, BlockPlanks.EnumType.BIRCH.getMetadata());
+        registerLattice(BlockList.jungleLattice, Blocks.PLANKS, BlockPlanks.EnumType.JUNGLE.getMetadata());
+        registerLattice(BlockList.oakLattice, Blocks.PLANKS, BlockPlanks.EnumType.OAK.getMetadata());
+        registerLattice(BlockList.spruceLattice, Blocks.PLANKS, BlockPlanks.EnumType.SPRUCE.getMetadata());
+    }
+
     private void removeVanillaRecipes() {
         removeBlockRecipe(Blocks.STONE_SLAB);
 
@@ -498,5 +508,16 @@ public class RecipeHandler {
         ItemStack sourceItemStack = new ItemStack(sourceBlock, 1, meta);
         ItemStack tileStack = new ItemStack(tileBlock, 4);
         GameRegistry.addRecipe(tileStack, "xx", "xx", 'x', sourceItemStack);
+    }
+
+    private void registerLattice(Block latticeBlock, Block woodBlock) {
+        this.registerLattice(latticeBlock, woodBlock, 0);
+    }
+
+    private void registerLattice(Block latticeBlock, Block woodBlock, int meta) {
+        ItemStack woodStack = new ItemStack(woodBlock, 1, meta);
+        ItemStack stickStack = new ItemStack(Items.STICK, 1);
+        ItemStack latticeStack = new ItemStack(latticeBlock, 3);
+        GameRegistry.addRecipe(latticeStack, "x x", " y ", "x x", 'x', stickStack, 'y', woodStack);
     }
 }
