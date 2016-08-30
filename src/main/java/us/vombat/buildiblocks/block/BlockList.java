@@ -231,4 +231,8 @@ public class BlockList {
     public static ModSlabContainer dioriteBrickSlab;
     public static ModSlabContainer graniteBrickSlab;
     //slabadder
+
+    // Panes
+    public static ModBlockPane birchLattice;
+    //paneadder
 }

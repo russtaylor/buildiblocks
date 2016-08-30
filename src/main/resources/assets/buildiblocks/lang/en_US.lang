@@ -204,6 +204,7 @@ tile.chiseled_granite_brick_wall.name=Chiseled Granite Brick Wall
 tile.chiseled_granite_brick_slab.name=Chiseled Granite Brick Slab
 tile.chiseled_diorite_brick.name=Chiseled Diorite Brick
 tile.chiseled_andesite_brick.name=Chiseled Andesite Brick
+tile.birch_lattice.name=Birch Lattice
 tile.wordadder=nothing
 
 item.iron_rod.name=Iron Rod

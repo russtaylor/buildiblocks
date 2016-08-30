@@ -1,0 +1,7 @@
+{
+  "parent": "block/pane_post",
+  "textures": {
+    "edge": "buildiblocks:blocks/birch_lattice_top",
+    "pane": "buildiblocks:blocks/birch_lattice"
+  }
+}

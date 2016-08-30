@@ -1,0 +1,7 @@
+{
+  "parent": "block/pane_side",
+  "textures": {
+    "edge": "{mod_name}blocks/{edge_texture}",
+    "pane": "{mod_name}blocks/{pane_texture}"
+  }
+}

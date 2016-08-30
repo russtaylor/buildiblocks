@@ -1,0 +1,77 @@
+{
+  "multipart": [
+    {
+      "apply": {
+        "model": "{mod_name}{block_name}_post"
+      }
+    },
+    {
+      "when": {
+        "north": true
+      },
+      "apply": {
+        "model": "{mod_name}{block_name}_side"
+      }
+    },
+    {
+      "when": {
+        "east": true
+      },
+      "apply": {
+        "model": "{mod_name}{block_name}_side",
+        "y": 90
+      }
+    },
+    {
+      "when": {
+        "south": true
+      },
+      "apply": {
+        "model": "{mod_name}{block_name}_side_alt"
+      }
+    },
+    {
+      "when": {
+        "west": true
+      },
+      "apply": {
+        "model": "{mod_name}{block_name}_side_alt",
+        "y": 90
+      }
+    },
+    {
+      "when": {
+        "north": false
+      },
+      "apply": {
+        "model": "{mod_name}{block_name}_noside"
+      }
+    },
+    {
+      "when": {
+        "east": false
+      },
+      "apply": {
+        "model": "{mod_name}{block_name}_noside_alt"
+      }
+    },
+    {
+      "when": {
+        "south": false
+      },
+      "apply": {
+        "model": "{mod_name}{block_name}_noside_alt",
+        "y": 90
+      }
+    },
+    {
+      "when": {
+        "west": false
+      },
+      "apply": {
+        "model": "{mod_name}{block_name}_noside",
+        "y": 270
+      }
+    }
+  ]
+}

@@ -6,7 +6,7 @@ require 'optparse'
 require 'set'
 require 'fileutils'
 
-type_options = %w(fence slab stairs wall block pillar)
+type_options = %w(fence slab stairs wall block pillar pane)
 model_directories = %w(models/block blockstates models/item)
 non_custom_options = %w(block_name mod_name vanilla texture)
 
@@ -27,8 +27,8 @@ optionParser = OptionParser.new do |opts|
     options['texture'] = texture
   end
 
-  opts.on('-o', '--options OPTIONS', 'A comma-separated list of other custom options that appear ' + 
-    'in this type\'s templates. In the format variable=value.') do |custom|
+  opts.on('-o', '--options OPTIONS', 'A comma-separated list of other custom options that appear ' +
+      'in this type\'s templates. In the format variable=value.') do |custom|
     options['custom'] = custom
   end
 
@@ -40,7 +40,7 @@ end
 begin
   optionParser.parse!
   mandatory = %w(type block_name)
-  missing = mandatory.select{ |param| options[param].nil? }
+  missing = mandatory.select { |param| options[param].nil? }
   unless missing.empty?
     puts "Missing required options: #{missing.join(', ')}"
     puts optionParser

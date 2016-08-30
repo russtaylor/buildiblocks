@@ -8,6 +8,7 @@ import us.vombat.buildiblocks.block.fence.EmeraldFence;
 import us.vombat.buildiblocks.block.fence.GoldFence;
 import us.vombat.buildiblocks.block.fence.IronFence;
 import us.vombat.buildiblocks.block.misc.PaperWall;
+import us.vombat.buildiblocks.block.pane.BirchLattice;
 import us.vombat.buildiblocks.block.pillar.*;
 import us.vombat.buildiblocks.block.slab.*;
 import us.vombat.buildiblocks.block.stairs.*;
@@ -32,6 +33,7 @@ public class BlockHandler {
         registerModStairs();
         registerModSlabs();
         registerModPillars();
+        registerModPanes();
     }
 
     private void registerModBlocks() {
@@ -258,5 +260,9 @@ public class BlockHandler {
         BlockList.dioriteBrickSlab = new DioriteBrickSlab(Blocks.STONE).register();
         BlockList.graniteBrickSlab = new GraniteBrickSlab(Blocks.STONE).register();
         //slabadder
+    }
+
+    private void registerModPanes() {
+        BlockList.birchLattice = new BirchLattice(Blocks.PLANKS).register();
     }
 }
