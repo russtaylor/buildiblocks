@@ -1,6 +1,6 @@
 {
   "parent": "item/generated",
   "textures": {
-    "layer0": "buildiblocks:blocks/lattice_birch"
+    "layer0": "buildiblocks:blocks/lattice_spruce"
   }
 }

@@ -1,0 +1,7 @@
+{
+  "parent": "block/pane_post",
+  "textures": {
+    "edge": "buildiblocks:blocks/lattice_acacia_top",
+    "pane": "buildiblocks:blocks/lattice_acacia"
+  }
+}

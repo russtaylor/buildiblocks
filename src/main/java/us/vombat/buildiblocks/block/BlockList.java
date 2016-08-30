@@ -233,6 +233,11 @@ public class BlockList {
     //slabadder
 
     // Panes
+    public static ModBlockPane acaciaLattice;
+    public static ModBlockPane bigOakLattice;
     public static ModBlockPane birchLattice;
+    public static ModBlockPane jungleLattice;
+    public static ModBlockPane oakLattice;
+    public static ModBlockPane spruceLattice;
     //paneadder
 }

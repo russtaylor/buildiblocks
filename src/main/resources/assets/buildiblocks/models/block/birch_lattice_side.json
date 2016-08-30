@@ -1,7 +1,7 @@
 {
   "parent": "block/pane_side",
   "textures": {
-    "edge": "buildiblocks:blocks/birch_lattice_top",
-    "pane": "buildiblocks:blocks/birch_lattice"
+    "edge": "buildiblocks:blocks/lattice_birch_top",
+    "pane": "buildiblocks:blocks/lattice_birch"
   }
 }

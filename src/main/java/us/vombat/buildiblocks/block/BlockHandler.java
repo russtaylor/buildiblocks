@@ -8,7 +8,7 @@ import us.vombat.buildiblocks.block.fence.EmeraldFence;
 import us.vombat.buildiblocks.block.fence.GoldFence;
 import us.vombat.buildiblocks.block.fence.IronFence;
 import us.vombat.buildiblocks.block.misc.PaperWall;
-import us.vombat.buildiblocks.block.pane.BirchLattice;
+import us.vombat.buildiblocks.block.pane.*;
 import us.vombat.buildiblocks.block.pillar.*;
 import us.vombat.buildiblocks.block.slab.*;
 import us.vombat.buildiblocks.block.stairs.*;
@@ -263,6 +263,12 @@ public class BlockHandler {
     }
 
     private void registerModPanes() {
+        BlockList.acaciaLattice = new AcaciaLattice(Blocks.PLANKS).register();
+        BlockList.bigOakLattice = new BigOakLattice(Blocks.PLANKS).register();
         BlockList.birchLattice = new BirchLattice(Blocks.PLANKS).register();
+        BlockList.jungleLattice = new JungleLattice(Blocks.PLANKS).register();
+        BlockList.oakLattice = new OakLattice(Blocks.PLANKS).register();
+        BlockList.spruceLattice = new SpruceLattice(Blocks.PLANKS).register();
+        //paneadder
     }
 }

@@ -1,6 +1,6 @@
 {
   "parent": "block/pane_noside_alt",
   "textures": {
-    "pane": "buildiblocks:blocks/lattice_birch"
+    "pane": "buildiblocks:blocks/lattice_acacia"
   }
 }
