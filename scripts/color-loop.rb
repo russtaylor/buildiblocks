@@ -3,7 +3,7 @@ colors = %w(white)
 
 colors.each do |color|
   capname = color.capitalize
-  `ruby generate-blocks.rb -n "#{capname} Clay Tile" -s wall -p "BlockList.clayTile" -x clay_tile_#{color} -r tile -c #{color} -R "Blocks.STAINED_HARDENED_CLAY"`
+  `ruby generate-blocks.rb -n "#{capname} Glass" -j block/ -s block,wall -p "Blocks.GLASS" -x glass_#{color} -c #{color} -R "Blocks.GLASS"`
   # `ruby generate-json.rb -t stairs -n #{color}_wool_stairs -v -o bottom_texture_name=wool_colored_#{color},top_texture_name=wool_colored_#{color},side_texture_name=wool_colored_#{color}`
   # `ruby generate-json.rb -t stairs -n #{color}_hardened_clay_stairs -v -o bottom_texture_name=hardened_clay_stained_#{color},top_texture_name=hardened_clay_stained_#{color},side_texture_name=hardened_clay_stained_#{color}`
 end

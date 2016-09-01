@@ -9,7 +9,7 @@ class BlockGenerator
   COLOR_OPTIONS = %w(white orange magenta light_blue yellow lime pink gray silver cyan purple blue brown green red black)
   TYPES = %w(block stairs wall slab)
 
-  JSON_GENERATE_COMMAND = "ruby #{Dir.pwd}/generate-json.rb"
+  JSON_GENERATE_COMMAND = "ruby #{Dir.pwd}/generate-json.rb -v"
   JSON_GENERATORS = {
       :block => '-t block -n [block] -x [texture]',
       :stairs => '-t stairs -n [block] -o bottom_texture_name=[texture],top_texture_name=[texture],side_texture_name=[texture]',
