@@ -246,6 +246,9 @@ public class RecipeHandler {
         registerStairs(BlockList.dioriteBrickStairs, BlockList.dioriteBrick);
         registerStairs(BlockList.graniteBrickStairs, BlockList.graniteBrick);
         registerStairs(BlockList.whiteClayTileStairs, BlockList.whiteClayTile);
+        registerStairs(BlockList.whiteGlassStairs, Blocks.GLASS, EnumDyeColor.WHITE.getMetadata());
+        registerStairs(BlockList.whiteGlassStairs, Blocks.GLASS, EnumDyeColor.WHITE.getMetadata());
+        registerStairs(BlockList.whiteGlassStairs, Blocks.GLASS, EnumDyeColor.WHITE.getMetadata());
         //stairsadder
     }
 
@@ -319,6 +322,7 @@ public class RecipeHandler {
         registerSlab(BlockList.dioriteBrickSlab.getSingleSlab(), BlockList.dioriteBrick);
         registerSlab(BlockList.graniteBrickSlab.getSingleSlab(), BlockList.graniteBrick);
         registerSlab(BlockList.whiteClayTileSlab.getSingleSlab(), BlockList.whiteClayTile);
+        registerSlab(BlockList.whiteGlassSlab.getSingleSlab(), 0, Blocks.GLASS, EnumDyeColor.WHITE.getMetadata());
         //slabadder
     }
 

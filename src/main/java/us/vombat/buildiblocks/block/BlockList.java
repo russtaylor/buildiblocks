@@ -161,6 +161,7 @@ public class BlockList {
     public static ModBlockStairs dioriteBrickStairs;
     public static ModBlockStairs graniteBrickStairs;
     public static ModBlockStairs whiteClayTileStairs;
+    public static ModBlockStairs whiteGlassStairs;
     //stairsadder
 
     // Slabs
@@ -233,6 +234,7 @@ public class BlockList {
     public static ModSlabContainer dioriteBrickSlab;
     public static ModSlabContainer graniteBrickSlab;
     public static ModSlabContainer whiteClayTileSlab;
+    public static ModSlabContainer whiteGlassSlab;
     //slabadder
 
     // Panes

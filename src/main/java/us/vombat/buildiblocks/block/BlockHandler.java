@@ -189,6 +189,7 @@ public class BlockHandler {
         BlockList.dioriteBrickStairs = new DioriteBrickStairs(Blocks.STONE).register();
         BlockList.graniteBrickStairs = new GraniteBrickStairs(Blocks.STONE).register();
         BlockList.whiteClayTileStairs = new WhiteClayTileStairs(BlockList.clayTile).register();
+        BlockList.whiteGlassStairs = new WhiteGlassStairs(Blocks.GLASS).register();
         //stairsadder
     }
 
@@ -262,6 +263,7 @@ public class BlockHandler {
         BlockList.dioriteBrickSlab = new DioriteBrickSlab(Blocks.STONE).register();
         BlockList.graniteBrickSlab = new GraniteBrickSlab(Blocks.STONE).register();
         BlockList.whiteClayTileSlab = new WhiteClayTileSlab(BlockList.clayTile).register();
+        BlockList.whiteGlassSlab = new WhiteGlassSlab(Blocks.GLASS).register();
         //slabadder
     }
 
