@@ -4,13 +4,13 @@ import net.minecraft.block.Block;
 import us.vombat.buildiblocks.block.ModBlock;
 
 /**
- * Class Name
+ * White Clay Tile
  */
-public class ClassName extends ModBlock {
+public class WhiteClayTile extends ModBlock {
 
-    public static final String BLOCK_NAME = "class_name";
+    public static final String BLOCK_NAME = "white_clay_tile";
 
-    public ClassName(Block block) {
+    public WhiteClayTile(Block block) {
         super(block, BLOCK_NAME);
     }
 

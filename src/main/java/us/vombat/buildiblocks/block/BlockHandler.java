@@ -59,6 +59,7 @@ public class BlockHandler {
         BlockList.chiseledGraniteBrick = new ChiseledGraniteBrick(Blocks.STONE).register();
         BlockList.chiseledDioriteBrick = new ChiseledDioriteBrick(Blocks.STONE).register();
         BlockList.chiseledAndesiteBrick = new ChiseledAndesiteBrick(BlockList.andesiteBrick).register();
+        BlockList.whiteClayTile = new WhiteClayTile(BlockList.clayTile).register();
         //blockadder
         BlockList.paperWall = (PaperWall) new PaperWall().register();
     }
@@ -187,6 +188,7 @@ public class BlockHandler {
         BlockList.andesiteBrickStairs = new AndesiteBrickStairs(Blocks.STONE).register();
         BlockList.dioriteBrickStairs = new DioriteBrickStairs(Blocks.STONE).register();
         BlockList.graniteBrickStairs = new GraniteBrickStairs(Blocks.STONE).register();
+        BlockList.whiteClayTileStairs = new WhiteClayTileStairs(BlockList.clayTile).register();
         //stairsadder
     }
 
@@ -259,6 +261,7 @@ public class BlockHandler {
         BlockList.andesiteBrickSlab = new AndesiteBrickSlab(Blocks.STONE).register();
         BlockList.dioriteBrickSlab = new DioriteBrickSlab(Blocks.STONE).register();
         BlockList.graniteBrickSlab = new GraniteBrickSlab(Blocks.STONE).register();
+        BlockList.whiteClayTileSlab = new WhiteClayTileSlab(BlockList.clayTile).register();
         //slabadder
     }
 

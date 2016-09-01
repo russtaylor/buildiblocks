@@ -1,7 +1,7 @@
-package net.minecraft.buildiblocks.block.wall;
+package us.vombat.buildiblocks.block.wall;
 
 import net.minecraft.block.Block;
-import net.minecraft.buildiblocks.block.ModBlockWall;
+import us.vombat.buildiblocks.block.ModBlockWall;
 
 /**
  * Class Name Wall

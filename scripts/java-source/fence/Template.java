@@ -1,7 +1,7 @@
-package net.minecraft.buildiblocks.block.fence;
+package us.vombat.buildiblocks.block.fence;
 
 import net.minecraft.block.Block;
-import net.minecraft.buildiblocks.block.ModBlockFence;
+import us.vombat.buildiblocks.block.ModBlockFence;
 
 /**
  * Class Name Fence
@@ -11,9 +11,5 @@ public class ClassNameFence extends ModBlockFence {
 
     public ClassNameFence(Block block) {
         super(block, BLOCK_NAME);
-    }
-
-    public ModBlockFence register() {
-        return register(BLOCK_NAME);
     }
 }

@@ -5,8 +5,6 @@ import us.vombat.buildiblocks.block.ModBlockFence;
 
 /**
  * Diamond fences.
- * <p>
- * Created by russt on 12/24/14.
  */
 public class DiamondFence extends ModBlockFence {
     public static final String BLOCK_NAME = "diamond_fence";

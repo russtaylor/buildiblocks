@@ -18,7 +18,7 @@ class BlockGenerator
   }
 
   JAVA_TEMPLATE_PATH = './java-source/[type]/Template.java'
-  DESTINATION_PATH = '../src/main/java/net/minecraft/buildiblocks/block/'
+  DESTINATION_PATH = '../src/main/java/us/vombat/buildiblocks/block/'
 
   JAVA_REPLACE_STRINGS = {
       :block => 'Class Name',
@@ -27,7 +27,7 @@ class BlockGenerator
       :snake => 'class_name'
   }
 
-  JAVA_SRC_LOCATION = '../src/main/java/net/minecraft/buildiblocks/'
+  JAVA_SRC_LOCATION = '../src/main/java/us/vombat/buildiblocks/'
   BLOCK_LIST = JAVA_SRC_LOCATION + 'block/BlockList.java'
   BLOCK_HANDLER = JAVA_SRC_LOCATION + 'block/BlockHandler.java'
   RECIPE_HANDLER = JAVA_SRC_LOCATION + 'recipe/RecipeHandler.java'
@@ -142,6 +142,9 @@ class BlockGenerator
     unless type == 'block'
       block_type << cap_type
       var_type = cap_type
+    end
+    if type == 'slab'
+      block_type = 'ModSlabContainer'
     end
     block_string = "    public static #{block_type} #{@strings[:variable]}#{var_type};"
     gawkify(type, block_string, BLOCK_LIST)
