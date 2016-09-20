@@ -21,6 +21,17 @@ class BlockHelper {
         return modBlock;
     }
 
+    static IModBlock registerTranslucentStairs(IModBlock modBlock, Block block) {
+        BlockList.blockList.add(modBlock);
+        GameRegistry.register(block);
+        ModelLoader.setCustomStateMapper(block,
+                new StateMap.Builder().ignore(new IProperty[]{ModBlockSlab.VARIANT_PROPERTY}).build());
+        // Register the related item
+        ItemBlock itemBlock = new ItemBlock(block);
+        GameRegistry.register(itemBlock.setRegistryName(block.getRegistryName()));
+        return modBlock;
+    }
+
     static void registerSlabAndItem(ModSlabContainer slab) {
         // Register the single slab
         BlockList.blockList.add(slab.getSingleSlab());

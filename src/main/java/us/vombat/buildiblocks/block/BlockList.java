@@ -161,7 +161,7 @@ public class BlockList {
     public static ModBlockStairs dioriteBrickStairs;
     public static ModBlockStairs graniteBrickStairs;
     public static ModBlockStairs whiteClayTileStairs;
-    public static ModBlockStairs whiteGlassStairs;
+    public static ModBlockTranslucentStairs whiteGlassStairs;
     //stairsadder
 
     // Slabs
