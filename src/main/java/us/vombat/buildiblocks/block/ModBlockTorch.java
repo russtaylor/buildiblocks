@@ -145,12 +145,10 @@ public class ModBlockTorch extends Block implements IModBlock {
             boolean flag = false;
 
             if (enumFacingAxis.isHorizontal() && !worldIn.isSideSolid(pos.offset(enumFacingOpposite), enumFacing, true)) {
-                System.out.println("Is horizontal, and side of changing block isn't solid...");
                 flag = true;
             } else if (enumFacingAxis.isVertical() &&
                     (!this.canPlaceOn(worldIn, pos.offset(enumFacingOpposite)) ||
                             !this.canPlaceUnder(worldIn, pos.offset(enumFacingOpposite)))) {
-                System.out.println("Is vertical, and can't place on or under the block...");
                 flag = true;
             }
 
