@@ -17,7 +17,7 @@ import javax.annotation.Nonnull;
 public abstract class ModBlockSlab extends BlockSlab {
 
     static final PropertyBool VARIANT_PROPERTY = PropertyBool.create("variant");
-    static final int HALF_META_BIT = 8;
+    private static final int HALF_META_BIT = 8;
 
     @SuppressWarnings("deprecation")
     public ModBlockSlab(String singleSlabName, Block block) {
