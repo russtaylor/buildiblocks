@@ -32,7 +32,7 @@ class BlockHelper {
         return modBlock;
     }
 
-    static void registerSlabAndItem(ModSlabContainer slab) {
+    static void registerSlabAndItem(ModSlabContainerInterface slab) {
         // Register the single slab
         BlockList.blockList.add(slab.getSingleSlab());
         GameRegistry.register(slab.getSingleSlab());

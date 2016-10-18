@@ -12,7 +12,7 @@ import net.minecraft.item.ItemStack;
 import javax.annotation.Nonnull;
 
 /**
- * Class to act as a container for singleSlabs and doubleSlabs
+ * Parent class for the mod's Slabs
  */
 public abstract class ModBlockSlab extends BlockSlab {
 

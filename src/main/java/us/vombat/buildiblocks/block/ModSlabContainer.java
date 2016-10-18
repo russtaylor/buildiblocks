@@ -5,7 +5,7 @@ import net.minecraft.block.Block;
 /**
  * Provides an interface for registering Slabs.
  */
-public abstract class ModSlabContainer {
+public abstract class ModSlabContainer implements ModSlabContainerInterface {
 
     private final ModBlockSingleSlab singleSlab;
     private final ModBlockDoubleSlab doubleSlab;

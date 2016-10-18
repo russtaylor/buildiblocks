@@ -234,7 +234,7 @@ public class BlockList {
     public static ModSlabContainer dioriteBrickSlab;
     public static ModSlabContainer graniteBrickSlab;
     public static ModSlabContainer whiteClayTileSlab;
-    public static ModSlabContainer whiteGlassSlab;
+    public static ModSlabTranslucentContainer whiteGlassSlab;
     //slabadder
 
     // Panes
