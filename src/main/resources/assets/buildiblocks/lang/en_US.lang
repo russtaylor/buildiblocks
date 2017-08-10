@@ -216,9 +216,8 @@ tile.white_clay_tile.name=White Clay Tile
 tile.white_clay_tile_stairs.name=White Clay Tile Stairs
 tile.white_clay_tile_slab.name=White Clay Tile Slab
 tile.white_glass_stairs.name=White Glass Stairs
-tile.white_glass_stairs.name=White Glass Stairs
-tile.white_glass_stairs.name=White Glass Stairs
 tile.white_glass_slab.name=White Glass Slab
+tile.glass_slab.name=Glass Slab
 tile.wordadder=nothing
 
 item.iron_rod.name=Iron Rod

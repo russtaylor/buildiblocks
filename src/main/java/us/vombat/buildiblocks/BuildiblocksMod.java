@@ -26,7 +26,7 @@ public class BuildiblocksMod {
     public static final String MOD_ID = "buildiblocks";
     static final String VERSION = "0.3.2";
     static final String MOD_NAME = "Buildiblocks";
-    static final String MINECRAFT_VERSIONS = "[1.10]";
+    static final String MINECRAFT_VERSIONS = "[1.11.2]";
 
     private static final String CLIENT_PROXY = "us.vombat.buildiblocks.client.ClientProxy";
     private static final String SERVER_PROXY = "us.vombat.buildiblocks.CommonProxy";

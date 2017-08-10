@@ -263,6 +263,7 @@ public class BlockHandler {
         BlockList.dioriteBrickSlab = new DioriteBrickSlab(Blocks.STONE).register();
         BlockList.graniteBrickSlab = new GraniteBrickSlab(Blocks.STONE).register();
         BlockList.whiteClayTileSlab = new WhiteClayTileSlab(BlockList.clayTile).register();
+        BlockList.glassSlab = new GlassSlab(Blocks.GLASS).register();
         BlockList.whiteGlassSlab = new WhiteGlassSlab(Blocks.GLASS).register();
         //slabadder
     }
